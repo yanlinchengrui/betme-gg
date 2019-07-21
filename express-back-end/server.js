@@ -3,12 +3,10 @@ const App = Express();
 const BodyParser = require('body-parser');
 const PORT = 8080;
 
-const db = require('./config/database')
-
+const db = require('./config/db')
 
 // Test db
-db
-  .authenticate()
+db.authenticate()
   .then(() => {
     console.log('Connection to db has been established successfully.');
   })

@@ -24,7 +24,12 @@ module.exports = (sequelize, DataTypes) => {
     },
   }, {});
   Bet.associate = function (models) {
-    // associations can be defined here
+    Bet.belongsToMany(models.User, {
+      through: 'UserBet',
+      as: 'users',
+      foreignKey: 'betId',
+      otherKey: 'userId'
+    })
   };
   return Bet;
 };
