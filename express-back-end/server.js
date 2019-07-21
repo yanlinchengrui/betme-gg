@@ -3,6 +3,19 @@ const App = Express();
 const BodyParser = require('body-parser');
 const PORT = 8080;
 
+const db = require('./config/database')
+
+
+// Test db
+db
+  .authenticate()
+  .then(() => {
+    console.log('Connection to db has been established successfully.');
+  })
+  .catch(err => {
+    console.error('Unable to connect to the database:', err);
+  });
+
 // Express Configuration
 App.use(BodyParser.urlencoded({ extended: false }));
 App.use(Express.static('public'));
@@ -11,6 +24,9 @@ App.use(Express.static('public'));
 App.get('/api/data', (req, res) => res.json({
   message: "Seems to work!",
 }));
+
+// user routes 
+App.use('/api/users', require('./routes/users'))
 
 App.listen(PORT, () => {
   // eslint-disable-next-line no-console
