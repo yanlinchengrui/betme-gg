@@ -1,15 +1,17 @@
-const Sequelize = require('sequelize');
-const db = require('../config/database')
-
-const Notification = db.define('notification', {
-  type: {
-    type: Sequelize.STRING,
-    notNull: true
-  },
-  description: {
-    type: Sequelize.STRING,
-    notNull: true
-  },
-})
-
-module.exports = Notification;
+'use strict';
+module.exports = (sequelize, DataTypes) => {
+  const Notification = sequelize.define('Notification', {
+    type: {
+      type: DataTypes.STRING,
+      notNull: true
+    },
+    description: {
+      type: DataTypes.STRING,
+      notNull: true
+    },
+  }, {});
+  Notification.associate = function (models) {
+    // associations can be defined here
+  };
+  return Notification;
+};

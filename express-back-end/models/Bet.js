@@ -1,28 +1,30 @@
-const Sequelize = require('sequelize');
-const db = require('../config/database')
-
-const Bet = db.define('bet', {
-  match: {
-    type: Sequelize.STRING,
-    unique: true,
-    notNull: true
-  },
-  owner: {
-    type: Sequelize.STRING,
-    notNull: true
-  },
-  description: {
-    type: Sequelize.STRING,
-    notNull: true
-  },
-  stakes: {
-    type: Sequelize.STRING,
-    notNull: true
-  },
-  bet_status: {
-    type: Sequelize.STRING,
-    notNull: true
-  },
-})
-
-module.exports = Bet;
+'use strict';
+module.exports = (sequelize, DataTypes) => {
+  const Bet = sequelize.define('Bet', {
+    match: {
+      type: DataTypes.STRING,
+      unique: true,
+      notNull: true
+    },
+    owner: {
+      type: DataTypes.STRING,
+      notNull: true
+    },
+    description: {
+      type: DataTypes.STRING,
+      notNull: true
+    },
+    stakes: {
+      type: DataTypes.STRING,
+      notNull: true
+    },
+    bet_status: {
+      type: DataTypes.STRING,
+      notNull: true
+    },
+  }, {});
+  Bet.associate = function (models) {
+    // associations can be defined here
+  };
+  return Bet;
+};
