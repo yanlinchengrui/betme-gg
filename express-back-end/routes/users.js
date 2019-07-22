@@ -4,7 +4,11 @@ const db = require('../models');
 const User = db.User;
 
 router.get('/', (req, res) => {
-  console.log('lol');
+  User.findAll()
+    .then((rez) => {
+      console.log(rez);
+      res.json(rez);
+    });
 });
 
 router.get('/:id', (req, res) => {

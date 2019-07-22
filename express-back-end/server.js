@@ -24,7 +24,7 @@ App.get('/api/data', (req, res) => res.json({
 }));
 
 // user routes 
-App.use('/api/users', require('./routes/users'))
+App.use('/users', require('./routes/users'))
 
 App.listen(PORT, () => {
   // eslint-disable-next-line no-console
