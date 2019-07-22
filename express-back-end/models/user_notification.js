@@ -2,27 +2,27 @@
 module.exports = (sequelize, DataTypes) => {
   const User_Notification = sequelize.define('User_Notification', {
     date: {
-      type: sequelize.DATE,
-      allowNull:false
+      type: DataTypes.DATE,
+      allowNull: false
     },
     user_id: {
-      type: sequelize.INTEGER,
+      type: DataTypes.INTEGER,
       allowNull: false
     },
     bet_id: {
-      type: sequelize.INTEGER,
+      type: DataTypes.INTEGER,
       allowNull: false
-    },    
+    },
     notification_id: {
-      type: sequelize.INTEGER,
+      type: DataTypes.INTEGER,
       allowNull: false
-    },    
+    },
     read: {
-      type: sequelize.BOOLEAN,
+      type: DataTypes.BOOLEAN,
       allowNull: false
     },
     text: {
-      type: sequelize.STRING,
+      type: DataTypes.STRING,
       allowNull: false
     }
   }, {});

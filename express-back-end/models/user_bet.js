@@ -2,21 +2,21 @@
 module.exports = (sequelize, DataTypes) => {
   const User_Bet = sequelize.define('User_Bet', {
     user_id: {
-      type: Sequelize.INTEGER,
+      type: DataTypes.INTEGER,
       allowNull: false
     },
     bet_id: {
-      type: Sequelize.INTEGER,
+      type: DataTypes.INTEGER,
       allowNull: false
     },
     termStatus: {
-      type: Sequelize.BOOLEAN,
+      type: DataTypes.BOOLEAN,
     },
     teamSelect: {
-      type: Sequelize.STRING,
+      type: DataTypes.STRING,
     },
     userWinStatus: {
-      type: Sequelize.BOOLEAN,
+      type: DataTypes.BOOLEAN,
     },
   }, {});
 
