@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import CreateBet from "./createBet.js";
+import CreateBet from "./createbet/createBet.js";
 import Notification from "./notification";
 import UserOption from "./userOptions";
 import axios from "axios";
