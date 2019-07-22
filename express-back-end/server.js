@@ -16,6 +16,7 @@ db.authenticate()
 
 // Express Configuration
 App.use(BodyParser.urlencoded({ extended: false }));
+App.use(BodyParser.json());
 App.use(Express.static('public'));
 
 // Sample GET route
@@ -25,6 +26,9 @@ App.get('/api/data', (req, res) => res.json({
 
 // user routes 
 App.use('/users', require('./routes/users'))
+
+// bet routes
+App.use('/bets', require('./routes/bets'))
 
 App.listen(PORT, () => {
   // eslint-disable-next-line no-console
