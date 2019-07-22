@@ -17,12 +17,8 @@ module.exports = {
         type: Sequelize.STRING,
         notNull: true
       },
-      description: {
-        type: Sequelize.STRING,
-        notNull: true
-      },
       stakes: {
-        type: Sequelize.STRING,
+        type: Sequelize.INTEGER,
         notNull: true
       },
       bet_status: {

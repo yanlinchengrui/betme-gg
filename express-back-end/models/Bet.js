@@ -10,12 +10,8 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       notNull: true
     },
-    description: {
-      type: DataTypes.STRING,
-      notNull: true
-    },
     stakes: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       notNull: true
     },
     bet_status: {
