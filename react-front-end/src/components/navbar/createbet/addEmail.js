@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Form, Input, Icon, Button } from 'antd';
-import '../../../styles/createbet/createbet.css';
+import '../../../styles/navbar/createbet/createbet.css';
 
 let id = 0;
 
@@ -95,11 +95,6 @@ class DynamicFieldSet extends React.Component {
         <Form.Item {...formItemLayoutWithOutLabel}>
           <Button type="dashed" onClick={this.add} style={{ width: '60%' }}>
             Add your friends!
-          </Button>
-        </Form.Item>
-        <Form.Item {...formItemLayoutWithOutLabel}>
-          <Button type="primary" htmlType="submit">
-            Submit
           </Button>
         </Form.Item>
       </Form>

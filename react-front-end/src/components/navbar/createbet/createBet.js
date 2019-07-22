@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Drawer, Form, Button, Col, Row, Input, Select, DatePicker, Icon } from 'antd';
-import WrappedDynamicFieldSet from './addemails'
+import WrappedDynamicFieldSet from './addEmail'
 
 const { Option } = Select;
 
