@@ -1,6 +1,6 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  const user_bet = sequelize.define('user_bet', {
+  const User_Bet = sequelize.define('User_Bet', {
     user_id: {
       type: Sequelize.INTEGER,
       allowNull: false
@@ -20,5 +20,5 @@ module.exports = (sequelize, DataTypes) => {
     },
   }, {});
 
-  return user_bet;
+  return User_Bet;
 };
