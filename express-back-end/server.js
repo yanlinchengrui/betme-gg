@@ -1,6 +1,7 @@
 const Express = require('express');
 const App = Express();
 const BodyParser = require('body-parser');
+const cors = require('cors');
 const PORT = 8080;
 
 const db = require('./config/db')
@@ -18,6 +19,7 @@ db.authenticate()
 App.use(BodyParser.urlencoded({ extended: false }));
 App.use(BodyParser.json());
 App.use(Express.static('public'));
+App.use(cors());
 
 // Sample GET route
 App.get('/api/data', (req, res) => res.json({

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Drawer, Form, Button, Col, Row, InputNumber, Select} from 'antd';
+import { Drawer, Form, Button, Col, Row, InputNumber, Select } from 'antd';
 import MatchPicker from './MatchPicker'
 import TeamPicker from './TeamPicker'
 import InviteFriends from './InviteFriends'
@@ -28,7 +28,16 @@ class NewBet extends Component {
       if (!err) {
         const { keys, names } = values;
         console.log('Received values of form: ', values);
-        console.log('Merged values:', keys.map(key => names[key]));
+        //console.log('Merged values:', keys.map(key => names[key]));
+        values.owner = 'FAKER';
+        values.userid = 1;
+        axios.post('http://localhost:8080/bets', values)
+          .then(function (response) {
+            console.log(response);
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
       }
     });
   };
@@ -38,7 +47,7 @@ class NewBet extends Component {
     return (
       <div>
         <Button type="primary" onClick={this.showNewBet}>
-           New Bet
+          New Bet
         </Button>
         <Drawer
           title="Create a new bet!"
@@ -60,7 +69,7 @@ class NewBet extends Component {
             {/* START TEAM PICKER */}
             <Row type="flex">
               <Col span={24}>
-                  <TeamPicker form={this.props.form} />
+                <TeamPicker form={this.props.form} />
               </Col>
             </Row>
             {/* END TEAM PICKER */}
@@ -69,17 +78,17 @@ class NewBet extends Component {
             <Row type="flex">
               <Col span={24}>
                 <Form.Item label="Place your bet">
-                {getFieldDecorator('stakes', { initialValue: 0 })(
-                  <InputNumber
-                    formatter={value => `$ ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
-                    parser={value => value.replace(/\$\s?|(,*)/g, '')}
-                  />
-                )}
+                  {getFieldDecorator('stakes', { initialValue: 0 })(
+                    <InputNumber
+                      formatter={value => `$ ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
+                      parser={value => value.replace(/\$\s?|(,*)/g, '')}
+                    />
+                  )}
                 </Form.Item>
               </Col>
             </Row>
             {/* END STAKES INPUT  */}
-            
+
             {/* START INVITE FRIENDS */}
             <Row type="flex">
               <Col span={24}>
@@ -87,7 +96,7 @@ class NewBet extends Component {
               </Col>
             </Row>
             {/* END INVITE FRIENDS */}
-            
+
             <div className="new-bet__actions">
               <Button onClick={this.onClose} style={{ marginRight: 8 }}>
                 Cancel
