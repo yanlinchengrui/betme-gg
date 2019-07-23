@@ -3,20 +3,18 @@ module.exports = (sequelize, DataTypes) => {
   const Bet = sequelize.define('Bet', {
     match: {
       type: DataTypes.STRING,
-      unique: true,
-      notNull: true
+      allowNull: false,
     },
     owner: {
       type: DataTypes.STRING,
-      notNull: true
+      allowNull: false,
     },
     stakes: {
       type: DataTypes.INTEGER,
-      notNull: true
+      allowNull: false,
     },
     bet_status: {
       type: DataTypes.STRING,
-      notNull: true
     },
   }, {});
   Bet.associate = function (models) {

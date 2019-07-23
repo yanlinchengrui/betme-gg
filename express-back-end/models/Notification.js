@@ -3,11 +3,11 @@ module.exports = (sequelize, DataTypes) => {
   const Notification = sequelize.define('Notification', {
     type: {
       type: DataTypes.STRING,
-      notNull: true
+      allowNull: false,
     },
     description: {
       type: DataTypes.STRING,
-      notNull: true
+      allowNull: false,
     },
   }, {});
   Notification.associate = function (models) {

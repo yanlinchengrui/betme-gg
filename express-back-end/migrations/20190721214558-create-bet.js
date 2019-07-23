@@ -10,20 +10,18 @@ module.exports = {
       },
       match: {
         type: Sequelize.STRING,
-        unique: true,
-        notNull: true
+        allowNull: false,
       },
       owner: {
         type: Sequelize.STRING,
-        notNull: true
+        allowNull: false,
       },
       stakes: {
         type: Sequelize.INTEGER,
-        notNull: true
+        allowNull: false,
       },
       bet_status: {
         type: Sequelize.STRING,
-        notNull: true
       },
       createdAt: {
         allowNull: false,
