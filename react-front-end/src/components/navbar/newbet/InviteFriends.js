@@ -75,7 +75,7 @@ class InviteFriends extends Component {
         required={true}
         key={k}
       >
-        {getFieldDecorator(`names[${k}]`, {
+        {getFieldDecorator(`emails[${k}]`, {
           validateTrigger: ['onChange', 'onBlur'],
           rules: [
             {

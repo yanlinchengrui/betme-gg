@@ -34,6 +34,7 @@ class NewBet extends Component {
   };
 
   render() {
+    const { getFieldDecorator } = this.props.form;
     return (
       <div>
         <Button type="primary" onClick={this.showNewBet}>
@@ -51,7 +52,7 @@ class NewBet extends Component {
             {/* START MATCH PICKER */}
             <Row type="flex">
               <Col span={24}>
-                <MatchPicker form={this.props.form}/>
+                <MatchPicker form={this.props.form} />
               </Col>
             </Row>
             {/* END MATCH PICKER */}
@@ -59,7 +60,7 @@ class NewBet extends Component {
             {/* START TEAM PICKER */}
             <Row type="flex">
               <Col span={24}>
-                  <TeamPicker form={this.props.form}/>
+                  <TeamPicker form={this.props.form} />
               </Col>
             </Row>
             {/* END TEAM PICKER */}
@@ -68,11 +69,12 @@ class NewBet extends Component {
             <Row type="flex">
               <Col span={24}>
                 <Form.Item label="Place your bet">
+                {getFieldDecorator('stakes', { initialValue: 0 })(
                   <InputNumber
-                    defaultValue={0}
                     formatter={value => `$ ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
                     parser={value => value.replace(/\$\s?|(,*)/g, '')}
                   />
+                )}
                 </Form.Item>
               </Col>
             </Row>
@@ -81,7 +83,7 @@ class NewBet extends Component {
             {/* START INVITE FRIENDS */}
             <Row type="flex">
               <Col span={24}>
-                <InviteFriends/>
+                <InviteFriends form={this.props.form} />
               </Col>
             </Row>
             {/* END INVITE FRIENDS */}
