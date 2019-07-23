@@ -1,7 +1,7 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('User_Notification', {
+    return queryInterface.createTable('User_Notifications', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -9,10 +9,12 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       date: {
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        allowNull: false,
       },
       user_id: {
         type: Sequelize.INTEGER,
+        allowNull: false,
         references: {
           model: 'Users',
           key: 'id'
@@ -20,6 +22,7 @@ module.exports = {
       },
       bet_id: {
         type: Sequelize.INTEGER,
+        allowNull: false,
         references: {
           model: 'Bets',
           key: 'id'
@@ -27,6 +30,7 @@ module.exports = {
       },    
       notification_id: {
         type: Sequelize.INTEGER,
+        allowNull: false,
         references: {
           model: 'Notifications',
           key: 'id'
@@ -34,19 +38,23 @@ module.exports = {
       },    
       read: {
         type: Sequelize.BOOLEAN,
+        allowNull: false,
       },
       text: {
         type: Sequelize.STRING,
+        allowNull: false,
       },
       createdAt: {
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        allowNull: false,
       },
       updatedAt: {
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        allowNull: false,
       }
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('User_Notification');
+    return queryInterface.dropTable('User_Notifications');
   }
 };
