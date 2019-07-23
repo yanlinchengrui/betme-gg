@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import { Form, Input, Icon, Button } from 'antd';
-import '../../../styles/navbar/createbet/createbet.css';
 
 let id = 0;
 
-class DynamicFieldSet extends React.Component {
+class InviteFriends extends Component {
   remove = k => {
     const { form } = this.props;
     // can use data-binding to get
@@ -61,6 +60,12 @@ class DynamicFieldSet extends React.Component {
         sm: { span: 20, offset: 4 },
       },
     };
+    const formBtn = {
+      wrapperCol: {
+        xs: { span: 24, offset: 0 },
+        sm: { span: 24, offset: 0 },
+      },
+    };
     getFieldDecorator('keys', { initialValue: [] });
     const keys = getFieldValue('keys');
     const formItems = keys.map((k, index) => (
@@ -79,7 +84,7 @@ class DynamicFieldSet extends React.Component {
               message: "Add your friend's emails!",
             },
           ],
-        })(<Input placeholder="Email address" style={{ width: '60%', marginRight: 8 }} />)}
+        })(<Input className="invite-friends__email-field" placeholder="Email address"/>)}
         {keys.length > 1 ? (
           <Icon
             className="dynamic-delete-button"
@@ -90,16 +95,16 @@ class DynamicFieldSet extends React.Component {
       </Form.Item>
     ));
     return (
-      <Form onSubmit={this.handleSubmit}>
+      <div>
         {formItems}
-        <Form.Item {...formItemLayoutWithOutLabel}>
-          <Button type="dashed" onClick={this.add} style={{ width: '60%' }}>
+        <Form.Item {...formBtn}>
+          <Button className="invite-friends__btn" type="dashed" onClick={this.add}>
             Add your friends!
           </Button>
         </Form.Item>
-      </Form>
+      </div>
     );
   }
 }
 
-export default Form.create({ name: 'dynamic_form_item' })(DynamicFieldSet);
+export default Form.create({ name: 'invite_friends' })(InviteFriends);

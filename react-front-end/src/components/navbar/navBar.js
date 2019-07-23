@@ -1,11 +1,9 @@
 import React, { Component } from "react";
-import CreateBet from "./createbet/createBet.js";
-import Notification from "./notification";
-import UserOption from "./userOptions";
+import NewBet from "./newbet/NewBet.js";
+import Notification from "./Notification";
+import UserOption from "./UserOptions";
 import axios from "axios";
-import { Menu, Layout, Form } from "antd";
-
-import "../../styles/navbar/navbar.css";
+import { Menu, Layout, Icon } from "antd";
 
 class NavBar extends Component {
 
@@ -19,10 +17,10 @@ class NavBar extends Component {
         style={{ lineHeight: '64px' }}
         className="main-nav"
       >
-        <Menu.Item key="1">Notifications</Menu.Item>
-        <Menu.Item key="2">User Options</Menu.Item>
+        <Menu.Item key="1"><Icon type="bell" theme="filled" /></Menu.Item>
+        <Menu.Item key="2"><Icon type="smile" theme="filled" /></Menu.Item>
       </Menu>
-      <div className="create-bet__btn"><CreateBet/></div>
+      <div className="new-bet__btn"><NewBet/></div>
     </Layout.Header>
     );
   }
