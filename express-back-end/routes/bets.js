@@ -28,39 +28,39 @@ router.post("/", (req, res) => {
     })
     // create participant 
     .then(userbet => {
-      
+
       const participantEmails = req.body.emails;
       let participantIds = [];
 
       participantEmails.map(participantEmail => {
-       User.findOne({ where: { email: participantEmail }})
-        .then(result => {
-          // participantIds.push(result.get("id"))
-          UserBet.create({
-            bet_id: userbet.bet_id,
-            user_id: result.get("id")
-          }).then(rez => {
-            res.status(201).send("Bet created");
+        User.findOne({ where: { email: participantEmail } })
+          .then(result => {
+            // participantIds.push(result.get("id"))
+            UserBet.create({
+              bet_id: userbet.bet_id,
+              user_id: result.get("id")
+            }).then(rez => {
+              res.status(201).send("Bet created");
+            })
+              .catch(err => {
+                console.log("Some errors here: " + err);
+              });
           })
-          .catch(err => {
-            console.log("Some errors here: " + err);
-          });
-        })
       })
 
-    //   const participantBets = participantIds.map(participantId => {
-    //     return UserBet.create({
-    //       bet_id: userbet.bet_id,
-    //       user_id: participantId
-    //     });
-    //   });
-    //   return Promise.all(participantBets);
-    // })
-    // .then(rez => {
-    //   res.status(201).send("Bet created");
-    // })
-    // .catch(err => {
-    //   console.log("Some errors here: " + err);
+      //   const participantBets = participantIds.map(participantId => {
+      //     return UserBet.create({
+      //       bet_id: userbet.bet_id,
+      //       user_id: participantId
+      //     });
+      //   });
+      //   return Promise.all(participantBets);
+      // })
+      // .then(rez => {
+      //   res.status(201).send("Bet created");
+      // })
+      // .catch(err => {
+      //   console.log("Some errors here: " + err);
     });
 });
 
@@ -75,6 +75,14 @@ router.post("/:id", (req, res) => {
     .catch(err => {
       console.log("Some errors here: " + err);
     });
+});
+
+router.get('/:id/users', (req, res) => {
+  Bet.findOne({ where: { id: req.params.id }, include: [{ model: User, as: 'users' }] }).then(
+    (rez) => {
+      res.send(rez);
+    }
+  )
 });
 
 module.exports = router;
