@@ -32,6 +32,9 @@ App.use('/users', require('./routes/users'))
 // bet routes
 App.use('/bets', require('./routes/bets'))
 
+//notification routes
+App.use('/notifications', require('./routes/notifications'))
+
 App.listen(PORT, () => {
   // eslint-disable-next-line no-console
   console.log(`Express seems to be listening on port ${PORT} so that's pretty good 👍`);
