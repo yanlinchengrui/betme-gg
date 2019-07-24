@@ -1,10 +1,27 @@
 import React, { Component } from "react";
 import NewBet from "./newbet/NewBet.js";
-import Notification from "./Notification";
+import NotificationList from "./notifications/NotificationList";
 import UserOptions from "./UserOptions";
 import { Menu, Layout } from "antd";
 
 class NavBar extends Component {
+  constructor(props) {
+    super(props);
+    
+    this.state = {
+      notifications: []
+    }
+  }
+
+  getNotifications(userid) {
+
+  }
+
+  componentDidMount() {
+
+  }
+
+
 
   render() {
     return (
@@ -17,7 +34,7 @@ class NavBar extends Component {
         style={{ lineHeight: '64px' }}
         className="main-nav"
       >
-        <Menu.Item className="main-nav__notification"><Notification /></Menu.Item>
+        <Menu.Item className="main-nav__notification"><NotificationList /></Menu.Item>
         <Menu.Item><UserOptions /></Menu.Item>
       </Menu>
       <div className="new-bet__btn"><NewBet/></div>

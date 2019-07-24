@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { Popover, Icon } from "antd";
+import Notification from './Notification'
 
-class Notification extends Component {
+class NotificationList extends Component {
 
   state = {
     visible: false,
@@ -38,4 +39,4 @@ class Notification extends Component {
   }
 }
 
-export default Notification;
+export default NotificationList;
