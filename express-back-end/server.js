@@ -42,12 +42,11 @@ App.use('/users', require('./routes/users'))
 // bet routes
 App.use('/bets', require('./routes/bets'))
 
-
 // login routes
 App.use('/login', require('./routes/login'))
 
 //notification routes
-// App.use('/notifications', require('./routes/notifications'))
+App.use('/notifications', require('./routes/notifications'))
 
 App.listen(PORT, () => {
   // eslint-disable-next-line no-console
