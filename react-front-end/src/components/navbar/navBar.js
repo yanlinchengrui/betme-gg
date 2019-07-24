@@ -14,10 +14,11 @@ class NavBar extends Component {
       <Menu
         theme="dark"
         mode="horizontal"
+        selectable={false}
         style={{ lineHeight: '64px' }}
         className="main-nav"
       >
-        <Menu.Item key="1"><Icon type="bell" theme="filled" /></Menu.Item>
+        <Menu.Item key="1"><Notification /></Menu.Item>
         <Menu.Item key="2"><Icon type="smile" theme="filled" /></Menu.Item>
       </Menu>
       <div className="new-bet__btn"><NewBet/></div>
@@ -27,3 +28,6 @@ class NavBar extends Component {
 }
 
 export default NavBar;
+
+
+{/* <Icon type="bell" theme="filled" /> */}

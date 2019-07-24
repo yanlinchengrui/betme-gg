@@ -25,6 +25,10 @@
   background: #171719 !important;
 }
 
+/* .ant-menu.ant-menu-dark .ant-menu-item-selected {
+  background-color: transparent !important;
+} */
+
 .ant-menu-item .anticon, .ant-menu-submenu-title .anticon {
   margin-right: 0 !important;
 }
@@ -33,7 +37,7 @@
   transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1)
 }
 
-.ant-menu-dark .ant-menu-item .anticon:hover {
+.ant-menu-dark .ant-menu-item:hover .anticon {
   transform: scale(2);
 }
 
@@ -91,4 +95,13 @@
 
 .invite-friends__btn {
   width: 100%;
+}
+
+/* ========== Notification ========== */
+.notification {
+
+}
+
+.notifications__close-btn {
+  margin-top: 10px;
 }
