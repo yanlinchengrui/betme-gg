@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import NewBet from "./newbet/NewBet.js";
 import Notification from "./Notification";
-import UserOption from "./UserOptions";
-import axios from "axios";
-import { Menu, Layout, Icon } from "antd";
+import UserOptions from "./UserOptions";
+import { Menu, Layout } from "antd";
 
 class NavBar extends Component {
 
@@ -18,8 +17,8 @@ class NavBar extends Component {
         style={{ lineHeight: '64px' }}
         className="main-nav"
       >
-        <Menu.Item key="1"><Notification /></Menu.Item>
-        <Menu.Item key="2"><Icon type="smile" theme="filled" /></Menu.Item>
+        <Menu.Item className="main-nav__notification"><Notification /></Menu.Item>
+        <Menu.Item><UserOptions /></Menu.Item>
       </Menu>
       <div className="new-bet__btn"><NewBet/></div>
     </Layout.Header>

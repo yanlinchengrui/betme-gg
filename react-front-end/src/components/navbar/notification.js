@@ -28,15 +28,9 @@ class Notification extends Component {
         content={
           <div>
             {content}
-            <div className="notifications__close-btn">
-              <a onClick={this.hide}>Close Notifications</a>
-            </div>
           </div>
         }
-        title="Notifications"
         trigger="click"
-        visible={this.state.visible}
-        onVisibleChange={this.handleVisibleChange}
       >
         <Icon type="bell" theme="filled" />
       </Popover>
