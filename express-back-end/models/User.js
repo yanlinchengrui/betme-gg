@@ -40,10 +40,6 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: 'user_id',
       otherKey: 'bet_id'
     });
-    User.belongsToMany(models.Notification, {
-      through: 'User_Notifications',
-      foreignKey: 'notification_id'
-    });
   };
   return User;
 };

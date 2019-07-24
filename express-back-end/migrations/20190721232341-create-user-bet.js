@@ -33,6 +33,12 @@ module.exports = {
       userWinStatus: {
         type: Sequelize.BOOLEAN,
       },
+      notificationType: {
+        type: Sequelize.STRING
+      },
+      notificationRead: {
+        type: Sequelize.BOOLEAN
+      },
       createdAt: Sequelize.DATE,
       updatedAt: Sequelize.DATE,
     });

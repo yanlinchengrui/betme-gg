@@ -4,7 +4,6 @@ const db = require("../models");
 const Bet = db.Bet;
 const UserBet = db.User_Bet;
 const User = db.User;
-const UserNotification = db.User_Notification;
 
 router.post("/", (req, res) => {
   const newBet = {
@@ -41,16 +40,18 @@ router.post("/", (req, res) => {
           UserBet.create({
             bet_id: betid,
             user_id: userid
-          }).then((userbet) => {
-            UserNotification.create({
-              user_id: userid,
-              bet_id: betid,
-              notification_id: 1,
-              read: false,
-              date: new Date(),
-              text: "abc"
-            });
-          });
+          })
+          
+          // .then((userbet) => {
+          //   UserNotification.create({
+          //     user_id: userid,
+          //     bet_id: betid,
+          //     notification_id: 1,
+          //     read: false,
+          //     date: new Date(),
+          //     text: "abc"
+          //   });
+          // });
         });
       });
     })

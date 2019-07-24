@@ -18,6 +18,12 @@ module.exports = (sequelize, DataTypes) => {
     userWinStatus: {
       type: DataTypes.BOOLEAN,
     },
+    notificationType: {
+      type: DataTypes.STRING
+    },
+    notificationRead: {
+      type: DataTypes.BOOLEAN
+    }
   }, {});
 
   return User_Bet;
