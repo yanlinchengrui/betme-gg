@@ -25,7 +25,7 @@ db.authenticate()
 App.use(BodyParser.urlencoded({ extended: false }));
 App.use(BodyParser.json());
 App.use(Express.static('public'));
-App.use(cors());
+App.use(cors({ origin: 'http://localhost:3000', credentials: true }));
 
 // Middleware for checking sessions
 // App.use((req, res, next) => { console.log(req.session.user_id); next(); });

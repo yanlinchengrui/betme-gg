@@ -6,52 +6,44 @@ const UserBet = db.User_Bet;
 const User = db.User;
 
 router.post("/", (req, res) => {
+  console.log(req.session);
   const newBet = {
     match: req.body.match,
-    owner: req.body.owner,
-    stakes: req.body.stakes
+    owner: req.session.user.user_name,
+    stakes: req.body.stakes,
+    bet_status: 'pending'
   };
 
-  const userid = req.body.userid;
+  // session userId
+  const userid = req.session.user.id;
 
   Bet.create(newBet)
-
-    .then(bet => {
+    .then((bet) => {
       const betid = bet.get("id");
-
       const ownerBet = {
         user_id: userid,
         bet_id: betid,
-        teamSelect: req.body.team
+        teamSelect: req.body.team,
+        notificationType: 'invite',
+        termStatus: true
       };
-
       return UserBet.create(ownerBet);
     })
     // create participant bet, usernotifications, userbets
-    .then(userbet => {
+    .then((userbet) => {
 
       const participantEmails = req.body.emails;
 
       participantEmails.map(participantEmail => {
-
-        User.findOne({ where: { email: participantEmail } }).then(result => {
+        User.findOne({ where: { email: participantEmail } }).then((result) => {
           const betid = userbet.bet_id;
           const userid = result.get("id");
           UserBet.create({
             bet_id: betid,
-            user_id: userid
+            user_id: userid,
+            notificationType: 'invite',
+            notificationRead: false
           })
-          
-          // .then((userbet) => {
-          //   UserNotification.create({
-          //     user_id: userid,
-          //     bet_id: betid,
-          //     notification_id: 1,
-          //     read: false,
-          //     date: new Date(),
-          //     text: "abc"
-          //   });
-          // });
         });
       });
     })
