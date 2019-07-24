@@ -38,11 +38,10 @@ router.post("/", (req, res) => {
         User.findOne({ where: { email: participantEmail } }).then(result => {
           const betid = userbet.bet_id;
           const userid = result.get("id");
-
           UserBet.create({
             bet_id: betid,
             user_id: userid
-          }).then(() => {
+          }).then((userbet) => {
             UserNotification.create({
               user_id: userid,
               bet_id: betid,
