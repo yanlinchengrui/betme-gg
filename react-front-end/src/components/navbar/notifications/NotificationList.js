@@ -22,20 +22,15 @@ class NotificationList extends Component {
   };
 
   render() {
-    // const content = (
-    //   <div className="notification">
-    //     Peter invited you to a bet!
-    //   </div>
-    // );
 
-    const notificationType = this.props.notificationType.map(betInfo => {
+    const notification = this.props.notificationType.map(betInfo => {
       console.log(betInfo)
       return <Notification key={betInfo.bet_id} type={betInfo.notificationType} />;
 
     });
 
     return (
-      <Popover content={<div>{ notificationType }</div>} trigger="click">
+      <Popover content={<div>{ notification }</div>} trigger="click">
         <Icon type="bell" theme="filled" />
       </Popover>
     );

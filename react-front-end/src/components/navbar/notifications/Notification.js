@@ -6,7 +6,7 @@ class Notification extends Component {
 
     switch (this.props.type) {
       case "invite":
-        notification = <div> You have been invited to a bet! </div>;
+        notification = <div> <span>You have been invited to a bet!</span> </div>;
         break;
 
       case "teamSelect":
