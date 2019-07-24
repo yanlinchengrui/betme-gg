@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
 
 router.get('/:id', (req, res) => {
   User.findOne({
-    where: { id: req.params.id }
+    where: { id: req.params.id }, include: [{ model: db.Notification }]
   }).then((rez) => {
     console.log(rez.toJSON())
     res.json(rez);

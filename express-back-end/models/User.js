@@ -35,11 +35,15 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   User.associate = function (models) {
     User.belongsToMany(models.Bet, {
-      through: 'UserBet',
+      through: 'User_Bets',
       as: 'bets',
-      foreignKey: 'userId',
-      otherKey: 'betId'
-    })
+      foreignKey: 'user_id',
+      otherKey: 'bet_id'
+    });
+    User.belongsToMany(models.Notification, {
+      through: 'User_Notifications',
+      foreignKey: 'notification_id'
+    });
   };
   return User;
 };
