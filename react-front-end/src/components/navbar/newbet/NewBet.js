@@ -29,9 +29,9 @@ class NewBet extends Component {
         const { keys, names } = values;
         console.log('Received values of form: ', values);
         //console.log('Merged values:', keys.map(key => names[key]));
-        values.owner = 'FAKER';
-        values.userid = 1;
-        axios.post('http://localhost:8080/bets', values)
+        // values.owner = 'FAKER';
+        // values.userid = 1;
+        axios.post('http://localhost:8080/bets', values, { withCredentials: true })
           .then(function (response) {
             console.log(response);
           })
