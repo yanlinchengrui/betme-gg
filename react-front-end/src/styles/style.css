@@ -33,12 +33,18 @@
   margin-right: 0 !important;
 }
 
-.ant-menu-dark .ant-menu-item .anticon {
+/* .ant-menu-dark .ant-menu-item .anticon {
   transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1)
 }
 
 .ant-menu-dark .ant-menu-item:hover .anticon {
   transform: scale(2);
+} */
+
+/* ========== Main Nav ========== */
+.main-nav__notification .anticon {
+  font-size: 24px !important;
+  vertical-align: -0.5rem;
 }
 
 /* ========== Logo ========== */

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+import { Route, Switch } from "react-router-dom";
 import NavBar from './components/navbar/NavBar'
+import Dashboard from './components/Dashboard'
 import Login from './components/Login'
 
 import './App.css';
@@ -13,7 +14,11 @@ class App extends Component {
     return (
       <div>
         <NavBar />
-        <Login />
+    
+        <Switch>
+          <Route exact path='/' component={Dashboard}/>
+          <Route path='/login' component={Login} />
+        </Switch>
       </div>
     );
   }
