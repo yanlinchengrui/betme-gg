@@ -7,7 +7,7 @@ const PORT = 8080;
 const cookieSession = require('cookie-session')
 App.use(cookieSession({
   name: 'session',
-  keys: ['key1', 'key2']
+  keys: ['horseracing', 'bumfights']
 }))
 
 const db = require('./config/db')
@@ -26,8 +26,10 @@ App.use(BodyParser.urlencoded({ extended: false }));
 App.use(BodyParser.json());
 App.use(Express.static('public'));
 App.use(cors());
-App.use((req, res) => console.log(req.session));
-App.use((req, res) => console.log(req.path, req.body, req.method));
+
+// Middleware for checking sessions
+// App.use((req, res, next) => { console.log(req.session.user_id); next(); });
+// App.use((req, res, next) => { console.log(req.path, req.body, req.method); next(); });
 
 // Sample GET route
 App.get('/api/data', (req, res) => res.json({
