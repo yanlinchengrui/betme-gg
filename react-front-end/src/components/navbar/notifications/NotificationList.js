@@ -1,16 +1,19 @@
 import React, { Component } from "react";
 import { Popover, Icon } from "antd";
-import Notification from './Notification'
+import Notification from "./Notification";
 
 class NotificationList extends Component {
+  constructor(props) {
+    super(props);
 
-  state = {
-    visible: false,
-  };
+    this.state = {
+      visible: false
+    };
+  }
 
   hide = () => {
     this.setState({
-      visible: false,
+      visible: false
     });
   };
 
@@ -19,20 +22,20 @@ class NotificationList extends Component {
   };
 
   render() {
-    const content = (
-      <div className="notification">
-        Peter invited you to a bet!
-      </div>
-    );
+    // const content = (
+    //   <div className="notification">
+    //     Peter invited you to a bet!
+    //   </div>
+    // );
+
+    const notificationType = this.props.notificationType.map(betInfo => {
+      console.log(betInfo)
+      return <Notification key={betInfo.bet_id} type={betInfo.notificationType} />;
+
+    });
+
     return (
-      <Popover
-        content={
-          <div>
-            {content}
-          </div>
-        }
-        trigger="click"
-      >
+      <Popover content={<div>{ notificationType }</div>} trigger="click">
         <Icon type="bell" theme="filled" />
       </Popover>
     );

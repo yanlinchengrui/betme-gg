@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { notification } from "antd";
 
 class Notification extends Component {
   displayNotificationByType() {
@@ -7,20 +6,23 @@ class Notification extends Component {
 
     switch (this.props.type) {
       case "invite":
-        message = <div>You have been invited to a bet! </div>;
+        notification = <div> You have been invited to a bet! </div>;
         break;
 
       case "teamSelect":
-        message = <div />;
-
+        notification = <div> Pick your team: </div>;
         break;
 
       case "win":
-        message = <div />;
+        notification = <div> You won! </div>;
         break;
 
       case "loss":
-        message = <div />;
+        notification = <div> Ha! you lost! </div>;
+        break;
+      
+      default:
+        break;
     }
     return notification;
   }

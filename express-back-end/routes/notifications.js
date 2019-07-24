@@ -8,8 +8,6 @@ router.get("/", (req, res) => {
   UserBet.findAll({
     where: {
       user_id: req.session.user.id,
-      // user_id: 2,
-      notificationRead: false
     }
   }).then(rez => {
     console.log(rez.toJSON);
