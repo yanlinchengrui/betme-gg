@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Axios from "axios";
-import Cookies from 'universal-cookie';
 
 class Login extends Component {
   constructor(props) {
@@ -22,7 +21,7 @@ class Login extends Component {
   handleSubmit = e => {
     e.preventDefault()
     Axios.post("http://localhost:3000/login", {
-      email: this.state.email, 
+      email: this.state.email,
       password: this.state.password
     });
   }
