@@ -1,0 +1,28 @@
+
+.new-bet {
+  &__actions {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid rgba(255,255,255,0.25);
+    padding: 10px 16px;
+    background: $primary-color;
+    text-align: right;
+  }
+
+  .ant-input.email-field {
+    width: 90%;
+    margin-right: 8px;
+  }
+
+  .email-field__btn {
+    width: 100%;
+    border-color: #fff;
+
+    &:hover {
+      border-color: #fff;
+      color: $darkest;
+    }
+  }
+}

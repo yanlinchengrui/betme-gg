@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { Popover, Icon } from "antd";
+import React, { Component } from 'react';
+import { Popover, Icon } from 'antd';
 
 class Notification extends Component {
 
@@ -19,7 +19,7 @@ class Notification extends Component {
 
   render() {
     const content = (
-      <div className="notification">
+      <div className='notification'>
         Peter invited you to a bet!
       </div>
     );
@@ -30,9 +30,9 @@ class Notification extends Component {
             {content}
           </div>
         }
-        trigger="click"
+        trigger='click'
       >
-        <Icon type="bell" theme="filled" />
+        <Icon type='bell' theme='filled' style={{ fontSize: '24px' }} />
       </Popover>
     );
   }
