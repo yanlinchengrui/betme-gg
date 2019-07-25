@@ -1,0 +1,55 @@
+.ant-layout-header {
+  height: 65px !important;
+  line-height: 1 !important;
+  background: $darkest !important;
+}
+
+.ant-menu-dark {
+  background: $darkest !important;
+}
+
+.ant-menu-item .anticon, .ant-menu-submenu-title .anticon {
+  margin-right: 0 !important;
+}
+
+.ant-drawer {
+  &-content, &-header, &-footer {
+    background-color: $primary-color !important;
+  }
+
+  &-header {
+    border-bottom: 1px solid rgba(255,255,255,0.25) !important;
+  }
+
+  &-title, .ant-form-item label, &-close {
+    color: #fff !important;
+  }
+
+  .new-bet__actions {
+    .ant-btn, .ant-btn-primary {
+      @extend %btn-styles;
+    }
+
+    .ant-btn {
+      border-color: $error-color;
+      background-color: $error-color;
+      color: #fff;
+
+      &:hover {
+        border-color: lighten( $error-color, 10% );
+        background-color: lighten( $error-color, 10% );
+      }
+    }
+
+    .ant-btn-primary {
+      background-color: $darkest;
+      border-color: $darkest;
+      color: #fff;
+
+      &:hover {
+        background-color: lighten( $darkest, 10% );
+        border-color: lighten( $darkest, 10% );
+      }
+    }
+  }
+}

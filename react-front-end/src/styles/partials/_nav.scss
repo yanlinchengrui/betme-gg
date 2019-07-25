@@ -1,0 +1,43 @@
+.header {
+  position: sticky;
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  .navigation {
+    display: flex;
+    line-height: 1;
+    align-items: center;
+
+    &__btn {
+      padding: 0 0 0 20px;
+
+      & .ant-btn {
+        @extend %btn-styles;
+      }
+
+      & .ant-btn-primary {
+        background: transparent;
+        border: 2px solid rgba(255,255,255,0.2);
+
+        &:hover {
+          background-color: $primary-color;
+          border-color: $primary-color;
+        }
+      }
+    }
+  }
+}
+
+.logo {
+  margin-right: auto;
+  color: #fff;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 36px;
+
+  &--accent {
+    color: $primary-color;
+  }
+}

@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import { Popover, Icon } from "antd";
-import Notification from "./Notification";
+import React, { Component } from 'react';
+import { Popover, Icon } from 'antd';
+import Notification from './Notification';
 
 class NotificationList extends Component {
   constructor(props) {
@@ -22,21 +22,20 @@ class NotificationList extends Component {
   };
 
   render() {
-    // const content = (
-    //   <div className="notification">
-    //     Peter invited you to a bet!
-    //   </div>
-    // );
 
-    const notificationType = this.props.notificationType.map(betInfo => {
-      console.log(betInfo)
-      return <Notification key={betInfo.bet_id} type={betInfo.notificationType} />;
+    const notification = this.props.notificationType.map(betInfo => {
+      return <Notification 
+      key={betInfo.bet_id} 
+      userBetId={betInfo.id} 
+      type={betInfo.notificationType} 
+      handleNotificationSelection = { this.props.handleNotificationSelection } 
+      />;
 
     });
 
     return (
-      <Popover content={<div>{ notificationType }</div>} trigger="click">
-        <Icon type="bell" theme="filled" />
+      <Popover content={<div>{ notification }</div>} trigger='click'>
+        <Icon type='bell' theme='filled' style={{ fontSize: '24px' }}/>
       </Popover>
     );
   }

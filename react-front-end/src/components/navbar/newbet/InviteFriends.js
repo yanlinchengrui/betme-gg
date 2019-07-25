@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import { Form, Input, Icon, Button } from 'antd';
 
 let id = 0;
@@ -81,14 +81,14 @@ class InviteFriends extends Component {
             {
               required: true,
               whitespace: true,
-              message: "Add your friend's emails!",
+              message: 'Add your friend\'s emails!',
             },
           ],
-        })(<Input className="invite-friends__email-field" placeholder="Email address"/>)}
+        })(<Input className='email-field' placeholder='Email address'/>)}
         {keys.length > 1 ? (
           <Icon
-            className="dynamic-delete-button"
-            type="minus-circle-o"
+            className='dynamic-delete-button'
+            type='minus-circle-o'
             onClick={() => this.remove(k)}
           />
         ) : null}
@@ -98,7 +98,7 @@ class InviteFriends extends Component {
       <div>
         {formItems}
         <Form.Item {...formBtn}>
-          <Button className="invite-friends__btn" type="dashed" onClick={this.add}>
+          <Button className='email-field__btn' onClick={this.add}>
             Add your friends!
           </Button>
         </Form.Item>
