@@ -24,13 +24,17 @@ class NotificationList extends Component {
   render() {
 
     const notification = this.props.notificationType.map(betInfo => {
-      console.log(betInfo)
-      return <Notification key={betInfo.bet_id} userBetId={betInfo.id} type={betInfo.notificationType} />;
+      return <Notification 
+      key={betInfo.bet_id} 
+      userBetId={betInfo.id} 
+      type={betInfo.notificationType} 
+      handleNotificationSelection = { this.props.handleNotificationSelection } 
+      />;
 
     });
 
     return (
-      <Popover content={<div>{ notification }</div>} trigger="click">
+      <Popover content={ notification } trigger="click">
         <Icon type="bell" theme="filled" />
       </Popover>
     );

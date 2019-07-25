@@ -17,7 +17,12 @@ class NavBar extends Component {
         style={{ lineHeight: '64px' }}
         className="main-nav"
       >
-        <Menu.Item className="main-nav__notification"><NotificationList notificationType= { this.props.notificationType }/></Menu.Item>
+        <Menu.Item className="main-nav__notification">
+          <NotificationList 
+          notificationType= { this.props.notificationType }
+          handleNotificationSelection = { this.props.handleNotificationSelection }
+          />
+          </Menu.Item>
         <Menu.Item><UserOptions /></Menu.Item>
       </Menu>
       <div className="new-bet__btn"><NewBet/></div>

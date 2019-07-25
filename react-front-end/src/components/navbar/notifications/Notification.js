@@ -1,24 +1,6 @@
 import React, { Component } from "react";
-import axios from 'axios'
 
 class Notification extends Component {
-  
-  handleSubmit = (event) => {
-    event.preventDefault()
-    console.log("----------------------", event.target.value)
-    switch(this.props.type) {
-      case ("invite"):
-      axios.put(`http://localhost:8080/notifications/${this.props.userBetId}/termstatus`, (event.target.name), {withCredentials: true});
-      break;
-
-      case ("teamSelect"):
-          axios.put(`http://localhost:8080/notifications/${this.props.userBetId}/teamselect`, {withCredentials: true});
-          break;
-      
-      default: 
-      break;
-    }
-  }
   
   displayNotificationByType() {
     let notification;
@@ -28,22 +10,20 @@ class Notification extends Component {
         notification = (
         <div> 
           <span> You have been invited to a bet!</span> 
-          <form onSubmit={this.handleSubmit}>
-          <span><input type='submit' name='Accept' value= 'Accept'/> </span>
-          <span><input type='submit' name='Decline' value= 'Decline'/> </span>
-          </form>
+          <button name="Accept" onClick={() => this.props.handleNotificationSelection(this.props.userBetId, true) }>Accept </button>
+          <button name= "Decline" onClick={() => this.props.handleNotificationSelection(this.props.userBetId, false) }>Decline </button>
         </div>
         )
         break;
 
       case "teamSelect":
-        notification = <div> 
+        notification = (
+        <div> 
           <span>Pick your team: </span>
-          <form onSubmit={this.handleSubmit}>
-          <span><input type='submit' name='Team1' value= 'Team1'/> </span>
-          <span><input type='submit' name='Team2' value= 'Team2'/> </span>
-          </form>
-          </div>;
+          <button name= "Team 1" onClick={() => this.props.handleNotificationSelection(this.props.userBetId, "Team1") }>Team 1 </button>
+          <button name="Team 2" onClick={() => this.props.handleNotificationSelection(this.props.userBetId, "Team2") }>Team 2 </button>
+          </div>
+          )
         break;
 
       case "win":

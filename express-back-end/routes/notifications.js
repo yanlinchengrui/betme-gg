@@ -10,12 +10,13 @@ router.get("/", (req, res) => {
       user_id: req.session.user.id,
     }
   }).then((rez) => {
-    console.log(rez.toJSON);
+    // console.log(rez.toJSON);
     res.json(rez);
   });
 });
 
-router.post("/:id/termStatus", (req, res) => {
+router.put("/:id/termStatus", (req, res) => {
+  // console.log("xx--------", req.body.termStatus)
   UserBet.update(
     { termStatus: req.body.termStatus },
     { where: { id: req.params.id } }
@@ -24,7 +25,7 @@ router.post("/:id/termStatus", (req, res) => {
   });
 });
 
-router.post("/:id/teamSelect", (req, res) => {
+router.put("/:id/teamSelect", (req, res) => {
   UserBet.update(
     { teamSelect: req.body.teamSelect },
     { where: { id: req.params.id } }

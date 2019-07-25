@@ -16,21 +16,45 @@ class App extends Component {
     this.state = {
       userBetInformation: []
     }
+
+    this.handleNotificationSelection = this.handleNotificationSelection.bind(this);
   }
 
   getNotifications() {
     axios.get('http://localhost:8080/notifications', { withCredentials: true })
     .then(response => {
+      console.log("---------", response)
       this.setState({
         userBetInformation: response.data
       })
-      console.log(response.data)
-      console.log(this.state.userBetInformation)
     })
     .catch(err => {
       console.log(err)
     })
 
+  }
+
+  handleNotificationSelection = (id, truthy) => {
+    // event.preventDefault()
+    
+    console.log("-----------", id, truthy )
+    let result = this.state.userBetInformation.find(rez => {
+      return rez.id === id
+    })
+    console.log(result.notificationType)
+
+    switch(result.notificationType) {
+      case ("invite"):
+      axios.put(`http://localhost:8080/notifications/${result.id}/termStatus`, {termStatus: truthy}, {withCredentials: true});
+      break;
+
+      case ("teamSelect"):
+          axios.put(`http://localhost:8080/notifications/${result.id}/teamSelect`, {teamSelect: truthy}, {withCredentials: true});
+          break;
+      
+      default: 
+      break;
+    }
   }
 
   componentDidMount() {
@@ -40,7 +64,10 @@ class App extends Component {
   render() {
     return (
       <div>
-        <NavBar notificationType = { this.state.userBetInformation }/>
+        <NavBar 
+        notificationType = { this.state.userBetInformation }
+        handleNotificationSelection = { this.handleNotificationSelection }
+        />
     
         <Switch>
           <Route exact path='/' component={Dashboard}/>
