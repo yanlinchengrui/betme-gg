@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { Route, Switch } from "react-router-dom";
 import NavBar from './components/navbar/NavBar'
-import Dashboard from './components/Dashboard'
+import Dashboard from './components/dashboard/Dashboard'
 import Login from './components/Login'
 
 import './App.css';
-import './styles/style.css';
+import './styles/styles.css';
 import 'antd/dist/antd.css';
 
 class App extends Component {

@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import { Popover, Icon } from "antd";
-import Notification from "./Notification";
+import React, { Component } from 'react';
+import { Popover, Icon } from 'antd';
+import Notification from './Notification';
 
 class NotificationList extends Component {
   constructor(props) {
@@ -23,7 +23,7 @@ class NotificationList extends Component {
 
   render() {
     // const content = (
-    //   <div className="notification">
+    //   <div className='notification'>
     //     Peter invited you to a bet!
     //   </div>
     // );
@@ -35,8 +35,8 @@ class NotificationList extends Component {
     });
 
     return (
-      <Popover content={<div>{ notificationType }</div>} trigger="click">
-        <Icon type="bell" theme="filled" />
+      <Popover content={<div>{ notificationType }</div>} trigger='click'>
+        <Icon type='bell' theme='filled' style={{ fontSize: '24px' }}/>
       </Popover>
     );
   }

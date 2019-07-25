@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import axios from "axios";
+import React, { Component } from 'react';
+import axios from 'axios';
 import { Drawer, Form, Button, Col, Row, InputNumber, Select } from 'antd';
 import MatchPicker from './MatchPicker'
 import TeamPicker from './TeamPicker'
@@ -46,20 +46,20 @@ class NewBet extends Component {
     const { getFieldDecorator } = this.props.form;
     return (
       <div>
-        <Button type="primary" onClick={this.showNewBet}>
+        <Button type='primary' onClick={this.showNewBet}>
           New Bet
         </Button>
         <Drawer
-          title="Create a new bet!"
+          title='Create a new bet!'
           width={350}
-          className="new-bet"
+          className='new-bet'
           onClose={this.onClose}
           visible={this.state.visible}
         >
-          <Form layout="vertical" hideRequiredMark>
+          <Form layout='vertical' hideRequiredMark>
 
             {/* START MATCH PICKER */}
-            <Row type="flex">
+            <Row type='flex'>
               <Col span={24}>
                 <MatchPicker form={this.props.form} />
               </Col>
@@ -67,7 +67,7 @@ class NewBet extends Component {
             {/* END MATCH PICKER */}
 
             {/* START TEAM PICKER */}
-            <Row type="flex">
+            <Row type='flex'>
               <Col span={24}>
                 <TeamPicker form={this.props.form} />
               </Col>
@@ -75,9 +75,9 @@ class NewBet extends Component {
             {/* END TEAM PICKER */}
 
             {/* START STAKES INPUT */}
-            <Row type="flex">
+            <Row type='flex'>
               <Col span={24}>
-                <Form.Item label="Place your bet">
+                <Form.Item label='Place your bet'>
                   {getFieldDecorator('stakes', { initialValue: 0 })(
                     <InputNumber
                       formatter={value => `$ ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
@@ -90,18 +90,15 @@ class NewBet extends Component {
             {/* END STAKES INPUT  */}
 
             {/* START INVITE FRIENDS */}
-            <Row type="flex">
+            <Row type='flex'>
               <Col span={24}>
                 <InviteFriends form={this.props.form} />
               </Col>
             </Row>
             {/* END INVITE FRIENDS */}
 
-            <div className="new-bet__actions">
-              <Button onClick={this.onClose} style={{ marginRight: 8 }}>
-                Cancel
-              </Button>
-              <Button onClick={this.handleSubmit} type="primary">
+            <div className='new-bet__actions'>
+              <Button onClick={this.handleSubmit} type='primary'>
                 Create Bet!
               </Button>
             </div>

@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import Axios from "axios";
+import React, { Component } from 'react';
+import Axios from 'axios';
 
 class Login extends Component {
   constructor(props) {
@@ -20,7 +20,7 @@ class Login extends Component {
 
   handleSubmit = e => {
     e.preventDefault()
-    Axios.post("http://localhost:3000/login", {
+    Axios.post('http://localhost:3000/login', {
       email: this.state.email,
       password: this.state.password
     });
@@ -28,16 +28,16 @@ class Login extends Component {
 
   render() {
     return (
-      <form style={{ paddingTop: '100px' }} onSubmit={this.handleSubmit}>
+      <form onSubmit={this.handleSubmit}>
         <label>
           Email:
-          <input type="email" value={this.state.email} onChange={this.handleEmail} />
+          <input type='email' value={this.state.email} onChange={this.handleEmail} />
         </label>
         <label>
           Password:
-          <input type="password" value={this.state.password} onChange={this.handlePassword} />
+          <input type='password' value={this.state.password} onChange={this.handlePassword} />
         </label>
-        <input type="submit" value="Login" />
+        <input type='submit' value='Login' />
       </form>
     );
   }

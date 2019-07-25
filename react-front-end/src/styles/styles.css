@@ -1,0 +1,85 @@
+.ant-drawer .new-bet__actions .ant-btn, .ant-drawer .new-bet__actions .ant-btn-primary, .header .navigation__btn .ant-btn {
+  border-radius: 100px;
+  padding: 0 25px;
+  border-width: 2px; }
+
+.ant-layout-header {
+  height: 65px !important;
+  line-height: 1 !important;
+  background: #171719 !important; }
+
+.ant-menu-dark {
+  background: #171719 !important; }
+
+.ant-menu-item .anticon, .ant-menu-submenu-title .anticon {
+  margin-right: 0 !important; }
+
+.ant-drawer-content, .ant-drawer-header, .ant-drawer-footer {
+  background-color: #6910ff !important; }
+.ant-drawer-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25) !important; }
+.ant-drawer-title, .ant-drawer .ant-form-item label, .ant-drawer-close {
+  color: #fff !important; }
+.ant-drawer .new-bet__actions .ant-btn {
+  border-color: #ff4d4f;
+  background-color: #ff4d4f;
+  color: #fff; }
+  .ant-drawer .new-bet__actions .ant-btn:hover {
+    border-color: #ff8081;
+    background-color: #ff8081; }
+.ant-drawer .new-bet__actions .ant-btn-primary {
+  background-color: #171719;
+  border-color: #171719;
+  color: #fff; }
+  .ant-drawer .new-bet__actions .ant-btn-primary:hover {
+    background-color: #2f2f34;
+    border-color: #2f2f34; }
+
+.header {
+  position: sticky;
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center; }
+  .header .navigation {
+    display: flex;
+    line-height: 1;
+    align-items: center; }
+    .header .navigation__btn {
+      padding: 0 0 0 20px; }
+      .header .navigation__btn .ant-btn-primary {
+        background: transparent;
+        border: 2px solid rgba(255, 255, 255, 0.2); }
+        .header .navigation__btn .ant-btn-primary:hover {
+          background-color: #6910ff;
+          border-color: #6910ff; }
+
+.logo {
+  margin-right: auto;
+  color: #fff;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 36px; }
+  .logo--accent {
+    color: #6910ff; }
+
+.new-bet__actions {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 10px 16px;
+  background: #6910ff;
+  text-align: right; }
+.new-bet .ant-input.email-field {
+  width: 90%;
+  margin-right: 8px; }
+.new-bet .email-field__btn {
+  width: 100%;
+  border-color: #fff; }
+  .new-bet .email-field__btn:hover {
+    border-color: #fff;
+    color: #171719; }
+
+/*# sourceMappingURL=styles.css.map */
