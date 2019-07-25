@@ -25,7 +25,7 @@ class NotificationList extends Component {
 
     const notification = this.props.notificationType.map(betInfo => {
       console.log(betInfo)
-      return <Notification key={betInfo.bet_id} type={betInfo.notificationType} />;
+      return <Notification key={betInfo.bet_id} userBetId={betInfo.id} type={betInfo.notificationType} />;
 
     });
 
