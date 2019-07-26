@@ -134,27 +134,42 @@ main {
         justify-content: flex-start; }
       .dashboard__matches .match__time {
         justify-content: flex-end; }
-      .dashboard__matches .match__vs {
+      .dashboard__matches .match__team-logos {
         display: flex;
         justify-content: center;
         align-items: center; }
-        .dashboard__matches .match__vs .vs-text {
+        .dashboard__matches .match__team-logos .logo-container {
+          background-color: #fff;
+          width: 70px;
+          height: 70px;
+          display: flex;
+          border-radius: 100%;
+          align-items: center;
+          justify-content: center; }
+          .dashboard__matches .match__team-logos .logo-container img {
+            display: block;
+            margin: 0 auto; }
+        .dashboard__matches .match__team-logos .vs-text {
           font-size: 32px;
           font-family: 'Permanent Marker', cursive;
           font-weight: 700;
           font-style: italic;
           padding-right: 13px;
-          margin: -10px 25px 0;
+          margin: 0 25px;
           background: -webkit-linear-gradient(#cc1500, #ffb900);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent; }
-      .dashboard__matches .match__team {
+      .dashboard__matches .match footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 25px; }
+      .dashboard__matches .match__team-name {
+        margin-top: 10px;
+        width: 70px;
         text-align: center;
         font-size: 10px;
-        width: 100px; }
-        .dashboard__matches .match__team img {
-          display: block;
-          margin: 0 auto 10px; }
+        line-height: 1; }
   .dashboard__bets {
     flex-grow: 1;
     margin-left: 100px; }

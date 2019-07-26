@@ -32,21 +32,27 @@ class UpcomingMatches extends Component {
               <span className='text'>{moment(match.begin_at).tz('America/Vancouver').format('HH:mm')}</span>
             </div>
           </header>
-          <div className='match__vs'>
-            <div className='match__team'>
-              <img src={match.opponents[0].opponent.image_url} style={{ width: '70px', height: '70px' }} />
-              {match.opponents[0].opponent.name}
+          <div className='match__team-logos'>
+            <div className='logo-container'>
+              <img src={match.opponents[0].opponent.image_url} style={{ width: '50px', height: '50px' }} />
             </div>
             <span className='vs-text'>VS</span>
-            <div className='match__team'>
+            <div className='logo-container'>
               {
                 match.opponents[1] ?
-                  <img src={match.opponents[1].opponent.image_url} style={{ width: '70px', height: '70px' }} />
-                  : <img src='https://cdn.pandascore.co/images/team/image/126148/ffamix.png' style={{ width: '70px', height: '70px' }} />
+                  <img src={match.opponents[1].opponent.image_url} style={{ width: '50px', height: '50px' }} />
+                  : <img src='https://cdn.pandascore.co/images/team/image/126148/ffamix.png' style={{ width: '50px', height: '50px' }} />
               }
-              {match.opponents[1].opponent.name}
             </div>
           </div>
+          <footer>
+            <div className='match__team-name'>
+              {match.opponents[0].opponent.name}
+            </div>
+            <div className='match__team-name'>
+              {match.opponents[1].opponent.name}
+            </div>
+          </footer>
         </div>
       );
     });
