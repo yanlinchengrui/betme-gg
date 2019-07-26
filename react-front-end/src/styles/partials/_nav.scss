@@ -1,14 +1,10 @@
 .header {
-  position: sticky;
-  top: 0;
-  z-index: 1;
   width: 100%;
   display: flex;
   align-items: center;
+  margin-bottom: 40px;
 
   .container {
-    margin: 0 auto;
-    width: 1024px;
     display: flex;
     justify-content: flex-end;
     align-items: center;

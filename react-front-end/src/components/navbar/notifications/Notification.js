@@ -1,4 +1,5 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
+import { Button, Icon } from 'antd';
 
 class Notification extends Component {
 
@@ -6,39 +7,40 @@ class Notification extends Component {
     let notification;
 
     switch (this.props.type) {
-      case "invite":
+      case 'invite':
         notification = (
-          <div>
-            <span> {this.props.match}:  </span>
+          <div className='notification notification--invite'>
+            <span className='notification__match'>{this.props.match}: </span>
             <span> {this.props.owner} has invited you to a bet!</span>
-            <button name="Accept" onClick={() => this.props.handleNotificationSelection(this.props.userBetId, true, this.props.type)}>Accept </button>
-            <button name="Decline" onClick={() => this.props.handleNotificationSelection(this.props.userBetId, false, this.props.type)}>Decline </button>
+            <Icon type='check-circle' style={{ fontSize: '24px', color: '#52c41a', marginLeft: '10px' }} onClick={() => this.props.handleNotificationSelection(this.props.userBetId, true, this.props.type)} />
+            <Icon type='close-circle' style={{ fontSize: '24px', color: '#ff4d4f', marginLeft: '5px' }} onClick={() => this.props.handleNotificationSelection(this.props.userBetId, false, this.props.type)} />
           </div>
         )
         break;
 
-      case "teamSelect":
+      case 'teamSelect':
         notification = (
-          <div>
-            <span> {this.props.match}: Pick your team: </span>
-            <button name="Team 1" onClick={() => this.props.handleNotificationSelection(this.props.userBetId, "Team1", this.props.type)}>Team 1 </button>
-            <button name="Team 2" onClick={() => this.props.handleNotificationSelection(this.props.userBetId, "Team2", this.props.type)}>Team 2 </button>
+          <div className='notification notification--team-select'>
+            <span className='notification__match'>{this.props.match}:</span> 
+            <span>Pick your team:</span>
+            <Button className='notification__team-btn' style={{ marginLeft: '10px' }} name='Team 1' onClick={() => this.props.handleNotificationSelection(this.props.userBetId, 'Team1', this.props.type)}>Team 1 </Button>
+            <Button className='notification__team-btn' style={{ marginLeft: '5px' }} name='Team 2' onClick={() => this.props.handleNotificationSelection(this.props.userBetId, 'Team2', this.props.type)}>Team 2 </Button>
           </div>
         )
         break;
 
-      case "win":
+      case 'win':
         notification = (
-          <div>
+          <div className='notification notification--winner'>
             <div> {this.props.match} </div>
             <div> You won! </div>
           </div>
         );
         break;
 
-      case "loss":
+      case 'loss':
         notification = (
-          <div>
+          <div className='notification notification--loser'>
             <div> {this.props.match} </div>
             <div> Ha! you lost! </div>
           </div>
@@ -52,7 +54,11 @@ class Notification extends Component {
   }
 
   render() {
-    return <div>{this.displayNotificationByType()}</div>;
+    return (
+      <div className='notifications'>
+        {this.displayNotificationByType()}
+      </div>
+    );
   }
 }
 

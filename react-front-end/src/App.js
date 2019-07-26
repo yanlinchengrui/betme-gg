@@ -103,12 +103,12 @@ class App extends Component {
           refreshComponent={this.getUserBetsDetails}
           upcomingMatches={this.state.upcomingMatches}
         />
-        <div className="main">
+        <main>
           <Switch>
-            <Route exact path="/" component={() => <Dashboard upcomingMatches={this.state.upcomingMatches} />} />
+            <Route exact path="/" component={() => <Dashboard upcomingMatches={this.state.upcomingMatches} activeBets={this.state.userBets} />} />
             <Route path="/login" component={Login} />
           </Switch>
-        </div>
+        </main>
       </div>
     );
   }

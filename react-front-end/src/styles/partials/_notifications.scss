@@ -1,0 +1,25 @@
+.notifications {
+
+  .notification {
+    border: {
+      top: 2px solid rgba(0,0,0,0.1);
+      bottom: 2px solid rgba(0,0,0,0.1);
+    }
+    padding: 5px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+
+    &__match {
+      font-weight: 700;
+      margin-right: 5px;
+      color: $primary-color;
+    }
+
+    &__team-btn {
+      @extend %btn-styles;
+      padding: 0 12.5px;
+      font-size: 12px;
+    }
+  }
+}

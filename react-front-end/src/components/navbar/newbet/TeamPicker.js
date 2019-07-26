@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import { Form, Select } from 'antd';
 
 const { Option } = Select;
@@ -9,7 +9,7 @@ class TeamPicker extends Component {
     { console.log(this.props.chosenTeam) }
     const teams = this.props.chosenTeam && this.props.chosenTeam.split(" vs ");
     return (
-      <Form.Item label="Select your team">
+      <Form.Item label='Select your team'>
         {getFieldDecorator('team', {
           rules: [{ required: true }],
         })(

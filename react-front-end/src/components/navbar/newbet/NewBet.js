@@ -57,8 +57,6 @@ class NewBet extends Component {
           visible={this.state.visible}
         >
           <Form layout='vertical' hideRequiredMark>
-
-            {/* START MATCH PICKER */}
             <Row type='flex'>
               <Col span={24}>
                 <MatchPicker form={this.props.form} upcomingMatches={this.props.upcomingMatches} />
@@ -87,16 +85,11 @@ class NewBet extends Component {
                 </Form.Item>
               </Col>
             </Row>
-            {/* END STAKES INPUT  */}
-
-            {/* START INVITE FRIENDS */}
             <Row type='flex'>
               <Col span={24}>
                 <InviteFriends form={this.props.form} />
               </Col>
             </Row>
-            {/* END INVITE FRIENDS */}
-
             <div className='new-bet__actions'>
               <Button onClick={this.handleSubmit} type='primary'>
                 Create Bet!
