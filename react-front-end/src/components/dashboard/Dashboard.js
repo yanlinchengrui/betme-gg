@@ -6,8 +6,10 @@ class Dashboard extends Component {
   render() {
     return (
       <div className='container'>
-        <UpcomingMatches upcomingMatches={this.props.upcomingMatches} />
-        <ActiveBetsList activeBets={this.props.activeBets} />
+        <div className='dashboard'>
+          <UpcomingMatches upcomingMatches={this.props.upcomingMatches} />
+          <ActiveBetsList activeBets={this.props.activeBets} />
+        </div>
       </div>
     );
   }
