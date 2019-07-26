@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Drawer, Form, Button, Col, Row, InputNumber, Select } from 'antd';
+import { Drawer, Form, Button, Col, Row, InputNumber } from 'antd';
 import MatchPicker from './MatchPicker'
-import TeamPicker from './TeamPicker'
 import InviteFriends from './InviteFriends'
-
-const { Option } = Select;
 
 class NewBet extends Component {
   state = { visible: false };
@@ -62,17 +59,6 @@ class NewBet extends Component {
                 <MatchPicker form={this.props.form} upcomingMatches={this.props.upcomingMatches} />
               </Col>
             </Row>
-            {/* END MATCH PICKER */}
-
-            {/* START TEAM PICKER */}
-            {/* <Row type='flex'>
-              <Col span={24}>
-                <TeamPicker form={this.props.form} />
-              </Col>
-            </Row> */}
-            {/* END TEAM PICKER */}
-
-            {/* START STAKES INPUT */}
             <Row type='flex'>
               <Col span={24}>
                 <Form.Item label='Place your bet'>

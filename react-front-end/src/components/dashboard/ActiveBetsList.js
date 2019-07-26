@@ -4,7 +4,6 @@ import ActiveBet from "./ActiveBets"
 class ActiveBetList extends Component {
 
   render() {
-    console.log(this.props.activeBets)
     const activeBets = this.props.activeBets.map(activeBet => {
       return (
         <ActiveBet

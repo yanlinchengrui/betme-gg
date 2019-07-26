@@ -14,7 +14,7 @@ class App extends Component {
     super(props);
 
     this.state = {
-      userInfo: {},
+      userInfo: {avatar_url: ''},
       userBets: [],
       userBetInformation: [],
       upcomingMatches: []
@@ -24,10 +24,12 @@ class App extends Component {
 
   }
 
-  getUserBetsDetails() {
+  getUserBetsDetails = () => {
+    console.log('did this work???');
     axios
       .get("http://localhost:8080/users/:id", { withCredentials: true })
       .then(allInfo => {
+        console.log('test this shit out', allInfo);
         let allData = allInfo.data;
         const bets = allData.bets;
         delete allData["bets"];
@@ -35,9 +37,9 @@ class App extends Component {
           userInfo: allData,
           userBets: bets
         });
-        console.log("---------", this.state);
       })
       .catch(err => {
+        console.log("why")
         console.log(err);
       });
   }
@@ -102,11 +104,12 @@ class App extends Component {
           handleNotificationSelection={this.handleNotificationSelection}
           refreshComponent={this.getUserBetsDetails}
           upcomingMatches={this.state.upcomingMatches}
+          userInfo={this.state.userInfo}
         />
         <main>
           <Switch>
             <Route exact path="/" component={() => <Dashboard upcomingMatches={this.state.upcomingMatches} activeBets={this.state.userBets} />} />
-            <Route path="/login" component={Login} />
+            <Route path="/login" render={(props) => { return (<Login {...props} getUserBetsDetails={this.getUserBetsDetails} />)}} />
           </Switch>
         </main>
       </div>

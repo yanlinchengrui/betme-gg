@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Form, Input, Icon, Button } from 'antd';
+import { Form, Input, Button } from 'antd';
 import Axios from 'axios';
 
 class Login extends Component {
@@ -24,6 +24,10 @@ class Login extends Component {
     Axios.post('http://localhost:3000/login', {
       email: this.state.email,
       password: this.state.password
+    }).then(() => {
+      console.log(this.props);
+      this.props.getUserBetsDetails();
+      this.props.history.push('/');
     });
   }
 
