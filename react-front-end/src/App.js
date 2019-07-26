@@ -102,7 +102,7 @@ class App extends Component {
         />
         <div className="main">
           <Switch>
-            <Route exact path="/" component={() => <Dashboard upcomingMatches={this.state.upcomingMatches} /> } />
+            <Route exact path="/" component={() => <Dashboard upcomingMatches={this.state.upcomingMatches} activeBets={this.state.userBets} /> } />
             <Route path="/login" component={Login} />
           </Switch>
         </div>
