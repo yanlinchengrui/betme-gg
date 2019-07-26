@@ -72,11 +72,12 @@ class App extends Component {
           handleNotificationSelection={this.handleNotificationSelection}
           refreshComponent={this.getUserBetsDetails}
         />
-
-        <Switch>
-          <Route exact path='/' component={Dashboard} />
-          <Route path='/login' component={Login} />
-        </Switch>
+        <div className='main'>
+          <Switch>
+            <Route exact path='/' component={Dashboard} />
+            <Route path='/login' component={Login} />
+          </Switch>
+        </div>
       </div>
     );
   }

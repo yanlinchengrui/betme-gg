@@ -1,42 +1,26 @@
-.ant-drawer .new-bet__actions .ant-btn, .ant-drawer .new-bet__actions .ant-btn-primary, .header .navigation__btn .ant-btn {
+.ant-drawer .new-bet__actions .ant-btn-primary, .header .navigation__btn .ant-btn {
   border-radius: 100px;
   padding: 0 25px;
   border-width: 2px; }
 
+body {
+  font-family: 'Lato', sans-serif !important;
+  color: #fff !important; }
+
 .ant-layout-header {
   height: 65px !important;
   line-height: 1 !important;
-  background: #171719 !important; }
+  background: #0f0f0f !important; }
 
 .ant-menu-dark {
-  background: #171719 !important; }
+  background: #0f0f0f !important; }
 
 .ant-menu-item .anticon, .ant-menu-submenu-title .anticon {
   margin-right: 0 !important; }
 
-.ant-drawer-content, .ant-drawer-header, .ant-drawer-footer {
-  background-color: #6910ff !important; }
-.ant-drawer-header {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.25) !important; }
-.ant-drawer-title, .ant-drawer .ant-form-item label, .ant-drawer-close {
-  color: #fff !important; }
-.ant-drawer .new-bet__actions .ant-btn {
-  border-color: #ff4d4f;
-  background-color: #ff4d4f;
-  color: #fff; }
-  .ant-drawer .new-bet__actions .ant-btn:hover {
-    border-color: #ff8081;
-    background-color: #ff8081; }
-.ant-drawer .new-bet__actions .ant-btn-primary {
-  background-color: #171719;
-  border-color: #171719;
-  color: #fff; }
-  .ant-drawer .new-bet__actions .ant-btn-primary:hover {
-    background-color: #2f2f34;
-    border-color: #2f2f34; }
-
 .header {
   position: sticky;
+  top: 0;
   z-index: 1;
   width: 100%;
   display: flex;
@@ -52,34 +36,98 @@
         background: transparent;
         border: 2px solid rgba(255, 255, 255, 0.2); }
         .header .navigation__btn .ant-btn-primary:hover {
-          background-color: #6910ff;
-          border-color: #6910ff; }
+          background-color: #3745fe;
+          border-color: #3745fe; }
 
 .logo {
-  margin-right: auto;
-  color: #fff;
-  font-family: 'Ubuntu', sans-serif;
-  font-size: 36px; }
+  margin-right: auto; }
+  .logo a {
+    color: #fff;
+    font-family: 'Ubuntu', sans-serif;
+    font-style: italic;
+    font-size: 36px; }
+    .logo a:hover {
+      color: #3745fe;
+      text-shadow: 0 1px 10px #010fce; }
   .logo--accent {
-    color: #6910ff; }
+    color: #3745fe;
+    text-shadow: 0 1px 10px #010fce; }
 
 .new-bet__actions {
   position: absolute;
   left: 0;
   bottom: 0;
   width: 100%;
-  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  border-top: 1px solid #e8e8e8;
   padding: 10px 16px;
-  background: #6910ff;
   text-align: right; }
 .new-bet .ant-input.email-field {
   width: 90%;
   margin-right: 8px; }
 .new-bet .email-field__btn {
-  width: 100%;
-  border-color: #fff; }
-  .new-bet .email-field__btn:hover {
-    border-color: #fff;
-    color: #171719; }
+  width: 100%; }
+
+.main {
+  background-color: #191b22; }
+
+.dashboard {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; }
+  .dashboard__matches {
+    width: 330px; }
+    .dashboard__matches h2 {
+      color: #fff;
+      border-bottom: 2px solid #fff;
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 20px; }
+    .dashboard__matches .match {
+      background-color: #0f0f0f;
+      padding: 12px 20px 20px 20px;
+      -webkit-border-radius: 20px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+      -webkit-box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
+      box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15); }
+      .dashboard__matches .match header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px; }
+      .dashboard__matches .match__date, .dashboard__matches .match__time {
+        color: #7f7d87;
+        display: flex;
+        align-items: center;
+        width: 80px; }
+        .dashboard__matches .match__date .text, .dashboard__matches .match__time .text {
+          font-size: 10px;
+          font-weight: 700;
+          margin-left: 5px;
+          text-transform: uppercase; }
+      .dashboard__matches .match__date {
+        justify-content: flex-start; }
+      .dashboard__matches .match__time {
+        justify-content: flex-end; }
+      .dashboard__matches .match__vs {
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+        .dashboard__matches .match__vs .vs-text {
+          font-size: 32px;
+          font-family: 'Permanent Marker', cursive;
+          font-weight: 700;
+          font-style: italic;
+          padding-right: 13px;
+          margin: -10px 25px 0;
+          background: -webkit-linear-gradient(#cc1500, #ffb900);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent; }
+      .dashboard__matches .match__team {
+        text-align: center;
+        font-size: 10px; }
+        .dashboard__matches .match__team img {
+          display: block;
+          margin: 0 auto 10px; }
 
 /*# sourceMappingURL=styles.css.map */
