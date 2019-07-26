@@ -1,9 +1,9 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import NewBet from "./newbet/NewBet.js";
-import NotificationList from "./notifications/NotificationList";
-import UserOptions from "./UserOptions";
-import { Menu, Layout } from "antd";
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import NewBet from './newbet/NewBet.js';
+import NotificationList from './notifications/NotificationList';
+import UserOptions from './UserOptions';
+import { Menu, Layout } from 'antd';
 
 class NavBar extends Component {
 

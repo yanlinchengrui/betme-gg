@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Form, Input, Icon, Button } from 'antd';
 import Axios from 'axios';
 
 class Login extends Component {
@@ -28,17 +29,19 @@ class Login extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label>
-          Email:
-          <input type='email' value={this.state.email} onChange={this.handleEmail} />
-        </label>
-        <label>
-          Password:
-          <input type='password' value={this.state.password} onChange={this.handlePassword} />
-        </label>
-        <input type='submit' value='Login' />
-      </form>
+      <div style={{ width: '300px', margin: '0 auto', padding: '20px', backgroundColor: '#3745fe', borderRadius: '20px' }}>
+        <Form onSubmit={this.handleSubmit}>
+          <Form.Item>
+            <Input placeholder='Email' value={this.state.email} onChange={this.handleEmail} />
+          </Form.Item>
+          <Form.Item>
+            <Input.Password placeholder='Password' value={this.state.password} onChange={this.handlePassword} />
+          </Form.Item>
+          <Button htmlType='submit' type='primary' style={{ width: '100%' }}>
+            Login
+          </Button>
+        </Form>
+      </div>
     );
   }
 }
