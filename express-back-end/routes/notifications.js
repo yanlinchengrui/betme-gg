@@ -4,21 +4,30 @@ const db = require("../models");
 const UserBet = db.User_Bet;
 
 // get all unread notifications
-router.get("/", (req, res) => {
-  UserBet.findAll({
-    where: {
-      user_id: req.session.user.id,
-    }
-  }).then((rez) => {
-    // console.log(rez.toJSON);
-    res.json(rez);
-  });
-});
+// router.get("/", (req, res) => {
+//   if (req.session.user) {
+//     UserBet.findAll({
+//       where: {
+//         user_id: req.session.user.id
+//       },
+//       order: [
+//         ['createdAt', 'ASC'],
+//       ],
+//     }).then((rez) => {
+//       // console.log(rez.toJSON);
+//       res.json(rez);
+//     });
+//   } else {
+//     res.status(200);
+//   }
+// });
 
 router.put("/:id/termStatus", (req, res) => {
-  // console.log("xx--------", req.body.termStatus)
   UserBet.update(
-    { termStatus: req.body.termStatus },
+    {
+      termStatus: req.body.termStatus,
+      notificationType: req.body.termStatus ? 'teamSelect' : 'declined'
+    },
     { where: { id: req.params.id } }
   ).then(() => {
     res.status(200).json({ message: "modified" });
@@ -27,7 +36,10 @@ router.put("/:id/termStatus", (req, res) => {
 
 router.put("/:id/teamSelect", (req, res) => {
   UserBet.update(
-    { teamSelect: req.body.teamSelect },
+    {
+      teamSelect: req.body.teamSelect,
+      notificationType: 'inProgress'
+    },
     { where: { id: req.params.id } }
   ).then(() => {
     res.status(200).json({ message: "modified" });

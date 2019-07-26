@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
 
 router.get('/:id', (req, res) => {
   User.findOne({
-    where: { id: req.params.id }, include: [{ model: db.Bet, as: 'bets' }]
+    where: { id: req.session.user.id }, include: [{ model: db.Bet, as: 'bets' }]
   }).then((rez) => {
     console.log(rez.toJSON())
     res.json(rez);

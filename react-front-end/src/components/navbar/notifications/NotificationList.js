@@ -23,19 +23,20 @@ class NotificationList extends Component {
 
   render() {
 
-    const notification = this.props.notificationType.map(betInfo => {
-      return <Notification 
-      key={betInfo.bet_id} 
-      userBetId={betInfo.id} 
-      type={betInfo.notificationType} 
-      handleNotificationSelection = { this.props.handleNotificationSelection } 
+    const notification = this.props.userBets.map((bet) => {
+      return <Notification
+        key={bet.User_Bet.id}
+        userBetId={bet.User_Bet.id}
+        match={bet.match}
+        owner={bet.owner}
+        type={bet.User_Bet.notificationType}
+        handleNotificationSelection={this.props.handleNotificationSelection}
       />;
-
     });
 
     return (
-      <Popover content={<div>{ notification }</div>} trigger='click'>
-        <Icon type='bell' theme='filled' style={{ fontSize: '24px' }}/>
+      <Popover content={<div>{notification}</div>} trigger='click'>
+        <Icon type='bell' theme='filled' style={{ fontSize: '24px' }} />
       </Popover>
     );
   }
