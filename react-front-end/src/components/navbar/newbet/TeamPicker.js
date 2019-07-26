@@ -14,8 +14,8 @@ class TeamPicker extends Component {
           rules: [{ required: true }],
         })(
           <Select placeholder='Please select your team'>
-            {this.props.chosenTeam && teams[0] && <Option value={teams[0]}>{teams[0]}</Option>}
-            {this.props.chosenTeam && teams[1] && <Option value={teams[1]}>{teams[1]}</Option>}
+            {this.props.chosenTeam && teams[0] && <Option value="Team1">{teams[0]}</Option>}
+            {this.props.chosenTeam && teams[1] && <Option value="Team2">{teams[1]}</Option>}
           </Select>
         )}
       </Form.Item>

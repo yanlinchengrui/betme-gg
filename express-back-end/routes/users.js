@@ -12,12 +12,16 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:id', (req, res) => {
-  User.findOne({
-    where: { id: req.session.user.id }, include: [{ model: db.Bet, as: 'bets' }]
-  }).then((rez) => {
-    console.log(rez.toJSON())
-    res.json(rez);
-  });
+  if (req.session.user) {
+    User.findOne({
+      where: { id: req.session.user.id }, include: [{ model: db.Bet, as: 'bets' }]
+    }).then((rez) => {
+      console.log(rez.toJSON())
+      res.json(rez);
+    });
+  } else {
+    res.status(200);
+  }
 });
 
 module.exports = router;
