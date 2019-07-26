@@ -7,6 +7,9 @@ module.exports = {
       owner: 'PeterMan',
       stakes: 15,
       bet_status: 'Pending',
+      game: 'lol',
+      team1: 'SKT',
+      team2: 'C9',
       createdAt: new Date(),
       updatedAt: new Date()
     },
@@ -15,6 +18,9 @@ module.exports = {
       owner: 'PokemonGOvind',
       stakes: 50,
       bet_status: 'Pending',
+      game: 'dota2',
+      team1: 'CLG',
+      team2: 'F',
       createdAt: new Date(),
       updatedAt: new Date()
     },
@@ -23,6 +29,9 @@ module.exports = {
       owner: 'SethMarksTheSpot',
       stakes: 200,
       bet_status: 'Active',
+      game: 'ow',
+      team1: 'VT',
+      team2: 'FM',
       createdAt: new Date(),
       updatedAt: new Date()
     }], {});

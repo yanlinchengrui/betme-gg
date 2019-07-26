@@ -11,7 +11,10 @@ router.post("/", (req, res) => {
     match: req.body.match,
     owner: req.session.user.user_name,
     stakes: req.body.stakes,
-    bet_status: 'pending'
+    bet_status: 'pending',
+    team1: req.body.team1,
+    team2: req.body.team2,
+    game: req.body.game,
   };
 
   // session userId

@@ -5,7 +5,7 @@ import UpcomingMatches from "./UpcomingMatches";
 class Dashboard extends Component {
   render() {
     return (
-      <div class='container'>
+      <div className='container'>
         <UpcomingMatches upcomingMatches={this.props.upcomingMatches} />
         <ActiveBetsList activeBets={this.props.activeBets} />
       </div>

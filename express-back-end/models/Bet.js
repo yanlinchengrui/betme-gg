@@ -16,6 +16,18 @@ module.exports = (sequelize, DataTypes) => {
     bet_status: {
       type: DataTypes.STRING,
     },
+    game: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    team1: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    team2: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
   }, {});
   Bet.associate = function (models) {
     Bet.belongsToMany(models.User, {
