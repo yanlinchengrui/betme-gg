@@ -18,7 +18,8 @@ class ActiveBetList extends Component {
       );
     });
     return (
-      <div>
+      <div className='dashboard__bets'>
+        <h2>Active bets</h2>
         {activeBets}
       </div>
     );
