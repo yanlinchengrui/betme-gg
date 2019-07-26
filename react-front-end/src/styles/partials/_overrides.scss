@@ -1,6 +1,11 @@
 body {
   font-family: 'Lato', sans-serif !important;
   color: #fff !important;
+  background-color: $darker !important;
+  background-image: url('../images/bg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
 }
 
 .ant-layout-header {

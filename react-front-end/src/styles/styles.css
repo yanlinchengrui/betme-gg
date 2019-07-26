@@ -5,7 +5,12 @@
 
 body {
   font-family: 'Lato', sans-serif !important;
-  color: #fff !important; }
+  color: #fff !important;
+  background-color: #191b22 !important;
+  background-image: url("../images/bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top; }
 
 .ant-layout-header {
   height: 65px !important;
@@ -24,8 +29,13 @@ body {
   z-index: 1;
   width: 100%;
   display: flex;
-  justify-content: flex-end;
   align-items: center; }
+  .header .container {
+    margin: 0 auto;
+    width: 1024px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center; }
   .header .navigation {
     display: flex;
     line-height: 1;
@@ -66,12 +76,6 @@ body {
   margin-right: 8px; }
 .new-bet .email-field__btn {
   width: 100%; }
-
-.main {
-  background-color: #191b22;
-  background-image: url("../images/bg.jpg");
-  background-size: cover;
-  background-positon: center top; }
 
 .dashboard {
   display: flex;
@@ -128,7 +132,8 @@ body {
           -webkit-text-fill-color: transparent; }
       .dashboard__matches .match__team {
         text-align: center;
-        font-size: 10px; }
+        font-size: 10px;
+        width: 100px; }
         .dashboard__matches .match__team img {
           display: block;
           margin: 0 auto 10px; }

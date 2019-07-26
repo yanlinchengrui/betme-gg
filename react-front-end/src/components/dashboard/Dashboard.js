@@ -19,13 +19,15 @@ class Dashboard extends Component {
 
   componentDidMount() {
     console.log(process.env)
-    axios.get(`https://api.pandascore.co/matches/upcoming?token=${process.env.REACT_APP_TOKEN}`)
+    axios.get(`https://api.pandascore.co/matches/upcoming?page[size]=5&&token=${process.env.REACT_APP_TOKEN}`)
       .then((rez) => {
-        console.log(rez.data);
         this.setState(
-          { upcomingMatches: rez.data.slice(0, 5) }
-          // { upcomingMatches: rez.data }
+          // { upcomingMatches: rez.data.slice(0, 5) }
+          { upcomingMatches: rez.data.filter(match => {
+            return match.opponents.length;
+          }) }
         );
+        console.log(this.state.upcomingMatches.length)
       });
   }
 
@@ -74,6 +76,7 @@ class Dashboard extends Component {
   }
 
   render() {
+
     return (
       <div className='dashboard'>
         <div className='dashboard__matches'>

@@ -4,8 +4,15 @@
   z-index: 1;
   width: 100%;
   display: flex;
-  justify-content: flex-end;
   align-items: center;
+
+  .container {
+    margin: 0 auto;
+    width: 1024px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
 
   .navigation {
     display: flex;
