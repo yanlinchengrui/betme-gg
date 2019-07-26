@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Bet.associate = function (models) {
     Bet.belongsToMany(models.User, {
-      through: 'User_Bets',
+      through: models.User_Bet,
       as: 'users',
       foreignKey: 'bet_id',
       otherKey: 'user_id'
