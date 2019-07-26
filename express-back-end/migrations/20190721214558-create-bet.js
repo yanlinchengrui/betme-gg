@@ -23,6 +23,18 @@ module.exports = {
       bet_status: {
         type: Sequelize.STRING,
       },
+      game: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
+      team1: {
+        type: Sequelize.STRING,
+        allowNull: false
+      }, 
+      team2: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

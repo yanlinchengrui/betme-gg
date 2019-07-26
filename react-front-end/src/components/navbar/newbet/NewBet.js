@@ -23,11 +23,17 @@ class NewBet extends Component {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
       if (!err) {
-        const { keys, names } = values;
+        // get the right game info based on the match name
+        const gameInfo = this.props.upcomingMatches.filter((match) => match.name === values.match);
+        // filter returns an array, get the first one and save the game type
+        values.game = gameInfo[0].videogame.name;
+        // split the match to get the team names and save them to values
+        let teams = gameInfo[0].name.split(' vs ');
+        values.team1 = teams[0];
+        values.team2 = teams[1];
+
         console.log('Received values of form: ', values);
-        //console.log('Merged values:', keys.map(key => names[key]));
-        // values.owner = 'FAKER';
-        // values.userid = 1;
+
         axios.post('http://localhost:8080/bets', values, { withCredentials: true })
           .then(function (response) {
             console.log(response);
