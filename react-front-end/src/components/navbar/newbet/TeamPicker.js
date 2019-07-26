@@ -11,7 +11,7 @@ class TeamPicker extends Component {
         {getFieldDecorator('team', {
           rules: [{ required: true }],
         })(
-        <Select>
+        <Select placeholder='Please select your team'>
           <Option value="CLG">Counter Logic Gaming</Option>
           <Option value="C9">Cloud 9</Option>
         </Select>,

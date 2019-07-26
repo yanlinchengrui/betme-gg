@@ -35,7 +35,7 @@ class UserOptions extends Component {
         }
         trigger="click"
       >
-        <Avatar style={{ backgroundColor: '#6910ff' }} icon="user" />
+        <Avatar style={{ backgroundColor: '#3745fe' }} icon="user" />
       </Popover>
     );
   }

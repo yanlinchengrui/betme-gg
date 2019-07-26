@@ -68,11 +68,12 @@ class App extends Component {
         notificationType = { this.state.userBetInformation }
         handleNotificationSelection = { this.handleNotificationSelection }
         />
-    
-        <Switch>
-          <Route exact path='/' component={Dashboard}/>
-          <Route path='/login' component={Login} />
-        </Switch>
+        <div className='main'>
+          <Switch>
+            <Route exact path='/' component={Dashboard}/>
+            <Route path='/login' component={Login} />
+          </Switch>
+        </div>
       </div>
     );
   }

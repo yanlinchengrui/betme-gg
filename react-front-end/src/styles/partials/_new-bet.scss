@@ -5,9 +5,8 @@
     left: 0;
     bottom: 0;
     width: 100%;
-    border-top: 1px solid rgba(255,255,255,0.25);
+    border-top: 1px solid #e8e8e8;
     padding: 10px 16px;
-    background: $primary-color;
     text-align: right;
   }
 
@@ -18,11 +17,5 @@
 
   .email-field__btn {
     width: 100%;
-    border-color: #fff;
-
-    &:hover {
-      border-color: #fff;
-      color: $darkest;
-    }
   }
 }

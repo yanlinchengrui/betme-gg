@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import NewBet from "./newbet/NewBet.js";
 import NotificationList from "./notifications/NotificationList";
 import UserOptions from "./UserOptions";
@@ -9,7 +10,9 @@ class NavBar extends Component {
   render() {
     return (
       <Layout.Header className='header'>
-      <div className='logo'>Betme.<span className='logo--accent'>gg</span></div>
+      <div className='logo'>
+        <Link to='/'>Betme.<span className='logo--accent'>gg</span></Link>
+      </div>
       <Menu
         theme='dark'
         mode='horizontal'

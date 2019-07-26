@@ -1,5 +1,6 @@
 .header {
   position: sticky;
+  top: 0;
   z-index: 1;
   width: 100%;
   display: flex;
@@ -33,11 +34,22 @@
 
 .logo {
   margin-right: auto;
-  color: #fff;
-  font-family: 'Ubuntu', sans-serif;
-  font-size: 36px;
+
+  a {
+    color: #fff;
+    font-family: 'Ubuntu', sans-serif;
+    font-style: italic;
+    font-size: 36px;
+
+    &:hover {
+      color: $primary-color;
+      text-shadow: 0 1px 10px darken($primary-color,20%);
+    }
+  }
 
   &--accent {
     color: $primary-color;
+    text-shadow: 0 1px 10px darken($primary-color,20%);
   }
+  
 }

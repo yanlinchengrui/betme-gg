@@ -84,7 +84,11 @@ class InviteFriends extends Component {
               message: 'Add your friend\'s emails!',
             },
           ],
-        })(<Input className='email-field' placeholder='Email address'/>)}
+        })(<Input 
+          className='email-field'
+          placeholder='Enter their email address'
+          prefix={<Icon type="mail" style={{ color: 'rgba(0,0,0,.25)' }} />}
+        />)}
         {keys.length > 1 ? (
           <Icon
             className='dynamic-delete-button'
@@ -98,7 +102,7 @@ class InviteFriends extends Component {
       <div>
         {formItems}
         <Form.Item {...formBtn}>
-          <Button className='email-field__btn' onClick={this.add}>
+          <Button type="dashed" className='email-field__btn' onClick={this.add}>
             Add your friends!
           </Button>
         </Form.Item>
