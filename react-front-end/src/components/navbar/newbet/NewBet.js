@@ -61,17 +61,17 @@ class NewBet extends Component {
             {/* START MATCH PICKER */}
             <Row type='flex'>
               <Col span={24}>
-                <MatchPicker form={this.props.form} />
+                <MatchPicker form={this.props.form} upcomingMatches={this.props.upcomingMatches} />
               </Col>
             </Row>
             {/* END MATCH PICKER */}
 
             {/* START TEAM PICKER */}
-            <Row type='flex'>
+            {/* <Row type='flex'>
               <Col span={24}>
                 <TeamPicker form={this.props.form} />
               </Col>
-            </Row>
+            </Row> */}
             {/* END TEAM PICKER */}
 
             {/* START STAKES INPUT */}

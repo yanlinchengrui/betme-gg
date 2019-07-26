@@ -24,7 +24,7 @@ router.post("/", (req, res) => {
         user_id: userid,
         bet_id: betid,
         teamSelect: req.body.team,
-        notificationType: 'invite',
+        notificationType: 'inProgress',
         termStatus: true
       };
       return UserBet.create(ownerBet);

@@ -46,9 +46,11 @@ class App extends Component {
     axios.get(`https://api.pandascore.co/matches/upcoming?page[size]=5&&token=${process.env.REACT_APP_TOKEN}`)
       .then((rez) => {
         this.setState(
-          { upcomingMatches: rez.data.filter(match => {
-            return match.opponents.length;
-          }) }
+          {
+            upcomingMatches: rez.data.filter(match => {
+              return match.opponents.length;
+            })
+          }
         );
       });
   }
@@ -85,7 +87,7 @@ class App extends Component {
         break;
     }
   };
-  
+
   componentDidMount() {
     this.getUserBetsDetails()
     this.getUpcomingMatches()
@@ -99,10 +101,11 @@ class App extends Component {
           userBets={this.state.userBets}
           handleNotificationSelection={this.handleNotificationSelection}
           refreshComponent={this.getUserBetsDetails}
+          upcomingMatches={this.state.upcomingMatches}
         />
         <div className="main">
           <Switch>
-            <Route exact path="/" component={() => <Dashboard upcomingMatches={this.state.upcomingMatches} /> } />
+            <Route exact path="/" component={() => <Dashboard upcomingMatches={this.state.upcomingMatches} />} />
             <Route path="/login" component={Login} />
           </Switch>
         </div>

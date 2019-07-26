@@ -28,7 +28,8 @@ class NavBar extends Component {
             </Menu.Item>
             <Menu.Item><UserOptions /></Menu.Item>
           </Menu>
-          <div className='navigation__btn'><NewBet /></div>
+          <div className='navigation__btn'><NewBet upcomingMatches={this.props.upcomingMatches} /></div>
+          {console.log(this.props.upcomingMatches)}
         </div>
       </Layout.Header>
     );
