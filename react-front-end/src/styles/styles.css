@@ -68,7 +68,10 @@ body {
   width: 100%; }
 
 .main {
-  background-color: #191b22; }
+  background-color: #191b22;
+  background-image: url("../images/bg.jpg");
+  background-size: cover;
+  background-positon: center top; }
 
 .dashboard {
   display: flex;
