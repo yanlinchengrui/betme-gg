@@ -3,16 +3,16 @@
   justify-content: center;
   align-items: flex-start;
 
+  h2 {
+    color: #fff;
+    border-bottom: 2px solid #fff;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
   &__matches {
     width: 330px;
-
-    h2 {
-      color: #fff;
-      border-bottom: 2px solid #fff;
-      font-size: 24px;
-      font-weight: 700;
-      margin-bottom: 20px;
-    }
 
     .match {
       background-color: $darkest;
@@ -81,5 +81,10 @@
         }
       }
     }
+  }
+
+  &__bets {
+    width: 594px;
+    margin-left: 100px;
   }
 }

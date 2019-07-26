@@ -54,11 +54,9 @@ class UpcomingMatches extends Component {
 
   render() {
     return (
-      <div className='dashboard'>
-        <div className='dashboard__matches'>
-          <h2>Upcoming matches</h2>
-          {this.renderMatches(this.props.upcomingMatches)}
-        </div>
+      <div className='dashboard__matches'>
+        <h2>Upcoming matches</h2>
+        {this.renderMatches(this.props.upcomingMatches)}
       </div>
     );
   }

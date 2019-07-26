@@ -1,9 +1,12 @@
+// Global Styles
 @import './partials/variables';
 @import './partials/overrides';
+@import './partials/global';
 
-// Page styles
+// Nav Styles
 @import './partials/nav';
 @import './partials/notifications';
 @import './partials/new-bet';
-@import './partials/main';
+
+// Page Styles
 @import './partials/dashboard';

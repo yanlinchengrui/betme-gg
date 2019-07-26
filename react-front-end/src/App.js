@@ -100,12 +100,12 @@ class App extends Component {
           handleNotificationSelection={this.handleNotificationSelection}
           refreshComponent={this.getUserBetsDetails}
         />
-        <div className="main">
+        <main>
           <Switch>
             <Route exact path="/" component={() => <Dashboard upcomingMatches={this.state.upcomingMatches} /> } />
             <Route path="/login" component={Login} />
           </Switch>
-        </div>
+        </main>
       </div>
     );
   }

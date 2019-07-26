@@ -85,9 +85,8 @@ class InviteFriends extends Component {
             },
           ],
         })(<Input 
-          className='email-field'
-          placeholder='Enter their email address'
           prefix={<Icon type="mail" style={{ color: 'rgba(0,0,0,.25)' }} />}
+          style={{ width: '90%', marginRight: '8px' }}
         />)}
         {keys.length > 1 ? (
           <Icon
@@ -103,7 +102,7 @@ class InviteFriends extends Component {
         {formItems}
         <Form.Item {...formBtn}>
           <Button type="dashed" className='email-field__btn' onClick={this.add}>
-            Add your friends!
+            Invite your friends!
           </Button>
         </Form.Item>
       </div>
