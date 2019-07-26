@@ -7,9 +7,10 @@ class ActiveBet extends Component {
     console.log(this.props.betStatus)
 
     switch (this.props.betStatus) {
-      case "Pending":
+      case "pending":
         notification = (
           <div>
+            <span> Game {this.props.game}</span>
             <span> Match {this.props.match}:  </span>
             <span> Stakes {this.props.stakes}</span>
             <span> Bet Status {this.props.betStatus}</span>
@@ -18,9 +19,10 @@ class ActiveBet extends Component {
         )
         break;
 
-      case "Active":
+      case "active":
         notification = (
           <div>
+            <span> Game {this.props.game}</span>
             <span> Match {this.props.match}:  </span>
             <span> Stakes {this.props.stakes}</span>
             <span> Bet Status {this.props.betStatus}</span>
