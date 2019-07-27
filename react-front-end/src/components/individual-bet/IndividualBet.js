@@ -31,6 +31,10 @@ class IndividualBet extends Component {
             return null;
           }
 
+          if(!this.props.betInfo.users) {
+            return null;
+          }
+
           return this.props.betInfo.users.map(owner => {
             if (owner.User_Bet.user_id === this.props.currentUser.id) {
               return (
@@ -47,6 +51,9 @@ class IndividualBet extends Component {
         <div>
           <div>{this.props.betInfo.team1}</div>
           <div>{this.props.betInfo.team2}</div>
+          <div>{this.props.betInfo.start_time}</div>
+          <div>{this.props.betInfo.team1logo}</div>
+          <div>{this.props.betInfo.team2logo}</div>
           {<div>{getParticipantInformation()}</div>}
           {renderTeamSelection()}
      
