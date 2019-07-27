@@ -32,7 +32,6 @@ class IndividualBet extends Component {
           }
 
           return this.props.betInfo.users.map(owner => {
-            
             if (owner.User_Bet.user_id === this.props.currentUser.id) {
               return (
               <div key={this.props.currentUser.id} >

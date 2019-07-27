@@ -33,9 +33,9 @@ class NewBet extends Component {
         let teams = gameInfo[0].name.split(' vs ');
         values.team1 = teams[0];
         values.team2 = teams[1];
-        values.startTime = gameInfo[0].begin_at
-        values.team1url = gameInfo[0].opponents[0].opponent.image_url
-        values.team2url = gameInfo[0].opponents[1].opponent.image_url
+        values.start_time = gameInfo[0].begin_at
+        values.team1logo = gameInfo[0].opponents[0].opponent.image_url
+        values.team2logo = gameInfo[0].opponents[1].opponent.image_url
 
         console.log("is it in", values)
 
