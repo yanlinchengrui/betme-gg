@@ -5,7 +5,7 @@ class StreamAndChat extends Component {
   render() {
     return (
       <div>
-        <Chat currentUser={this.props.currentUser} />
+        <Chat currentUser={this.props.currentUser} game={this.props.match.params.game} />
       </div>
     );
   }

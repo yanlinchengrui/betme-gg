@@ -92,7 +92,7 @@ class App extends Component {
   handleNotificationRead = () => {
     console.log('Update notifications');
     axios.put(`http://localhost:8080/notifications/3/notificationRead`,
-              { withCredentials: true }
+      { withCredentials: true }
     ).then(() => {
       console.log('Notifications were updated');
       this.getUserBetsDetails();
@@ -125,7 +125,7 @@ class App extends Component {
 
             <Route path="/bets/user/:id" render={(props) => { return (<IndividualBetMain {...props} handleNotificationSelection={this.handleNotificationSelection} currentUser={this.state.userInfo} />) }} />
 
-            <Route path="/stream" render={() => <StreamAndChat currentUser={this.state.userInfo} />} />
+            <Route path="/stream/:game" render={(props) => { return <StreamAndChat {...props} currentUser={this.state.userInfo} /> }} />
 
           </Switch>
         </main>

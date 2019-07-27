@@ -31,6 +31,7 @@ class ChatBar extends Component {
       if (!this.state.username) {
         message.username = 'Anonymous';
       }
+      message.game = this.props.game;
       this.props.addMessage(message);
       this.setState({ content: "" });
     }
@@ -41,7 +42,8 @@ class ChatBar extends Component {
       const message = {
         type: 'postNotification',
         content: `${this.state.oldUsername} changed the name to ${this.state.username}`,
-        color: this.props.color
+        color: this.props.color,
+        game: this.props.game,
       };
       this.setState({ oldUsername: this.state.username });
       this.props.addMessage(message);

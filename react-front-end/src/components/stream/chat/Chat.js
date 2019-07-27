@@ -9,14 +9,14 @@ class Chat extends Component {
       currentUser: { name: "Anonymous" }, // optional. if currentUser is not defined, it means the user is Anonymous
       messages: [],
       onlineUsers: '',
-      color: ''
+      color: '',
+      game: this.props.game
     };
     this.ws = new WebSocket('ws://localhost:8080');
     this.addMessage = this.addMessage.bind(this);
   }
 
   componentDidMount() {
-    this.updateCurrentUser();
     this.ws.onopen = (event) => {
       console.log(this.props.currentUser);
       console.log('Connected to server');
@@ -60,11 +60,11 @@ class Chat extends Component {
   render() {
     return (
       <div>
-        <strong className="navbar-onlineUsers" > {this.state.onlineUsers} users online❗️ </strong>
+        {/* <strong className="navbar-onlineUsers" > {this.state.onlineUsers} users online❗️ </strong> */}
 
-        <MessageList messages={this.state.messages} />
+        <MessageList messages={this.state.messages} game={this.state.game} />
 
-        <ChatBar currentUser={this.state.currentUser} addMessage={this.addMessage} color={this.state.color} />
+        <ChatBar currentUser={this.state.currentUser} addMessage={this.addMessage} color={this.state.color} game={this.state.game} />
       </div>
     );
   }

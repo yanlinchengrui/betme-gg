@@ -10,7 +10,9 @@ class MessageList extends Component {
   }
   render() {
     const messages = this.props.messages.map((msg) => {
-      return (<Message key={msg.id} {...msg} />);
+      if (msg.game === this.props.game) {
+        return (<Message key={msg.id} {...msg} />);
+      }
     });
     return (
       <main className="messages">
