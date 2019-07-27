@@ -4,7 +4,6 @@ class ActiveBet extends Component {
 
   displayActiveBets() {
     let notification;
-    console.log(this.props.betStatus)
 
     switch (this.props.betStatus) {
       case "pending":
