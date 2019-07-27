@@ -3,6 +3,7 @@ import { Route, Switch } from "react-router-dom";
 import NavBar from "./components/navbar/NavBar";
 import Dashboard from "./components/dashboard/Dashboard";
 import Login from "./components/Login";
+import IndividualBetMain from "./components/individual-bet/IndividualBetMain"
 import StreamAndChat from "./components/stream/StreamAndChat"
 import axios from "axios";
 
@@ -15,7 +16,7 @@ class App extends Component {
     super(props);
 
     this.state = {
-      userInfo: {},
+      userInfo: { avatar_url: '' },
       userBets: [],
       userBetInformation: [],
       upcomingMatches: []
@@ -25,7 +26,7 @@ class App extends Component {
 
   }
 
-  getUserBetsDetails() {
+  getUserBetsDetails = () => {
     axios
       .get("http://localhost:8080/users/:id", { withCredentials: true })
       .then(allInfo => {
@@ -36,7 +37,6 @@ class App extends Component {
           userInfo: allData,
           userBets: bets
         });
-        console.log("---------", this.state);
       })
       .catch(err => {
         console.log(err);
@@ -93,6 +93,7 @@ class App extends Component {
     this.getUserBetsDetails()
     this.getUpcomingMatches()
     // console.log(this.state)
+
   }
 
   render() {
@@ -103,12 +104,18 @@ class App extends Component {
           handleNotificationSelection={this.handleNotificationSelection}
           refreshComponent={this.getUserBetsDetails}
           upcomingMatches={this.state.upcomingMatches}
+          userInfo={this.state.userInfo}
         />
         <main>
           <Switch>
-            <Route exact path="/" component={() => <Dashboard upcomingMatches={this.state.upcomingMatches} activeBets={this.state.userBets} />} />
-            <Route path="/login" component={Login} />
-            <Route path="/stream" component={() => <StreamAndChat currentUser={this.state.userInfo} />} />
+            <Route exact path="/" component={() => <Dashboard upcomingMatches={this.state.upcomingMatches} activeBets={this.state.userBets} getUserBetsDetails={this.getUserBetsDetails} />} />
+
+            <Route path="/login" render={(props) => { return (<Login {...props} getUserBetsDetails={this.getUserBetsDetails} />) }} />
+
+            <Route path="/bets/user/:id" render={(props) => { return (<IndividualBetMain {...props} handleNotificationSelection={this.handleNotificationSelection} currentUser={this.state.userInfo} />) }} />
+
+            <Route path="/stream" render={() => <StreamAndChat currentUser={this.state.userInfo} />} />
+
           </Switch>
         </main>
       </div>

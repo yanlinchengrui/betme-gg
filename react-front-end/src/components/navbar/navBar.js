@@ -26,7 +26,9 @@ class NavBar extends Component {
                 handleNotificationSelection={this.props.handleNotificationSelection}
               />
             </Menu.Item>
-            <Menu.Item><UserOptions /></Menu.Item>
+            <Menu.Item>
+              <UserOptions userInfo={this.props.userInfo} />
+            </Menu.Item>
           </Menu>
           <div className='navigation__btn'><NewBet upcomingMatches={this.props.upcomingMatches} /></div>
           {console.log(this.props.upcomingMatches)}

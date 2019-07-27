@@ -11,7 +11,7 @@ class Message extends Component {
     const rezContent = images ? wordContent.map((each, i) => {
       for (const image of images) {
         if (image === each) {
-          return <img className="chat-image" src={image} key={this.props.id + i} />;
+          return <img className="chat-image" src={image} alt="img" key={this.props.id + i} />;
         } else {
           return each + ' ';
         }

@@ -16,7 +16,9 @@ class Chat extends Component {
   }
 
   componentDidMount() {
+    this.updateCurrentUser();
     this.ws.onopen = (event) => {
+      console.log(this.props.currentUser);
       console.log('Connected to server');
     };
     this.ws.onmessage = (event) => {
@@ -37,6 +39,13 @@ class Chat extends Component {
   addMessage(message) {
     message.color = this.state.color;
     this.ws.send(JSON.stringify(message));
+  }
+
+  updateCurrentUser() {
+    if (!this.props.currentUser) {
+      return null;
+    }
+    this.setState({ currentUser: { name: this.props.currentUser } });
   }
 
   render() {

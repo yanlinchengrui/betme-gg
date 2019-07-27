@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Drawer, Form, Button, Col, Row, InputNumber, Select } from 'antd';
+import { Drawer, Form, Button, Col, Row, InputNumber } from 'antd';
 import MatchPicker from './MatchPicker'
-import TeamPicker from './TeamPicker'
 import InviteFriends from './InviteFriends'
-
-const { Option } = Select;
 
 class NewBet extends Component {
   state = { visible: false };
@@ -28,12 +25,19 @@ class NewBet extends Component {
       if (!err) {
         // get the right game info based on the match name
         const gameInfo = this.props.upcomingMatches.filter((match) => match.name === values.match);
+       
+       console.log("gaame",gameInfo)
         // filter returns an array, get the first one and save the game type
         values.game = gameInfo[0].videogame.name;
         // split the match to get the team names and save them to values
         let teams = gameInfo[0].name.split(' vs ');
         values.team1 = teams[0];
         values.team2 = teams[1];
+        values.start_time = gameInfo[0].begin_at
+        values.team1logo = gameInfo[0].opponents[0].opponent.image_url
+        values.team2logo = gameInfo[0].opponents[1].opponent.image_url
+
+        console.log("is it in", values)
 
         console.log('Received values of form: ', values);
 
@@ -68,17 +72,6 @@ class NewBet extends Component {
                 <MatchPicker form={this.props.form} upcomingMatches={this.props.upcomingMatches} />
               </Col>
             </Row>
-            {/* END MATCH PICKER */}
-
-            {/* START TEAM PICKER */}
-            {/* <Row type='flex'>
-              <Col span={24}>
-                <TeamPicker form={this.props.form} />
-              </Col>
-            </Row> */}
-            {/* END TEAM PICKER */}
-
-            {/* START STAKES INPUT */}
             <Row type='flex'>
               <Col span={24}>
                 <Form.Item label='Place your bet'>

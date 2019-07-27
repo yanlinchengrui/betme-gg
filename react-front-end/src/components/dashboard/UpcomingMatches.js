@@ -34,14 +34,14 @@ class UpcomingMatches extends Component {
           </header>
           <div className='match__team-logos'>
             <div className='logo-container'>
-              <img src={match.opponents[0].opponent.image_url} style={{ width: '50px', height: '50px' }} />
+              <img src={match.opponents[0].opponent.image_url} alt={match.opponents[0].opponent.name} style={{ width: '50px', height: '50px' }} />
             </div>
             <span className='vs-text'>VS</span>
             <div className='logo-container'>
               {
                 match.opponents[1] ?
-                  <img src={match.opponents[1].opponent.image_url} style={{ width: '50px', height: '50px' }} />
-                  : <img src='https://cdn.pandascore.co/images/team/image/126148/ffamix.png' style={{ width: '50px', height: '50px' }} />
+                  <img src={match.opponents[1].opponent.image_url} alt={match.opponents[1].opponent.name} style={{ width: '50px', height: '50px' }} />
+                  : <img src='https://cdn.pandascore.co/images/team/image/126148/ffamix.png' alt="TBD" style={{ width: '50px', height: '50px' }} />
               }
             </div>
           </div>

@@ -27,11 +27,23 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false
       },
+      start_time: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
       team1: {
         type: Sequelize.STRING,
         allowNull: false
       }, 
       team2: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
+      team1logo: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
+      team2logo: {
         type: Sequelize.STRING,
         allowNull: false
       },

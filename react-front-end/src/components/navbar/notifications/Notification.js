@@ -10,6 +10,7 @@ class Notification extends Component {
       case 'invite':
         notification = (
           <div className='notification notification--invite'>
+            <span>{this.props.date}</span>
             <span className='notification__match'>{this.props.match}: </span>
             <span> {this.props.owner} has invited you to a bet!</span>
             <Icon type='check-circle' style={{ fontSize: '24px', color: '#52c41a', marginLeft: '10px' }} onClick={() => this.props.handleNotificationSelection(this.props.userBetId, true, this.props.type)} />
@@ -21,10 +22,11 @@ class Notification extends Component {
       case 'teamSelect':
         notification = (
           <div className='notification notification--team-select'>
+            <span>{this.props.date}</span>
             <span className='notification__match'>{this.props.match}:</span> 
             <span>Pick your team:</span>
-            <Button className='notification__team-btn' style={{ marginLeft: '10px' }} name='Team 1' onClick={() => this.props.handleNotificationSelection(this.props.userBetId, 'Team1', this.props.type)}>Team 1 </Button>
-            <Button className='notification__team-btn' style={{ marginLeft: '5px' }} name='Team 2' onClick={() => this.props.handleNotificationSelection(this.props.userBetId, 'Team2', this.props.type)}>Team 2 </Button>
+            <Button className='notification__team-btn' style={{ marginLeft: '10px' }} name='Team 1' onClick={() => this.props.handleNotificationSelection(this.props.userBetId, 'Team1', this.props.type)}>{this.props.team1} </Button>
+            <Button className='notification__team-btn' style={{ marginLeft: '5px' }} name='Team 2' onClick={() => this.props.handleNotificationSelection(this.props.userBetId, 'Team2', this.props.type)}>{this.props.team2} </Button>
           </div>
         )
         break;
@@ -32,6 +34,7 @@ class Notification extends Component {
       case 'win':
         notification = (
           <div className='notification notification--winner'>
+            <span>{this.props.date}</span>
             <div> {this.props.match} </div>
             <div> You won! </div>
           </div>
@@ -41,6 +44,7 @@ class Notification extends Component {
       case 'loss':
         notification = (
           <div className='notification notification--loser'>
+            <span>{this.props.date}</span>
             <div> {this.props.match} </div>
             <div> Ha! you lost! </div>
           </div>

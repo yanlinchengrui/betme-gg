@@ -6,7 +6,6 @@ const { Option } = Select;
 class TeamPicker extends Component {
   render() {
     const { getFieldDecorator } = this.props.form;
-    { console.log(this.props.chosenTeam) }
     const teams = this.props.chosenTeam && this.props.chosenTeam.split(" vs ");
     return (
       <Form.Item label='Select your team'>
