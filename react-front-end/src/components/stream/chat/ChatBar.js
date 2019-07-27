@@ -48,10 +48,20 @@ class ChatBar extends Component {
     }
   }
 
+  componentDidUpdate(prevProps) {
+    // Typical usage (don't forget to compare props):
+    if (JSON.stringify(this.props.currentUser) !== JSON.stringify(prevProps.currentUser)) {
+      this.setState({
+        username: this.props.currentUser.name,
+        oldUsername: this.props.currentUser.name
+      });
+    }
+  }
+
   render() {
     return (
       <footer className="chatbar" onKeyPress={this.handleEnter}>
-        <input className="chatbar-username" placeholder="Your Name (Optional)" value={this.state.username} onChange={this.onUsername} onBlur={this.notOnUsername} maxLength="20" />
+        <input className="chatbar-username" placeholder="Your Name (Optional)" value={this.state.username || ''} onChange={this.onUsername} onBlur={this.notOnUsername} maxLength="20" />
         <input autoFocus className="chatbar-message" placeholder="Type a message or image url and hit ENTER" value={this.state.content} onChange={this.onContent} maxLength="300" />
       </footer>
     );

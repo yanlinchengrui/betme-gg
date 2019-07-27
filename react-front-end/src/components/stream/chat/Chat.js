@@ -45,13 +45,22 @@ class Chat extends Component {
     if (!this.props.currentUser) {
       return null;
     }
-    this.setState({ currentUser: { name: this.props.currentUser } });
+    this.setState({ currentUser: { name: this.props.currentUser.user_name } });
+  }
+
+  componentDidUpdate(prevProps) {
+    // Typical usage (don't forget to compare props):
+    if (JSON.stringify(this.props.currentUser) !== JSON.stringify(prevProps.currentUser)) {
+      this.setState({ currentUser: { name: this.props.currentUser.user_name } }, () => {
+        console.log(this.state.currentUser);
+      });
+    }
   }
 
   render() {
     return (
       <div>
-        {this.state.onlineUsers && <strong className="navbar-onlineUsers" > {this.state.onlineUsers} users online❗️ </strong>}
+        <strong className="navbar-onlineUsers" > {this.state.onlineUsers} users online❗️ </strong>
 
         <MessageList messages={this.state.messages} />
 
