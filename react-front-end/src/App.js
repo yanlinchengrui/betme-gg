@@ -3,6 +3,7 @@ import { Route, Switch } from "react-router-dom";
 import NavBar from "./components/navbar/NavBar";
 import Dashboard from "./components/dashboard/Dashboard";
 import Login from "./components/Login";
+import IndividualBetMain from "./components/individual-bet/IndividualBetMain"
 import axios from "axios";
 
 import "./App.css";
@@ -94,6 +95,7 @@ class App extends Component {
     this.getUserBetsDetails()
     this.getUpcomingMatches()
     // console.log(this.state)
+
   }
 
   render() {
@@ -108,8 +110,12 @@ class App extends Component {
         />
         <main>
           <Switch>
-            <Route exact path="/" component={() => <Dashboard upcomingMatches={this.state.upcomingMatches} activeBets={this.state.userBets} />} />
+            <Route exact path="/" component={() => <Dashboard upcomingMatches={this.state.upcomingMatches} activeBets={this.state.userBets} getUserBetsDetails={this.getUserBetsDetails} />} />
+
             <Route path="/login" render={(props) => { return (<Login {...props} getUserBetsDetails={this.getUserBetsDetails} />)}} />
+
+            <Route path="/bets/user/:id" render={(props) => { return ( <IndividualBetMain {...props} handleNotificationSelection={this.handleNotificationSelection} currentUser={this.state.userInfo} />)}} />
+
           </Switch>
         </main>
       </div>

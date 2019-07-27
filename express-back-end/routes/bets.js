@@ -71,7 +71,7 @@ router.post("/:id", (req, res) => {
     });
 });
 
-router.get('/:id/users', (req, res) => {
+router.get('/user/:id', (req, res) => {
   Bet.findOne({ where: { id: req.params.id }, include: [{ model: User, as: 'users' }] }).then(
     (rez) => {
       res.send(rez);
