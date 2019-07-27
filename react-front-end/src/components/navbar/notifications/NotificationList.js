@@ -42,6 +42,9 @@ class NotificationList extends Component {
         match={bet.match}
         owner={bet.owner}
         type={bet.User_Bet.notificationType}
+        team1={bet.team1}
+        team2={bet.team2}
+        date={bet.User_Bet.updatedAt}
         handleNotificationSelection={this.props.handleNotificationSelection}
       />;
     });

@@ -24,7 +24,7 @@ class UserOptions extends Component {
   render() {
     const content = (
       <div>
-        <Link to={'./login'}>
+        <Link to={'/login'}>
           Login
         </Link>
       </div>

@@ -15,6 +15,9 @@ router.post("/", (req, res) => {
     team1: req.body.team1,
     team2: req.body.team2,
     game: req.body.game,
+    team1logo: req.body.team1logo,
+    team2logo: req.body.team2logo,
+    start_time: req.body.start_time
   };
 
   // session userId
@@ -71,7 +74,7 @@ router.post("/:id", (req, res) => {
     });
 });
 
-router.get('/:id/users', (req, res) => {
+router.get('/user/:id', (req, res) => {
   Bet.findOne({ where: { id: req.params.id }, include: [{ model: User, as: 'users' }] }).then(
     (rez) => {
       res.send(rez);

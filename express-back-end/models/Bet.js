@@ -20,11 +20,23 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false
     },
+    start_time: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
     team1: {
       type: DataTypes.STRING,
       allowNull: false
     },
     team2: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    team1logo: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    team2logo: {
       type: DataTypes.STRING,
       allowNull: false
     },
