@@ -25,11 +25,9 @@ class App extends Component {
   }
 
   getUserBetsDetails = () => {
-    console.log('did this work???');
     axios
       .get("http://localhost:8080/users/:id", { withCredentials: true })
       .then(allInfo => {
-        console.log('test this shit out', allInfo);
         let allData = allInfo.data;
         const bets = allData.bets;
         delete allData["bets"];
@@ -39,7 +37,6 @@ class App extends Component {
         });
       })
       .catch(err => {
-        console.log("why")
         console.log(err);
       });
   }
@@ -88,7 +85,17 @@ class App extends Component {
       default:
         break;
     }
-  };
+  }
+
+  handleNotificationRead = () => {
+    console.log('Update notifications');
+    axios.put(`http://localhost:8080/notifications/3/notificationRead`,
+              { withCredentials: true }
+    ).then(() => {
+      console.log('Notifications were updated');
+      this.getUserBetsDetails();
+    });
+  }
 
   componentDidMount() {
     this.getUserBetsDetails()
@@ -101,6 +108,7 @@ class App extends Component {
       <div>
         <NavBar
           userBets={this.state.userBets}
+          handleNotificationRead={this.handleNotificationRead}
           handleNotificationSelection={this.handleNotificationSelection}
           refreshComponent={this.getUserBetsDetails}
           upcomingMatches={this.state.upcomingMatches}
