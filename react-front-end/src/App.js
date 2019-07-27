@@ -87,7 +87,17 @@ class App extends Component {
       default:
         break;
     }
-  };
+  }
+
+  handleNotificationRead = () => {
+    console.log('Update notifications');
+    axios.put(`http://localhost:8080/notifications/3/notificationRead`,
+              { withCredentials: true }
+    ).then(() => {
+      console.log('Notifications were updated');
+      this.getUserBetsDetails();
+    });
+  }
 
   componentDidMount() {
     this.getUserBetsDetails()
@@ -101,6 +111,7 @@ class App extends Component {
       <div>
         <NavBar
           userBets={this.state.userBets}
+          handleNotificationRead={this.handleNotificationRead}
           handleNotificationSelection={this.handleNotificationSelection}
           refreshComponent={this.getUserBetsDetails}
           upcomingMatches={this.state.upcomingMatches}

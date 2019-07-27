@@ -46,4 +46,15 @@ router.put("/:id/teamSelect", (req, res) => {
   });
 });
 
+router.put("/:id/notificationRead", (req, res) => {
+  UserBet.update(
+    {
+      notificationRead: true
+    },
+    { where: { id: req.params.id } }
+  ).then(() => {
+    res.status(200).json({ message: 'modified' });
+  });
+});
+
 module.exports = router;
