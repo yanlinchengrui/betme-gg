@@ -3,6 +3,7 @@ import { Route, Switch } from "react-router-dom";
 import NavBar from "./components/navbar/NavBar";
 import Dashboard from "./components/dashboard/Dashboard";
 import Login from "./components/Login";
+import StreamAndChat from "./components/stream/StreamAndChat"
 import axios from "axios";
 
 import "./App.css";
@@ -107,6 +108,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={() => <Dashboard upcomingMatches={this.state.upcomingMatches} activeBets={this.state.userBets} />} />
             <Route path="/login" component={Login} />
+            <Route path="/stream" component={() => <StreamAndChat currentUser={this.state.userInfo} />} />
           </Switch>
         </main>
       </div>
