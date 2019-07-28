@@ -52,7 +52,7 @@ class IndividualBet extends Component {
           <div className='individual__match'>
             <div className='team team--1'>
               <div className='team__name'>
-                <h2>{this.props.betInfo.team1}</h2>
+                <h2>{this.props.betInfo.team1FullName}</h2>
               </div>
               <div className='team__logo'>
                 <img src={this.props.betInfo.team1logo} />
@@ -60,7 +60,7 @@ class IndividualBet extends Component {
             </div>
             <div className='team team--2'>
               <div className='team__name'>
-                <h2>{this.props.betInfo.team2}</h2>
+                <h2>{this.props.betInfo.team2FullName}</h2>
               </div>
               <div className='team__logo'>
                 <img src={this.props.betInfo.team2logo} />
@@ -73,7 +73,6 @@ class IndividualBet extends Component {
             </div>
             <div className='date'>
               {moment(this.props.betInfo.start_time).tz('America/Vancouver').format('MMMM DD, YYYY - HH:mm')}
-              {}
             </div>
             <div className='participants'>
               Participants: {this.props.betInfo.participants}

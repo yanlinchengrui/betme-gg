@@ -32,6 +32,14 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false
     },
+    team1FullName: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    team2FullName: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
     team1logo: {
       type: DataTypes.STRING,
       allowNull: false

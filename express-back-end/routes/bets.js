@@ -14,6 +14,8 @@ router.post("/", (req, res) => {
     bet_status: 'pending',
     team1: req.body.team1,
     team2: req.body.team2,
+    team1FullName: req.body.team1FullName,
+    team2FullName: req.body.team2FullName,
     game: req.body.game,
     team1logo: req.body.team1logo,
     team2logo: req.body.team2logo,
