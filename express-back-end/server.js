@@ -59,6 +59,10 @@ App.use('/login', require('./routes/login'))
 //notification routes
 App.use('/notifications', require('./routes/notifications'))
 
+// profile routes
+App.use('/profile', require('./routes/profile'))
+
+
 httpServer.listen(PORT, '0.0.0.0', 'localhost', () => {
   // eslint-disable-next-line no-console
   console.log(`Express seems to be listening on port ${PORT} so that's pretty good 👍`);
