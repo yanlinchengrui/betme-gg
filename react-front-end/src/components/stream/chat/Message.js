@@ -23,7 +23,7 @@ class Message extends Component {
     );
     const msg = (
       <div className="message">
-        <span className="message-username" style={color}>{this.props.username}</span>
+        <span className="message-username" style={color}>{this.props.username}: </span>
         <span className="message-content">{rezContent}</span>
       </div>
     );

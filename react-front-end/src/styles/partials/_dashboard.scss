@@ -104,5 +104,78 @@
   &__bets {
     flex-grow: 1;
     margin-left: 100px;
+
+    .bets {
+      .bet {
+        background-color: $darkest;
+        -webkit-border-radius: 20px;
+        border-radius: 20px;
+        margin-bottom: 20px;
+        -webkit-box-shadow: 0 5px 15px 0 rgba(0,0,0,0.15);
+        box-shadow: 0 5px 15px 0 rgba(0,0,0,0.15);
+
+        &__match {
+          padding: 20px;
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+
+          &-logo {
+            margin-right: 20px;
+          }
+
+          &-name {
+            h4 {
+              font-size: 18px;
+              font-weight: 700;
+              color: #7f7d87;
+              margin-bottom: 0;
+            }
+          }
+
+          &-view {
+            margin-left: auto;
+            .ant-btn {
+              @extend %btn-styles;
+              border-color: $primary-color;
+              background-color: $primary-color;
+              color: #fff;
+
+              &:hover {
+                background-color: lighten($primary-color, 10%);
+                border-color: lighten($primary-color, 10%);
+              }
+            }
+          }
+        }
+
+        footer {
+          display: flex;
+          padding: 5px 20px;
+          -webkit-border-radius: 0 0 20px 20px;
+          border-radius: 0 0 20px 20px;
+
+          & .bet__info {
+            margin-right: 40px;
+
+            p {
+              margin-bottom: 0;
+              font-size: 10px;
+              font-weight: 700;
+
+              .capitalize {
+                text-transform: capitalize;
+              }
+            }
+          }
+        }
+
+        &--pending {
+          footer {
+            background-color: #7f7d87;
+          }
+        }
+      }
+    }
   }
 }

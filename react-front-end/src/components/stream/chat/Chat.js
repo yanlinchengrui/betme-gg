@@ -59,7 +59,7 @@ class Chat extends Component {
 
   render() {
     return (
-      <div>
+      <div className='chat'>
         {/* <strong className="navbar-onlineUsers" > {this.state.onlineUsers} users online❗️ </strong> */}
 
         <MessageList messages={this.state.messages} game={this.state.game} />

@@ -22,7 +22,7 @@ class UpcomingMatches extends Component {
           <header>
             <div className='match__date'>
               <Icon type='calendar' theme='outlined' />
-              <span className='text'>{moment(match.begin_at).tz('America/Vancouver').format('DD-MMM-YYYY')}</span>
+              <span className='text'>{moment(match.begin_at).tz('America/Vancouver').format('DD MMM YYYY')}</span>
             </div>
             <div className='match__game'>
               <img src={this.gameLogo[match.videogame.name]} alt={match.videogame.name} style={{ width: '25px', height: '25px' }} />
@@ -50,7 +50,7 @@ class UpcomingMatches extends Component {
               {match.opponents[0].opponent.name}
             </div>
             <div className='match__team-name'>
-              {match.opponents[1].opponent.name}
+              {match.opponents.length > 1 ? match.opponents[1].opponent.name : "TBD"}
             </div>
           </footer>
         </div>

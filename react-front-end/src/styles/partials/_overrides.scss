@@ -29,3 +29,10 @@ body {
     }
   }
 }
+
+.ant-badge-count, .ant-badge-dot, .ant-badge .ant-scroll-number-custom-component {
+  width: 8px !important;
+  height: 8px !important;
+  -webkit-box-shadow: 0 0 10px 0 rgba(245,34,45,0.9) !important;
+  box-shadow: 0 0 10px 0 rgba(245,34,45,0.9) !important;
+}

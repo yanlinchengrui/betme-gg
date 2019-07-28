@@ -23,6 +23,10 @@ class NotificationList extends Component {
   };
 
   checkNotifications = () => {
+    if (!this.props.userBets) {
+      return null;
+    }
+
     const dot = this.props.userBets.some((bet) => {
       return bet.User_Bet.notificationRead === false;
     });
@@ -49,8 +53,10 @@ class NotificationList extends Component {
       />;
     });
 
+    const userBetIds = this.props.userBets.map((bet) => bet.User_Bet.id);
+
     return (
-      <Popover content={<div>{notification}</div>} trigger='click' onClick={() => this.props.handleNotificationRead()}>
+      <Popover content={<div>{notification}</div>} trigger='click' onClick={() => this.props.handleNotificationRead(userBetIds)}>
         <Badge dot={this.state.dot}>
           <Icon type='bell' theme='filled' style={{ fontSize: '24px' }} />
         </Badge>

@@ -10,6 +10,7 @@ import axios from "axios";
 import "./App.css";
 import "./styles/styles.css";
 import "antd/dist/antd.css";
+import { promises } from "dns";
 
 class App extends Component {
   constructor(props) {
@@ -89,11 +90,13 @@ class App extends Component {
     }
   }
 
-  handleNotificationRead = () => {
+  handleNotificationRead = (ids) => {
     console.log('Update notifications');
-    axios.put(`http://localhost:8080/notifications/3/notificationRead`,
-      { withCredentials: true }
-    ).then(() => {
+    Promise.all(ids.map((id) => {
+      return axios.put(`http://localhost:8080/notifications/${id}/notificationRead`,
+        { withCredentials: true }
+      )
+    })).then(() => {
       console.log('Notifications were updated');
       this.getUserBetsDetails();
     });

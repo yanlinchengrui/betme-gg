@@ -15,10 +15,10 @@ class MessageList extends Component {
       }
     });
     return (
-      <main className="messages">
+      <div className="chat__messages">
         {messages}
         <div ref={(el) => { this.messagesEnd = el; }}></div>
-      </main>
+      </div>
     );
   }
 }

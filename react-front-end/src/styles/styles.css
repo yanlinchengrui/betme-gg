@@ -1,4 +1,4 @@
-.ant-drawer .new-bet__actions .ant-btn-primary, .header .navigation__btn .ant-btn, .notifications .notification__team-btn {
+.ant-drawer .new-bet__actions .ant-btn-primary, .header .navigation__btn .ant-btn, .notifications .notification__content-text .actions .team-btn, .dashboard__bets .bets .bet__match-view .ant-btn {
   border-radius: 100px;
   padding: 0 25px;
   border-width: 2px; }
@@ -22,6 +22,12 @@ body {
 
 .ant-menu-item .anticon, .ant-menu-submenu-title .anticon {
   margin-right: 0 !important; }
+
+.ant-badge-count, .ant-badge-dot, .ant-badge .ant-scroll-number-custom-component {
+  width: 8px !important;
+  height: 8px !important;
+  -webkit-box-shadow: 0 0 10px 0 rgba(245, 34, 45, 0.9) !important;
+  box-shadow: 0 0 10px 0 rgba(245, 34, 45, 0.9) !important; }
 
 .container {
   margin: 0 auto;
@@ -64,19 +70,45 @@ body {
     text-shadow: 0 1px 10px #010fce; }
 
 .notifications .notification {
-  border-top: 2px solid rgba(0, 0, 0, 0.1);
-  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
-  padding: 5px;
-  font-size: 12px;
-  display: flex;
-  align-items: center; }
-  .notifications .notification__match {
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 4px;
+  margin-bottom: 15px; }
+  .notifications .notification--invite {
+    border-color: #d9d9d9;
+    background-color: rgba(217, 217, 217, 0.1); }
+  .notifications .notification--teamselect {
+    border-color: #40a9ff;
+    background-color: rgba(64, 169, 255, 0.1); }
+  .notifications .notification--weiner {
+    border-color: #52c41a;
+    background-color: rgba(82, 196, 26, 0.1); }
+  .notifications .notification--loser {
+    border-color: #ff4d4f;
+    background-color: rgba(255, 77, 79, 0.1); }
+  .notifications .notification__content {
+    font-size: 12px;
+    padding: 6px 12px; }
+    .notifications .notification__content-text {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      margin-bottom: 5px; }
+      .notifications .notification__content-text p {
+        margin-bottom: 0; }
+        .notifications .notification__content-text p .match {
+          font-weight: 700;
+          border-bottom: 2px dotted rgba(0, 0, 0, 0.65); }
+      .notifications .notification__content-text .actions {
+        margin-left: auto; }
+        .notifications .notification__content-text .actions .team-btn {
+          padding: 0 12.5px;
+          font-size: 10px;
+          min-width: 50px; }
+  .notifications .notification footer {
+    font-size: 8px;
     font-weight: 700;
-    margin-right: 5px;
-    color: #3745fe; }
-  .notifications .notification__team-btn {
-    padding: 0 12.5px;
-    font-size: 12px; }
+    color: rgba(0, 0, 0, 0.25); }
 
 .new-bet__actions {
   position: absolute;
@@ -173,5 +205,102 @@ main {
   .dashboard__bets {
     flex-grow: 1;
     margin-left: 100px; }
+    .dashboard__bets .bets .bet {
+      background-color: #0f0f0f;
+      -webkit-border-radius: 20px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+      -webkit-box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
+      box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15); }
+      .dashboard__bets .bets .bet__match {
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start; }
+        .dashboard__bets .bets .bet__match-logo {
+          margin-right: 20px; }
+        .dashboard__bets .bets .bet__match-name h4 {
+          font-size: 18px;
+          font-weight: 700;
+          color: #7f7d87;
+          margin-bottom: 0; }
+        .dashboard__bets .bets .bet__match-view {
+          margin-left: auto; }
+          .dashboard__bets .bets .bet__match-view .ant-btn {
+            border-color: #3745fe;
+            background-color: #3745fe;
+            color: #fff; }
+            .dashboard__bets .bets .bet__match-view .ant-btn:hover {
+              background-color: #6a74fe;
+              border-color: #6a74fe; }
+      .dashboard__bets .bets .bet footer {
+        display: flex;
+        padding: 5px 20px;
+        -webkit-border-radius: 0 0 20px 20px;
+        border-radius: 0 0 20px 20px; }
+        .dashboard__bets .bets .bet footer .bet__info {
+          margin-right: 40px; }
+          .dashboard__bets .bets .bet footer .bet__info p {
+            margin-bottom: 0;
+            font-size: 10px;
+            font-weight: 700; }
+            .dashboard__bets .bets .bet footer .bet__info p .capitalize {
+              text-transform: capitalize; }
+      .dashboard__bets .bets .bet--pending footer {
+        background-color: #7f7d87; }
+
+.stream {
+  background-color: #0f0f0f;
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+  -webkit-box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15); }
+  .stream__window {
+    position: relative;
+    padding-bottom: 37.5%;
+    padding-top: 25px;
+    height: 0;
+    flex-grow: 1; }
+    .stream__window iframe {
+      -webkit-border-radius: 20px 0 0 20px;
+      border-radius: 20px 0 0 20px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%; }
+  .stream__chat {
+    width: 300px;
+    height: 100%; }
+    .stream__chat .chat {
+      position: relative;
+      height: 100%; }
+      .stream__chat .chat__messages {
+        padding: 20px; }
+      .stream__chat .chat__chatbar {
+        position: absolute;
+        bottom: 0;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        background-color: #3745fe;
+        padding: 20px;
+        -webkit-border-radius: 20px;
+        border-radius: 0 0 20px 0; }
+        .stream__chat .chat__chatbar .chatbar__username, .stream__chat .chat__chatbar .chatbar__message {
+          background-color: transparent;
+          border-top: none;
+          border-left: none;
+          border-right: none;
+          border-bottom: 2px solid rgba(255, 255, 255, 0.15) !important;
+          outline: none; }
+          .stream__chat .chat__chatbar .chatbar__username::placeholder, .stream__chat .chat__chatbar .chatbar__message::placeholder {
+            color: #fff;
+            opacity: 0.5; }
+        .stream__chat .chat__chatbar .chatbar__message {
+          margin-top: 10px; }
 
 /*# sourceMappingURL=styles.css.map */

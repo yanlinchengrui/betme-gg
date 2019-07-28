@@ -1,0 +1,74 @@
+.stream {
+  background-color: $darkest;
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+  -webkit-box-shadow: 0 5px 15px 0 rgba(0,0,0,0.15);
+  box-shadow: 0 5px 15px 0 rgba(0,0,0,0.15);
+
+  &__window {
+    position: relative;
+    padding-bottom: 37.5%;
+    padding-top: 25px;
+    height: 0;
+    flex-grow: 1;
+
+    iframe {
+      -webkit-border-radius: 20px 0 0 20px;
+      border-radius: 20px 0 0 20px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__chat {
+    width: 300px;
+    height: 100%;
+
+    & .chat {
+      position: relative;
+      height: 100%;
+
+      &__messages {
+        padding: 20px;
+      }
+
+      &__chatbar {
+        position: absolute;
+        bottom: 0;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        background-color: $primary-color;
+        padding: 20px;
+        -webkit-border-radius: 20px;
+        border-radius: 0 0 20px 0;
+
+        .chatbar__username, .chatbar__message {
+          background-color: transparent;
+          border: {
+            top: none;
+            left: none;
+            right: none;
+            bottom: 2px solid rgba(255,255,255,0.15) !important;
+          }
+          outline: none;
+
+          &::placeholder {
+            color: #fff;
+            opacity: 0.5;
+          }
+        }
+
+        .chatbar__message {
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+}
