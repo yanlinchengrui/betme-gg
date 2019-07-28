@@ -43,8 +43,7 @@ img.bg {
 .header {
   width: 100%;
   display: flex;
-  align-items: center;
-  margin-bottom: 40px; }
+  align-items: center; }
   .header .container {
     display: flex;
     justify-content: flex-end;
@@ -60,7 +59,9 @@ img.bg {
         border: 2px solid rgba(255, 255, 255, 0.2); }
         .header .navigation__btn .ant-btn-primary:hover {
           background-color: #3745fe;
-          border-color: #3745fe; }
+          border-color: #3745fe;
+          -webkit-box-shadow: 0 0 20px 0 rgba(55, 69, 254, 0.5);
+          box-shadow: 0 0 20px 0 rgba(55, 69, 254, 0.5); }
 
 .logo {
   margin-right: auto; }
@@ -71,10 +72,10 @@ img.bg {
     font-size: 36px; }
     .logo a:hover {
       color: #3745fe;
-      text-shadow: 0 1px 10px #010fce; }
+      text-shadow: 0 0 20px rgba(55, 69, 254, 0.5); }
   .logo--accent {
     color: #3745fe;
-    text-shadow: 0 1px 10px #010fce; }
+    text-shadow: 0 0 20px rgba(55, 69, 254, 0.5); }
 
 .notifications .notification {
   border-width: 1px;
@@ -137,7 +138,8 @@ main {
 
 .dashboard {
   display: flex;
-  align-items: flex-start; }
+  align-items: flex-start;
+  margin-top: 40px; }
   .dashboard h2 {
     color: #fff;
     border-bottom: 2px solid #fff;
@@ -255,6 +257,116 @@ main {
               text-transform: capitalize; }
       .dashboard__bets .bets .bet--pending footer {
         background-color: #7f7d87; }
+      .dashboard__bets .bets .bet--active footer {
+        background-color: #52c41a; }
+
+.bet {
+  background-color: #0f0f0f;
+  -webkit-box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
+  -webkit-border-radius: 20px 20px 20px 20px;
+  border-radius: 20px 20px 20px 20px; }
+  .bet .individual {
+    margin-top: 40px; }
+    .bet .individual__match {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center; }
+      .bet .individual__match .team {
+        width: 50%;
+        display: flex;
+        align-items: center;
+        padding: 100px 0 60px; }
+        .bet .individual__match .team--1 {
+          background-color: #1890ff;
+          background-image: url("../images/t1.png");
+          background-size: cover;
+          background-position: center;
+          justify-content: flex-end;
+          padding-right: 110px;
+          -webkit-border-radius: 20px 0 0 0;
+          border-radius: 20px 0 0 0; }
+          .bet .individual__match .team--1 .team__name {
+            margin-right: 40px; }
+        .bet .individual__match .team--2 {
+          background-color: #ff4d4f;
+          background-image: url("../images/t2.png");
+          background-size: cover;
+          background-position: center;
+          justify-content: flex-start;
+          padding-left: 110px;
+          -webkit-border-radius: 0 20px 0 0;
+          border-radius: 0 20px 0 0; }
+          .bet .individual__match .team--2 .team__name {
+            order: 2;
+            margin-left: 40px; }
+          .bet .individual__match .team--2 .team__logo {
+            order: 1; }
+        .bet .individual__match .team__name h2 {
+          font-size: 36px;
+          font-weight: 700;
+          color: #fff;
+          margin-bottom: 0;
+          text-shadow: 0 5px 9px rgba(0, 0, 0, 0.35); }
+        .bet .individual__match .team__logo {
+          width: 120px;
+          height: 120px;
+          border-radius: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: #fff;
+          -webkit-box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.25);
+          box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.25); }
+          .bet .individual__match .team__logo img {
+            width: 85%;
+            height: 85%; }
+    .bet .individual__info {
+      display: flex;
+      justify-content: space-evenly;
+      background-color: #3745fe;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 6px 0;
+      -webkit-box-shadow: 0 0 20px 0 rgba(55, 69, 254, 0.5);
+      box-shadow: 0 0 20px 0 rgba(55, 69, 254, 0.5); }
+      .bet .individual__info .pot, .bet .individual__info .date, .bet .individual__info .participants {
+        width: 200px;
+        text-align: center; }
+    .bet .individual__pick {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      margin: 20px 0; }
+      .bet .individual__pick h2 {
+        color: #fff;
+        border-bottom: 2px solid #fff;
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 20px; }
+      .bet .individual__pick-btns .team-pick .t1-btn, .bet .individual__pick-btns .team-pick .t2-btn {
+        font-size: 30px;
+        min-width: 150px;
+        font-weight: 700;
+        height: auto;
+        border-radius: 100px;
+        border-width: 2px; }
+      .bet .individual__pick-btns .team-pick .t1-btn {
+        background-color: transparent;
+        border-color: #1890ff;
+        color: #1890ff;
+        margin-right: 40px; }
+        .bet .individual__pick-btns .team-pick .t1-btn:hover {
+          background-color: #1890ff;
+          color: #fff; }
+      .bet .individual__pick-btns .team-pick .t2-btn {
+        background-color: transparent;
+        border-color: #ff4d4f;
+        color: #ff4d4f; }
+        .bet .individual__pick-btns .team-pick .t2-btn:hover {
+          background-color: #ff4d4f;
+          color: #fff; }
 
 .stream {
   background-color: #0f0f0f;

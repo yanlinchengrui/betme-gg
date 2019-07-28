@@ -29,6 +29,7 @@ class UserOptions extends Component {
         </Link>
       </div>
     );
+
     return (
       <Popover
         content={
@@ -38,7 +39,7 @@ class UserOptions extends Component {
         }
         trigger='click'
       >
-        <Avatar src={this.props.userInfo.avatar_url} />
+        <Avatar shape='square' src={this.props.userInfo.avatar_url} />
       </Popover>
     );
   }
