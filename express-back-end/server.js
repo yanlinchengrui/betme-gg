@@ -92,6 +92,7 @@ checkWinnerAndUpdateWinStatus = () => {
           // update bet status
           Bet.findOne({
             where: {
+              id: bet.dataValues.id,
               matchId: bet.dataValues.matchId
             }
           }).then((thisBet) => {
