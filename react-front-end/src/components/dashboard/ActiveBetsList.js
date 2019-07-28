@@ -13,6 +13,7 @@ class ActiveBetList extends Component {
           owner={activeBet.owner}
           betStatus={activeBet.bet_status}
           game={activeBet.game}
+          participants={activeBet.participants}
 
         />
       );

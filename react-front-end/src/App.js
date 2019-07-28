@@ -38,6 +38,7 @@ class App extends Component {
           userInfo: allData,
           userBets: bets
         });
+        console.log(this.state.userBets)
       })
       .catch(err => {
         console.log(err);

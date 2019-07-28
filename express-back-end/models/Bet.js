@@ -40,6 +40,10 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false
     },
+    participants: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    }
   }, {});
   Bet.associate = function (models) {
     Bet.belongsToMany(models.User, {

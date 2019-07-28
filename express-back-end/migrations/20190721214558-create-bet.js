@@ -47,6 +47,10 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false
       },
+      participants: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
