@@ -39,6 +39,14 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false
       },
+      team1FullName: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
+      team2FullName: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
       team1logo: {
         type: Sequelize.STRING,
         allowNull: false

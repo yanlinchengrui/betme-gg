@@ -9,7 +9,8 @@ class BetHistoryList extends Component {
       return (
         <HistoricalBet
           key={historicalBet.id}
-          match={historicalBet.match}
+          team1={historicalBet.team1FullName}
+          team2={historicalBet.team2FullName}
           stakes={historicalBet.stakes}
           owner={historicalBet.owner}
           betStatus={historicalBet.bet_status}

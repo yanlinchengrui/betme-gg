@@ -25,8 +25,14 @@ class HistoricalBet extends Component {
               <div className='bet__match-logo'>
                 <img src={this.gameLogo[this.props.game]} alt={this.props.game} style={{ width: '40px', height: '40px' }} />
               </div>
-              <div className='bet__match-name'>
+              {/* <div className='bet__match-name'>
                 <h4>{this.props.match}</h4>
+              </div> */}
+              <div>
+                {this.props.team1}
+              </div>
+              <div>
+                {this.props.team2}
               </div>
               <div className='bet__match-view'>
                 <Button>View Bet</Button>
