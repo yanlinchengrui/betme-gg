@@ -54,6 +54,8 @@ class IndividualBet extends Component {
           <div>{this.props.betInfo.start_time}</div>
           <div>{this.props.betInfo.team1logo}</div>
           <div>{this.props.betInfo.team2logo}</div>
+          <div> { this.props.betInfo.participants }</div>
+          <div> ${ this.props.betInfo.participants * this.props.betInfo.stakes } </div>
           {<div>{getParticipantInformation()}</div>}
           {renderTeamSelection()}
      
