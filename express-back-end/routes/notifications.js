@@ -2,7 +2,8 @@ const express = require("express");
 const router = express.Router();
 const db = require("../models");
 const UserBet = db.User_Bet;
-const sequelize = require('sequelize');
+const Bet = db.Bet;
+
 
 
 // get all unread notifications
@@ -25,6 +26,8 @@ const sequelize = require('sequelize');
 // });
 
 router.put("/:id/termStatus", (req, res) => {
+  let betid;
+
   UserBet.update(
     {
       termStatus: req.body.termStatus,
@@ -38,13 +41,16 @@ router.put("/:id/termStatus", (req, res) => {
     })
 
     .then((result) => {
-      console.log("-------r-r-----",result)
+      betid = result.bet_id
       return UserBet.findAndCountAll({
-          where: { bet_id: result.bet_id, termStatus:true}
+          where: { bet_id: betid, termStatus:true}
       })
     })
     .then((result) => {
-      console.log(result)
+      Bet.update(
+        { participants: result.count },
+        { where: {id: betid}}
+      )
     })
     
     .then(() => {
