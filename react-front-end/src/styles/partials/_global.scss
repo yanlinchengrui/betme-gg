@@ -2,3 +2,12 @@
   margin: 0 auto;
   width: 1024px;
 }
+
+img.bg {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}

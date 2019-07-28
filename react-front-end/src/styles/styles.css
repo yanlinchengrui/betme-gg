@@ -7,7 +7,6 @@ body {
   font-family: 'Lato', sans-serif !important;
   color: #fff !important;
   background-color: #191b22 !important;
-  background-image: url("../images/bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center top; }
@@ -32,6 +31,14 @@ body {
 .container {
   margin: 0 auto;
   width: 1024px; }
+
+img.bg {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1; }
 
 .header {
   width: 100%;
