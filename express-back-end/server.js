@@ -14,6 +14,7 @@ const axios = require('axios');
 require('dotenv').config()
 const models = require('./models');
 const Bet = models.Bet;
+const UserBet = models.User_Bet;
 
 const cookieSession = require('cookie-session')
 App.use(cookieSession({
@@ -59,27 +60,74 @@ App.use('/login', require('./routes/login'))
 //notification routes
 App.use('/notifications', require('./routes/notifications'))
 
+// profile routes
+App.use('/profile', require('./routes/profile'))
+
+
 httpServer.listen(PORT, '0.0.0.0', 'localhost', () => {
   // eslint-disable-next-line no-console
   console.log(`Express seems to be listening on port ${PORT} so that's pretty good 👍`);
 });
 
-checkWinner = (matchId) => {
-  axios.get(`https://api.pandascore.co/matches/${matchId}?token=${process.env.TOKEN}`)
-    .then((rez) => {
-      console.log(rez.data);
-      if (rez.data.winner) {
-        // todo
-      }
-      // Bet.findAll({
-      //   where: { matchId: matchId },
-      //   include: [{ model: models.User_bet, attributes: [] }]
-      // }).then((rez) => {
-      //   console.log(rez);
-      // })
-      return rez.data;
+checkWinnerAndUpdateWinStatus = () => {
+
+  checkWinner = async (matchId) => {
+    return await axios.get(`https://api.pandascore.co/matches/${matchId}?token=${process.env.TOKEN}`);
+  }
+
+  Bet.findAll({
+    where: { bet_status: 'active' },
+    attributes: ['id', 'matchId'],
+  }).then((bets) => {
+    bets.forEach((bet) => {
+      checkWinner(bet.dataValues.matchId).then((rez) => {
+        // console.log(rez.data.winner);
+        if (rez.data.winner) {
+
+          // decide if team1 or team2 is winner
+          const teamz = rez.data.name.split(' vs ');
+          const winner = teamz[0] === rez.data.winner.acronym ? 'Team1' : 'Team2';
+          console.log(`${rez.data.name}: Winner is ${rez.data.winner.acronym} => ${winner}`);
+
+          // update bet status
+          Bet.findOne({
+            where: {
+              matchId: bet.dataValues.matchId
+            }
+          }).then((thisBet) => {
+            thisBet.update({ bet_status: 'completed' });
+          }).catch((err) => {
+            console.log(err);
+          })
+
+          // update all user bets
+          UserBet.findAll({
+            where: {
+              bet_id: bet.dataValues.id
+            }
+          }).then((allUserBet) => {
+            allUserBet.forEach((userBet) => {
+              userBet.update({
+                userWinStatus: userBet.dataValues.teamSelect === winner ? true : false,
+                notificationType: userBet.dataValues.teamSelect === winner ? 'win' : 'loss',
+              });
+            });
+          }).catch((err) => {
+            console.log(err);
+          });
+
+        }
+      }).catch((err) => {
+        console.log(err);
+      });
     });
+  });
 }
+
+// now it only checks all bets once when the server starts
+// can change to check once a hour
+checkWinnerAndUpdateWinStatus();
+
 
 // Create the WebSockets server
 const wss = new SocketServer({ server: httpServer });
