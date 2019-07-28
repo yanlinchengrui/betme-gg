@@ -17,7 +17,8 @@ router.post("/", (req, res) => {
     game: req.body.game,
     team1logo: req.body.team1logo,
     team2logo: req.body.team2logo,
-    start_time: req.body.start_time
+    start_time: req.body.start_time,
+    participants: 1
   };
 
   // session userId

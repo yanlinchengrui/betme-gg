@@ -2,6 +2,8 @@ const express = require("express");
 const router = express.Router();
 const db = require("../models");
 const UserBet = db.User_Bet;
+const sequelize = require('sequelize');
+
 
 // get all unread notifications
 // router.get("/", (req, res) => {
@@ -29,7 +31,23 @@ router.put("/:id/termStatus", (req, res) => {
       notificationType: req.body.termStatus ? 'teamSelect' : 'declined'
     },
     { where: { id: req.params.id } }
-  ).then(() => {
+    )
+    
+    .then(() => {
+      return UserBet.findOne({ where: { id: req.params.id } })
+    })
+
+    .then((result) => {
+      console.log("-------r-r-----",result)
+      return UserBet.findAndCountAll({
+          where: { bet_id: result.bet_id, termStatus:true}
+      })
+    })
+    .then((result) => {
+      console.log(result)
+    })
+    
+    .then(() => {
     res.status(200).json({ message: "modified" });
   });
 });
