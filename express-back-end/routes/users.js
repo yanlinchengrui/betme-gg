@@ -13,17 +13,17 @@ router.get('/', (req, res) => {
 
 router.get('/:id', (req, res) => {
   // if (req.session.user) {
-    if (!req.session.user.id) {
-      res.status(200)
-    }
-    User.findOne({
-      where: { id: req.session.user.id }, include: [{ model: db.Bet, as: 'bets' }]
-    }).then((rez) => {
-      console.log(rez.toJSON())
-      res.json(rez);
-    });
+  if (!req.session.user) {
+    res.status(200)
+  }
+  User.findOne({
+    where: { id: req.session.user.id }, include: [{ model: db.Bet, as: 'bets' }]
+  }).then((rez) => {
+    console.log(rez.toJSON())
+    res.json(rez);
+  });
   // } else {
-    // res.status(200);
+  // res.status(200);
   // }
 });
 

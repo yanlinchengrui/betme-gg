@@ -4,6 +4,7 @@ import NavBar from "./components/navbar/NavBar";
 import Dashboard from "./components/dashboard/Dashboard";
 import Login from "./components/Login";
 import IndividualBetMain from "./components/individual-bet/IndividualBetMain"
+import StreamAndChat from "./components/stream/StreamAndChat"
 import axios from "axios";
 
 import "./App.css";
@@ -16,7 +17,7 @@ class App extends Component {
     super(props);
 
     this.state = {
-      userInfo: {avatar_url: ''},
+      userInfo: { avatar_url: '' },
       userBets: [],
       userBetInformation: [],
       upcomingMatches: []
@@ -123,9 +124,11 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={() => <Dashboard upcomingMatches={this.state.upcomingMatches} activeBets={this.state.userBets} getUserBetsDetails={this.getUserBetsDetails} />} />
 
-            <Route path="/login" render={(props) => { return (<Login {...props} getUserBetsDetails={this.getUserBetsDetails} />)}} />
+            <Route path="/login" render={(props) => { return (<Login {...props} getUserBetsDetails={this.getUserBetsDetails} />) }} />
 
-            <Route path="/bets/user/:id" render={(props) => { return ( <IndividualBetMain {...props} handleNotificationSelection={this.handleNotificationSelection} currentUser={this.state.userInfo} />)}} />
+            <Route path="/bets/user/:id" render={(props) => { return (<IndividualBetMain {...props} handleNotificationSelection={this.handleNotificationSelection} currentUser={this.state.userInfo} />) }} />
+
+            <Route path="/stream/:game" render={(props) => { return <StreamAndChat {...props} currentUser={this.state.userInfo} /> }} />
 
           </Switch>
         </main>
