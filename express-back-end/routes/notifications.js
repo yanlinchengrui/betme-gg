@@ -47,6 +47,7 @@ router.put("/:id/teamSelect", (req, res) => {
 });
 
 router.put("/:id/notificationRead", (req, res) => {
+  console.log('this shit broken');
   UserBet.update(
     {
       notificationRead: true

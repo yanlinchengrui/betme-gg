@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Icon } from 'antd';
+import moment from 'moment-timezone';
 
 class Notification extends Component {
 
@@ -10,33 +11,53 @@ class Notification extends Component {
       case 'invite':
         notification = (
           <div className='notification notification--invite'>
-            <span>{this.props.date}</span>
-            <span className='notification__match'>{this.props.match}: </span>
-            <span> {this.props.owner} has invited you to a bet!</span>
-            <Icon type='check-circle' style={{ fontSize: '24px', color: '#52c41a', marginLeft: '10px' }} onClick={() => this.props.handleNotificationSelection(this.props.userBetId, true, this.props.type)} />
-            <Icon type='close-circle' style={{ fontSize: '24px', color: '#ff4d4f', marginLeft: '5px' }} onClick={() => this.props.handleNotificationSelection(this.props.userBetId, false, this.props.type)} />
+            <div className='notification__content'>
+              <div className='notification__content-text'>
+                <p>{this.props.owner} has invited you to a bet for <span className='match'>{this.props.match}</span></p>
+                <div className='actions'>
+                  <Icon type='check-circle' theme='filled' style={{ fontSize: '24px', color: '#52c41a', marginLeft: '10px' }} onClick={() => this.props.handleNotificationSelection(this.props.userBetId, true, this.props.type)} />
+                  <Icon type='close-circle' theme='filled' style={{ fontSize: '24px', color: '#ff4d4f', marginLeft: '5px' }} onClick={() => this.props.handleNotificationSelection(this.props.userBetId, false, this.props.type)} />
+                </div>
+              </div>
+              <footer>
+                {moment(this.props.date).tz('America/Vancouver').format('MMMM DD YYYY HH:mm')}
+              </footer>
+            </div>
           </div>
         )
         break;
 
       case 'teamSelect':
         notification = (
-          <div className='notification notification--team-select'>
-            <span>{this.props.date}</span>
-            <span className='notification__match'>{this.props.match}:</span> 
-            <span>Pick your team:</span>
-            <Button className='notification__team-btn' style={{ marginLeft: '10px' }} name='Team 1' onClick={() => this.props.handleNotificationSelection(this.props.userBetId, 'Team1', this.props.type)}>{this.props.team1} </Button>
-            <Button className='notification__team-btn' style={{ marginLeft: '5px' }} name='Team 2' onClick={() => this.props.handleNotificationSelection(this.props.userBetId, 'Team2', this.props.type)}>{this.props.team2} </Button>
+          <div className='notification notification--teamselect'>
+            <div className='notification__content'>
+              <div className='notification__content-text'>
+                <p>Pick your team for <span className='match'>{this.props.match}</span></p>
+                <div className='actions'>
+                  <Button className='team-btn' style={{ marginLeft: '10px' }} name='Team 1' onClick={() => this.props.handleNotificationSelection(this.props.userBetId, 'Team1', this.props.type)}>{this.props.team1}</Button>
+                  <Button className='team-btn' style={{ marginLeft: '5px' }} name='Team 2' onClick={() => this.props.handleNotificationSelection(this.props.userBetId, 'Team2', this.props.type)}>{this.props.team2}</Button>
+                </div>
+              </div>
+              <footer>
+                {moment(this.props.date).tz('America/Vancouver').format('MMMM DD YYYY HH:mm')}
+              </footer>
+            </div>
           </div>
         )
         break;
 
       case 'win':
         notification = (
-          <div className='notification notification--winner'>
-            <span>{this.props.date}</span>
-            <div> {this.props.match} </div>
-            <div> You won! </div>
+          <div className='notification notification--weiner'>
+            <div className='notification__content'>
+              <div className='notification__content-text'>
+                <p>Winner winner chicken dinner! You won the <span className='match'>{this.props.match}</span> bet!</p>
+              </div>
+          
+              <footer>
+                {moment(this.props.date).tz('America/Vancouver').format('MMMM DD YYYY HH:mm')}
+              </footer>
+            </div>
           </div>
         );
         break;
@@ -44,9 +65,14 @@ class Notification extends Component {
       case 'loss':
         notification = (
           <div className='notification notification--loser'>
-            <span>{this.props.date}</span>
-            <div> {this.props.match} </div>
-            <div> Ha! you lost! </div>
+            <div className='notification__content'>
+              <div className='notification__content-text'>
+                <p>You lost the <span className='match'>{this.props.match}</span> bet! Better luck next time, kid!</p>
+              </div>
+              <footer>
+                {moment(this.props.date).tz('America/Vancouver').format('MMMM DD YYYY HH:mm')}
+              </footer>
+            </div>
           </div>
         );
         break;
