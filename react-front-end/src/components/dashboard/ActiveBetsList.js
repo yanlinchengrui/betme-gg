@@ -4,6 +4,7 @@ import ActiveBet from "./ActiveBets"
 class ActiveBetList extends Component {
 
   render() {
+
     const activeBets = this.props.activeBets.map(activeBet => {
       return (
         <ActiveBet
@@ -14,10 +15,11 @@ class ActiveBetList extends Component {
           betStatus={activeBet.bet_status}
           game={activeBet.game}
           participants={activeBet.participants}
-
         />
       );
     });
+    
+
     return (
       <div className='dashboard__bets'>
         <h2>Active bets</h2>

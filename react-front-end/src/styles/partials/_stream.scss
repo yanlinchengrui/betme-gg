@@ -48,6 +48,8 @@
         padding: 20px;
         -webkit-border-radius: 20px;
         border-radius: 0 0 20px 0;
+        -webkit-box-shadow: 0 0 20px 0 rgba(55,69,254,0.5);
+        box-shadow: 0 0 20px 0 rgba(55,69,254,0.5);
 
         .chatbar__username, .chatbar__message {
           background-color: transparent;
