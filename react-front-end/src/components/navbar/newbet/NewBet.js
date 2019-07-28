@@ -25,19 +25,17 @@ class NewBet extends Component {
       if (!err) {
         // get the right game info based on the match name
         const gameInfo = this.props.upcomingMatches.filter((match) => match.name === values.match);
-       
-       console.log("gaame",gameInfo)
+
         // filter returns an array, get the first one and save the game type
         values.game = gameInfo[0].videogame.name;
         // split the match to get the team names and save them to values
         let teams = gameInfo[0].name.split(' vs ');
         values.team1 = teams[0];
         values.team2 = teams[1];
-        values.start_time = gameInfo[0].begin_at
-        values.team1logo = gameInfo[0].opponents[0].opponent.image_url
-        values.team2logo = gameInfo[0].opponents[1].opponent.image_url
-
-        console.log("is it in", values)
+        values.start_time = gameInfo[0].begin_at;
+        values.team1logo = gameInfo[0].opponents[0].opponent.image_url;
+        values.team2logo = gameInfo[0].opponents[1].opponent.image_url;
+        values.matchId = gameInfo[0].id;
 
         console.log('Received values of form: ', values);
 

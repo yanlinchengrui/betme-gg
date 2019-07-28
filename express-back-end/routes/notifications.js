@@ -33,29 +33,38 @@ router.put("/:id/termStatus", (req, res) => {
       termStatus: req.body.termStatus,
       notificationType: req.body.termStatus ? 'teamSelect' : 'declined'
     },
-    { where: { id: req.params.id } }
-    )
-    
-    .then(() => {
-      return UserBet.findOne({ where: { id: req.params.id } })
-    })
-
-    .then((result) => {
-      betid = result.bet_id
+    {
+      where: { id: req.params.id },
+      returning: true,
+      plain: true,
+    }
+  )
+    .then((thisUserBet) => {
+      betid = thisUserBet[1].dataValues.bet_id;
       return UserBet.findAndCountAll({
-          where: { bet_id: betid, termStatus:true}
+        where: { bet_id: betid, termStatus: true }
       })
     })
     .then((result) => {
-      Bet.update(
-        { participants: result.count },
-        { where: {id: betid}}
-      )
+      Bet.findOne(
+        {
+          where: { id: betid },
+          attributes: ['inviteCount', 'bet_status'],
+        }
+      ).then((countAndStatus) => {
+        Bet.update(
+          {
+            participants: result.count,
+            // use == because one of them is string and the other is integer
+            bet_status: countAndStatus.dataValues.inviteCount == result.count ? 'active' : countAndStatus.dataValues.bet_status,
+          },
+          { where: { id: betid } }
+        )
+      })
     })
-    
     .then(() => {
-    res.status(200).json({ message: "modified" });
-  });
+      res.status(200).json({ message: "modified" });
+    });
 });
 
 router.put("/:id/teamSelect", (req, res) => {

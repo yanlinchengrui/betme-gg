@@ -34,7 +34,7 @@ module.exports = {
       team1: {
         type: Sequelize.STRING,
         allowNull: false
-      }, 
+      },
       team2: {
         type: Sequelize.STRING,
         allowNull: false
@@ -49,6 +49,14 @@ module.exports = {
       },
       participants: {
         type: Sequelize.STRING,
+        allowNull: false
+      },
+      inviteCount: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
+      matchId: {
+        type: Sequelize.INTEGER,
         allowNull: false
       },
       createdAt: {

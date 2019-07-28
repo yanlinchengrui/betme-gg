@@ -10,6 +10,11 @@ const uuidv1 = require('uuid/v1');
 const http = require('http');
 const httpServer = http.createServer(App);
 
+const axios = require('axios');
+require('dotenv').config()
+const models = require('./models');
+const Bet = models.Bet;
+
 const cookieSession = require('cookie-session')
 App.use(cookieSession({
   name: 'session',
@@ -59,6 +64,22 @@ httpServer.listen(PORT, '0.0.0.0', 'localhost', () => {
   console.log(`Express seems to be listening on port ${PORT} so that's pretty good 👍`);
 });
 
+checkWinner = (matchId) => {
+  axios.get(`https://api.pandascore.co/matches/${matchId}?token=${process.env.TOKEN}`)
+    .then((rez) => {
+      console.log(rez.data);
+      if (rez.data.winner) {
+        // todo
+      }
+      // Bet.findAll({
+      //   where: { matchId: matchId },
+      //   include: [{ model: models.User_bet, attributes: [] }]
+      // }).then((rez) => {
+      //   console.log(rez);
+      // })
+      return rez.data;
+    });
+}
 
 // Create the WebSockets server
 const wss = new SocketServer({ server: httpServer });

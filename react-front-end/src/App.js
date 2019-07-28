@@ -107,7 +107,6 @@ class App extends Component {
     this.getUserBetsDetails()
     this.getUpcomingMatches()
     // console.log(this.state)
-
   }
 
   render() {

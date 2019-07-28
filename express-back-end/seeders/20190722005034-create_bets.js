@@ -14,6 +14,8 @@ module.exports = {
       team1logo: 'https://cdn.pandascore.co/images/team/image/663/300px-M19logo_square.png',
       team2logo: 'https://cdn.pandascore.co/images/team/image/19/unicorns-of-love-ih8ytfi8.png',
       participants: 1,
+      inviteCount: 1,
+      matchId: 999,
       createdAt: new Date(),
       updatedAt: new Date()
     },
@@ -29,6 +31,8 @@ module.exports = {
       team1logo: 'https://cdn.pandascore.co/images/team/image/33/kabum-orange-egig9edp.png',
       team2logo: 'https://cdn.pandascore.co/images/team/image/158/intz-ijdoekud.png',
       participants: 1,
+      inviteCount: 1,
+      matchId: 111,
       createdAt: new Date(),
       updatedAt: new Date()
     },
@@ -44,6 +48,8 @@ module.exports = {
       team1logo: 'https://cdn.pandascore.co/images/team/image/664/vega-squadron-giuegvf3.png',
       team2logo: 'https://cdn.pandascore.co/images/team/image/1717/300px-Dragon_Armylogo_square.png',
       participants: 1,
+      inviteCount: 1,
+      matchId: 222,
       createdAt: new Date(),
       updatedAt: new Date()
     }], {});

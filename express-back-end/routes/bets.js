@@ -18,7 +18,9 @@ router.post("/", (req, res) => {
     team1logo: req.body.team1logo,
     team2logo: req.body.team2logo,
     start_time: req.body.start_time,
-    participants: 1
+    participants: 1,
+    inviteCount: req.body.emails.length + 1,
+    matchId: req.body.matchId,
   };
 
   // session userId
