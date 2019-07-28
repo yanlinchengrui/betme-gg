@@ -37,7 +37,7 @@ class IndividualBetMain extends Component {
   render() {
     return (
       <div className="container">
-        <div className="dashboard">
+        <div className="bet">
           <IndividualBet betInfo={this.state.betInfo} handleNotificationSelection={this.props.handleNotificationSelection} currentUser={this.props.currentUser}/>
         </div>
       </div>

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Button } from 'antd';
-
+import moment from 'moment-timezone';
 
 class IndividualBet extends Component {
      
@@ -38,9 +38,9 @@ class IndividualBet extends Component {
           return this.props.betInfo.users.map(owner => {
             if (owner.User_Bet.user_id === this.props.currentUser.id) {
               return (
-              <div key={this.props.currentUser.id} >
-                <Button onClick={() => this.props.handleNotificationSelection(owner.User_Bet.id, 'Team1', 'teamSelect')}>{this.props.betInfo.team1}</Button>
-                <Button onClick={() => this.props.handleNotificationSelection(owner.User_Bet.id, 'Team2', 'teamSelect')}>{this.props.betInfo.team2}</Button>
+                <div className='team-pick' key={this.props.currentUser.id} >
+                  <Button className='t1-btn' type='dashed' onClick={() => this.props.handleNotificationSelection(owner.User_Bet.id, 'Team1', 'teamSelect')}>{this.props.betInfo.team1}</Button>
+                  <Button className='t2-btn' type='dashed' onClick={() => this.props.handleNotificationSelection(owner.User_Bet.id, 'Team2', 'teamSelect')}>{this.props.betInfo.team2}</Button>
                 </div>
               )
             }
@@ -48,16 +48,45 @@ class IndividualBet extends Component {
         }
       
       return (
-        <div>
-          <div>{this.props.betInfo.team1}</div>
-          <div>{this.props.betInfo.team2}</div>
-          <div>{this.props.betInfo.start_time}</div>
-          <div>{this.props.betInfo.team1logo}</div>
-          <div>{this.props.betInfo.team2logo}</div>
-          <div> { this.props.betInfo.participants }</div>
-          <div> ${ this.props.betInfo.participants * this.props.betInfo.stakes } </div>
+        <div className='individual'>
+          <div className='individual__match'>
+            <div className='team team--1'>
+              <div className='team__name'>
+                <h2>{this.props.betInfo.team1}</h2>
+              </div>
+              <div className='team__logo'>
+                <img src={this.props.betInfo.team1logo} />
+              </div>
+            </div>
+            <div className='team team--2'>
+              <div className='team__name'>
+                <h2>{this.props.betInfo.team2}</h2>
+              </div>
+              <div className='team__logo'>
+                <img src={this.props.betInfo.team2logo} />
+              </div>
+            </div>
+          </div>
+          <div className='individual__info'>
+            <div className='pot'>
+              Stakes: ${this.props.betInfo.participants * this.props.betInfo.stakes}
+            </div>
+            <div className='date'>
+              {moment(this.props.betInfo.start_time).tz('America/Vancouver').format('MMMM DD, YYYY - HH:mm')}
+              {}
+            </div>
+            <div className='participants'>
+              Participants: {this.props.betInfo.participants}
+            </div>
+          </div>
+          <div className='individual__pick'>
+            <h2>Pick your team!</h2>
+            <div className='individual__pick-btns'>
+              {renderTeamSelection()}
+            </div>
+          </div>
+
           {<div>{getParticipantInformation()}</div>}
-          {renderTeamSelection()}
      
         </div>
     )

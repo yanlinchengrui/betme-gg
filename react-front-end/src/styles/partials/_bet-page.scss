@@ -1,0 +1,156 @@
+.bet {
+  background-color: $darkest;
+  -webkit-box-shadow: 0 5px 15px 0 rgba(0,0,0,0.15);
+  box-shadow: 0 5px 15px 0 rgba(0,0,0,0.15);
+  -webkit-border-radius: 20px 20px 20px 20px;
+  border-radius: 20px 20px 20px 20px;
+
+  & .individual {
+    margin-top: 40px;
+
+    &__match {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+
+      & .team {
+        width: 50%;
+        display: flex;
+        align-items: center;
+        padding: 100px 0 60px;
+
+        &--1 {
+          background-color: $t1-color;
+          background-image: url('../images/t1.png');
+          background-size: cover;
+          background-position: center;
+          justify-content: flex-end;
+          padding-right: 110px;
+          -webkit-border-radius: 20px 0 0 0;
+          border-radius: 20px 0 0 0;
+
+          .team__name {
+            margin-right: 40px;
+          }
+        }
+
+        &--2 {
+          background-color: $t2-color;
+          background-image: url('../images/t2.png');
+          background-size: cover;
+          background-position: center;
+          justify-content: flex-start;
+          padding-left: 110px;
+          -webkit-border-radius: 0 20px 0 0;
+          border-radius: 0 20px 0 0;
+
+          .team__name {
+            order: 2;
+            margin-left: 40px;
+          }
+
+          .team__logo {
+            order: 1;
+          }
+        }
+
+        &__name {
+          h2 {
+            font-size: 36px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 0;
+            text-shadow: 0 5px 9px rgba(0, 0, 0, 0.35);
+          }
+        }
+
+        &__logo {
+          width: 120px;
+          height: 120px;
+          border-radius: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: #fff;
+          -webkit-box-shadow: 0 10px 20px 0 rgba(0,0,0,0.25);
+          box-shadow: 0 10px 20px 0 rgba(0,0,0,0.25);
+
+          img {
+            width: 85%;
+            height: 85%;
+          }
+        }
+      }
+    }
+
+    &__info {
+      display: flex;
+      justify-content: space-evenly;
+      background-color: $primary-color;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 6px 0;
+      -webkit-box-shadow: 0 0 20px 0 rgba(55,69,254,0.5);
+      box-shadow: 0 0 20px 0 rgba(55,69,254,0.5);
+
+      .pot, .date, .participants {
+        width: 200px;
+        text-align: center;
+      }
+    }
+
+    &__pick {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      margin: 20px 0;
+
+      h2 {
+        color: #fff;
+        border-bottom: 2px solid #fff;
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 20px;
+      }
+
+      &-btns {
+
+        .team-pick {
+
+          .t1-btn, .t2-btn {
+            font-size: 30px;
+            min-width: 150px;
+            font-weight: 700;
+            height: auto;
+            border-radius: 100px;
+            border-width: 2px;
+          }
+  
+          .t1-btn {
+            background-color: transparent;
+            border-color: $t1-color;
+            color: $t1-color;
+            margin-right: 40px;
+
+            &:hover {
+              background-color: $t1-color;
+              color: #fff;
+            }
+          }
+  
+          .t2-btn {
+            background-color: transparent;
+            border-color: $t2-color;
+            color: $t2-color;
+
+            &:hover {
+              background-color: $t2-color;
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+}

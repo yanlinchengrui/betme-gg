@@ -20,7 +20,7 @@ class Notification extends Component {
                 </div>
               </div>
               <footer>
-                {moment(this.props.date).tz('America/Vancouver').format('MMMM DD YYYY HH:mm')}
+                {moment(this.props.date).tz('America/Vancouver').format('MMMM DD, YYYY - HH:mm')}
               </footer>
             </div>
           </div>
@@ -39,7 +39,7 @@ class Notification extends Component {
                 </div>
               </div>
               <footer>
-                {moment(this.props.date).tz('America/Vancouver').format('MMMM DD YYYY HH:mm')}
+                {moment(this.props.date).tz('America/Vancouver').format('MMMM DD, YYYY - HH:mm')}
               </footer>
             </div>
           </div>
@@ -55,7 +55,7 @@ class Notification extends Component {
               </div>
           
               <footer>
-                {moment(this.props.date).tz('America/Vancouver').format('MMMM DD YYYY HH:mm')}
+                {moment(this.props.date).tz('America/Vancouver').format('MMMM DD, YYYY - HH:mm')}
               </footer>
             </div>
           </div>
@@ -70,7 +70,7 @@ class Notification extends Component {
                 <p>You lost the <span className='match'>{this.props.match}</span> bet! Better luck next time, kid!</p>
               </div>
               <footer>
-                {moment(this.props.date).tz('America/Vancouver').format('MMMM DD YYYY HH:mm')}
+                {moment(this.props.date).tz('America/Vancouver').format('MMMM DD, YYYY - HH:mm')}
               </footer>
             </div>
           </div>

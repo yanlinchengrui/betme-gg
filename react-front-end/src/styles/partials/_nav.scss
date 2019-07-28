@@ -2,7 +2,6 @@
   width: 100%;
   display: flex;
   align-items: center;
-  margin-bottom: 40px;
 
   .container {
     display: flex;
@@ -29,6 +28,8 @@
         &:hover {
           background-color: $primary-color;
           border-color: $primary-color;
+          -webkit-box-shadow: 0 0 20px 0 rgba(55,69,254,0.5);
+          box-shadow: 0 0 20px 0 rgba(55,69,254,0.5);
         }
       }
     }
@@ -46,13 +47,13 @@
 
     &:hover {
       color: $primary-color;
-      text-shadow: 0 1px 10px darken($primary-color,20%);
+      text-shadow: 0 0 20px rgba(55,69,254,0.5);
     }
   }
 
   &--accent {
     color: $primary-color;
-    text-shadow: 0 1px 10px darken($primary-color,20%);
+    text-shadow: 0 0 20px rgba(55,69,254,0.5);
   }
   
 }
