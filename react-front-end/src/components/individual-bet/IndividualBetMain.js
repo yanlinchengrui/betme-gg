@@ -9,36 +9,34 @@ class IndividualBetMain extends Component {
     this.state = {
       betInfo: {}
     }
+
+    this.getBetDetails.bind(this);
   }
-  
+
   getBetDetails = () => {
-        axios
-        .get(`http://localhost:8080/bets/user/${this.props.match.params.id}`, { withCredentials: true})
-        .then(allInfo => {
-          let allData = allInfo.data;
-          console.log(allData)
-          this.setState({
-            betInfo: allData,
-          });
-        })
-        .then(() => {
-          console.log("sfsdfcasdf", this.state)
-        })
-        .catch(err => {
-          console.log(err)
-        })
-      }
-      
-      
-      componentDidMount() {
-        this.getBetDetails()
-      }
+    axios
+      .get(`http://localhost:8080/bets/user/${this.props.match.params.id}`, { withCredentials: true })
+      .then(allInfo => {
+        let allData = allInfo.data;
+        console.log(allData)
+        this.setState({
+          betInfo: allData,
+        });
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  }
+
+  componentDidMount() {
+    this.getBetDetails();
+  }
 
   render() {
     return (
       <div className="container">
         <div className="bet">
-          <IndividualBet betInfo={this.state.betInfo} handleNotificationSelection={this.props.handleNotificationSelection} currentUser={this.props.currentUser}/>
+          <IndividualBet betInfo={this.state.betInfo} handleNotificationSelection={this.props.handleNotificationSelection} currentUser={this.props.currentUser} getBetDetails={this.getBetDetails} />
         </div>
       </div>
     );

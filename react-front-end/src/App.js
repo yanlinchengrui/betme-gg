@@ -29,7 +29,7 @@ class App extends Component {
   }
 
   getUserBetsDetails = () => {
-    axios
+    return axios
       .get("http://localhost:8080/users/:id", { withCredentials: true })
       .then(allInfo => {
         let allData = allInfo.data;
@@ -62,7 +62,7 @@ class App extends Component {
   handleNotificationSelection = (id, truthy, notificationType) => {
     switch (notificationType) {
       case "invite":
-        axios
+        return axios
           .put(
             `http://localhost:8080/notifications/${id}/termStatus`,
             { termStatus: truthy },
@@ -70,12 +70,11 @@ class App extends Component {
           )
           .then(() => {
             // refresh notifications
-            this.getUserBetsDetails();
+            return this.getUserBetsDetails();
           });
-        break;
 
       case "teamSelect":
-        axios
+        return axios
           .put(
             `http://localhost:8080/notifications/${id}/teamSelect`,
             { teamSelect: truthy },
@@ -83,9 +82,8 @@ class App extends Component {
           )
           .then(() => {
             // refresh notifications
-            this.getUserBetsDetails();
+            return this.getUserBetsDetails();
           });
-        break;
 
       default:
         break;
