@@ -5,7 +5,9 @@ import MatchPicker from './MatchPicker'
 import InviteFriends from './InviteFriends'
 
 class NewBet extends Component {
-  state = { visible: false };
+  state = {
+    visible: false,
+  };
 
   showNewBet = () => {
     this.setState({
@@ -21,6 +23,7 @@ class NewBet extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
+    let props = this.props;
     this.props.form.validateFields((err, values) => {
       if (!err) {
         // get the right game info based on the match name
@@ -42,6 +45,7 @@ class NewBet extends Component {
 
         axios.post('http://localhost:8080/bets', values, { withCredentials: true })
           .then(function (response) {
+            props.refreshComponent();
             console.log(response);
           })
           .catch(function (error) {

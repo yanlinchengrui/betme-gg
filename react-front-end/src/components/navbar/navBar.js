@@ -31,7 +31,7 @@ class NavBar extends Component {
               <UserOptions userInfo={this.props.userInfo} />
             </Menu.Item>
           </Menu>
-          <div className='navigation__btn'><NewBet upcomingMatches={this.props.upcomingMatches} /></div>
+          <div className='navigation__btn'><NewBet upcomingMatches={this.props.upcomingMatches} refreshComponent={this.props.refreshComponent} /></div>
         </div>
       </Layout.Header>
     );

@@ -30,11 +30,13 @@ class NotificationList extends Component {
     const dot = this.props.userBets.some((bet) => {
       return bet.User_Bet.notificationRead === false;
     });
-    this.setState({dot});
+    this.setState({ dot });
   }
 
-  componentWillReceiveProps() {
-    this.checkNotifications()
+  componentDidUpdate(prevProps) {
+    if (JSON.stringify(this.props.userBets) !== JSON.stringify(prevProps.userBets)) {
+      this.checkNotifications();
+    }
   }
 
   render() {
