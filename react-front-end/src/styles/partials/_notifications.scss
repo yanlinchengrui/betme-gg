@@ -28,7 +28,7 @@
 
     &--loser {
       border: 2px dashed #b22222;
-      background-color: #ff0000;
+      background-color: #df3838;
       color: #731616;
     }
 
@@ -59,6 +59,26 @@
             padding: 0 12.5px;
             font-size: 10px;
             min-width: 50px;
+
+            &--1 {
+              background-color: $t1-color;
+              border-color: $t1-color;
+
+              &:hover {
+                background-color: lighten($t1-color, 10%);
+                border-color: lighten($t1-color, 10%);
+              }
+            }
+
+            &--2 {
+              background-color: $t2-color;
+              border-color: $t2-color;
+
+              &:hover {
+                background-color: lighten($t2-color, 10%);
+                border-color: lighten($t2-color, 10%);
+              }
+            }
           }
         }
       }

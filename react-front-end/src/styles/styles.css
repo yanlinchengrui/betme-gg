@@ -53,11 +53,12 @@ body {
 
 img.bg {
   width: 100%;
-  height: auto;
+  height: 100%;
   position: absolute;
   top: 0;
   left: 0;
-  z-index: -1; }
+  z-index: -1;
+  overflow: hidden; }
 
 .header {
   width: 100%;
@@ -114,7 +115,7 @@ img.bg {
     color: #71480a; }
   .notifications .notification--loser {
     border: 2px dashed #b22222;
-    background-color: #ff0000;
+    background-color: #df3838;
     color: #731616; }
   .notifications .notification__content {
     font-size: 12px;
@@ -135,6 +136,18 @@ img.bg {
           padding: 0 12.5px;
           font-size: 10px;
           min-width: 50px; }
+          .notifications .notification__content-text .actions .team-btn--1 {
+            background-color: #1890ff;
+            border-color: #1890ff; }
+            .notifications .notification__content-text .actions .team-btn--1:hover {
+              background-color: #4ba9ff;
+              border-color: #4ba9ff; }
+          .notifications .notification__content-text .actions .team-btn--2 {
+            background-color: #ff4d4f;
+            border-color: #ff4d4f; }
+            .notifications .notification__content-text .actions .team-btn--2:hover {
+              background-color: #ff8081;
+              border-color: #ff8081; }
   .notifications .notification footer {
     font-size: 8px;
     font-weight: 700;
@@ -262,8 +275,8 @@ main {
             background-color: #3745fe;
             color: #fff; }
             .dashboard__bets .bets .bet__match-view .ant-btn:hover {
-              background-color: #6a74fe;
-              border-color: #6a74fe; }
+              -webkit-box-shadow: 0 0 20px 0 rgba(55, 69, 254, 0.5);
+              box-shadow: 0 0 20px 0 rgba(55, 69, 254, 0.5); }
       .dashboard__bets .bets .bet footer {
         display: flex;
         padding: 5px 20px;
@@ -281,6 +294,8 @@ main {
         background-color: #7f7d87; }
       .dashboard__bets .bets .bet--active footer {
         background-color: #52c41a; }
+      .dashboard__bets .bets .bet--complete footer {
+        background-color: #1890ff; }
 
 .bet {
   background-color: #0f0f0f;
@@ -293,7 +308,20 @@ main {
     .bet .individual__match {
       display: flex;
       justify-content: flex-start;
-      align-items: center; }
+      align-items: center;
+      position: relative; }
+      .bet .individual__match .match-details {
+        background-color: #0f0f0f;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 20px;
+        font-weight: 700;
+        color: #fff;
+        padding: 5px 15px;
+        -webkit-border-radius: 0 0 20px 20px;
+        border-radius: 0 0 20px 20px; }
       .bet .individual__match .team {
         width: 50%;
         display: flex;
@@ -432,24 +460,66 @@ main {
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      bottom: 40px;
+      bottom: 60px;
       left: 50%;
       transform: translateX(-50%) translateY(50%);
       -webkit-box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.25);
       box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.25); }
+  .profile__info {
+    padding: 80px 40px 20px;
+    overflow: hidden; }
+    .profile__info .info__user {
+      float: left;
+      width: 250px; }
+      .profile__info .info__user h2 {
+        color: #fff;
+        border-bottom: 2px solid #fff;
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 20px; }
+      .profile__info .info__user .info__container {
+        background-color: #0f0f0f;
+        padding: 12px 20px 20px 20px;
+        -webkit-border-radius: 20px;
+        border-radius: 20px;
+        margin-bottom: 20px;
+        -webkit-box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
+        box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
+        color: #7f7d87; }
+        .profile__info .info__user .info__container h4 {
+          font-size: 24px;
+          font-weight: 700;
+          color: #fff; }
+        .profile__info .info__user .info__container .user-info__title {
+          font-weight: 700;
+          margin-right: 5px;
+          color: #fff; }
+    .profile__info .info__past-bets {
+      float: right;
+      width: 594px; }
+      .profile__info .info__past-bets .dashboard__bets {
+        margin-left: 0; }
+        .profile__info .info__past-bets .dashboard__bets h2 {
+          color: #fff;
+          border-bottom: 2px solid #fff;
+          font-size: 24px;
+          font-weight: 700;
+          margin-bottom: 20px; }
 
 .stream {
   background-color: #0f0f0f;
   display: flex;
   align-items: flex-start;
   width: 100%;
+  height: 407px;
   -webkit-border-radius: 20px;
   border-radius: 20px;
   -webkit-box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
-  box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15); }
+  box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
+  margin-top: 40px; }
   .stream__window {
     position: relative;
-    padding-bottom: 37.5%;
+    padding-bottom: 37.4%;
     padding-top: 25px;
     height: 0;
     flex-grow: 1; }
