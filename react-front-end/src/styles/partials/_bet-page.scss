@@ -25,12 +25,13 @@
           background-size: cover;
           background-position: center;
           justify-content: flex-end;
-          padding-right: 110px;
+          padding-right: 60px;
           -webkit-border-radius: 20px 0 0 0;
           border-radius: 20px 0 0 0;
 
           .team__name {
             margin-right: 40px;
+            text-align: right;
           }
         }
 
@@ -40,13 +41,14 @@
           background-size: cover;
           background-position: center;
           justify-content: flex-start;
-          padding-left: 110px;
+          padding-left: 60px;
           -webkit-border-radius: 0 20px 0 0;
           border-radius: 0 20px 0 0;
 
           .team__name {
             order: 2;
             margin-left: 40px;
+            text-align: left;
           }
 
           .team__logo {
@@ -56,7 +58,7 @@
 
         &__name {
           h2 {
-            font-size: 36px;
+            font-size: 24px;
             font-weight: 700;
             color: #fff;
             margin-bottom: 0;
@@ -76,8 +78,8 @@
           box-shadow: 0 10px 20px 0 rgba(0,0,0,0.25);
 
           img {
-            width: 85%;
-            height: 85%;
+            width: 80%;
+            height: 80%;
           }
         }
       }
@@ -150,6 +152,36 @@
             }
           }
         }
+      }
+    }
+
+    &__participants {
+      display: flex;
+      flex-direction: column;
+      padding: 20px 60px;
+      
+      .Team1, .Team2, .Awaiting {
+        display: block;
+        font-size: 18px;
+        padding: 6px;
+      }
+
+      .Team1 {
+        text-align: left;
+        color: $t1-color;
+        border-bottom: 1px solid $t1-color;
+      }
+
+      .Team2 {
+        text-align: right;
+        color: $t2-color;
+        border-bottom: 1px solid $t2-color;
+      }
+
+      .Awaiting {
+        text-align: center;
+        color: #7f7d87;
+        border-bottom: 1px solid #7f7d87;
       }
     }
   }

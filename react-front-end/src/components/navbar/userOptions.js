@@ -39,7 +39,7 @@ class UserOptions extends Component {
         }
         trigger='click'
       >
-        <Avatar shape='square' src={this.props.userInfo.avatar_url} />
+        <Avatar src={this.props.userInfo.avatar_url} />
       </Popover>
     );
   }

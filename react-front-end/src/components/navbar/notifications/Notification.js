@@ -15,8 +15,8 @@ class Notification extends Component {
               <div className='notification__content-text'>
                 <p>{this.props.owner} has invited you to a bet for <span className='match'>{this.props.match}</span></p>
                 <div className='actions'>
-                  <Icon type='check-circle' theme='filled' style={{ fontSize: '24px', color: '#52c41a', marginLeft: '10px' }} onClick={() => this.props.handleNotificationSelection(this.props.userBetId, true, this.props.type)} />
-                  <Icon type='close-circle' theme='filled' style={{ fontSize: '24px', color: '#ff4d4f', marginLeft: '5px' }} onClick={() => this.props.handleNotificationSelection(this.props.userBetId, false, this.props.type)} />
+                  <Icon type='check-circle' theme='filled' style={{ fontSize: '24px', color: '#fff', marginLeft: '10px' }} onClick={() => this.props.handleNotificationSelection(this.props.userBetId, true, this.props.type)} />
+                  <Icon type='close-circle' theme='filled' style={{ fontSize: '24px', color: '#fff', marginLeft: '5px' }} onClick={() => this.props.handleNotificationSelection(this.props.userBetId, false, this.props.type)} />
                 </div>
               </div>
               <footer>
@@ -34,8 +34,8 @@ class Notification extends Component {
               <div className='notification__content-text'>
                 <p>Pick your team for <span className='match'>{this.props.match}</span></p>
                 <div className='actions'>
-                  <Button className='team-btn' style={{ marginLeft: '10px' }} name='Team 1' onClick={() => this.props.handleNotificationSelection(this.props.userBetId, 'Team1', this.props.type)}>{this.props.team1}</Button>
-                  <Button className='team-btn' style={{ marginLeft: '5px' }} name='Team 2' onClick={() => this.props.handleNotificationSelection(this.props.userBetId, 'Team2', this.props.type)}>{this.props.team2}</Button>
+                  <Button className='team-btn' type='primary' style={{ marginLeft: '10px' }} name='Team 1' onClick={() => this.props.handleNotificationSelection(this.props.userBetId, 'Team1', this.props.type)}>{this.props.team1}</Button>
+                  <Button className='team-btn' type='primary' style={{ marginLeft: '5px' }} name='Team 2' onClick={() => this.props.handleNotificationSelection(this.props.userBetId, 'Team2', this.props.type)}>{this.props.team2}</Button>
                 </div>
               </div>
               <footer>
@@ -51,7 +51,7 @@ class Notification extends Component {
           <div className='notification notification--weiner'>
             <div className='notification__content'>
               <div className='notification__content-text'>
-                <p>Winner winner chicken dinner! You won the <span className='match'>{this.props.match}</span> bet!</p>
+                <Icon type="trophy" theme="filled" />&nbsp;<p>Winner winner chicken dinner! You won the <span className='match'>{this.props.match}</span> bet!</p>
               </div>
           
               <footer>
@@ -67,7 +67,7 @@ class Notification extends Component {
           <div className='notification notification--loser'>
             <div className='notification__content'>
               <div className='notification__content-text'>
-                <p>You lost the <span className='match'>{this.props.match}</span> bet! Better luck next time, kid!</p>
+                <Icon type="frown" theme="filled" />&nbsp;<p>You lost the <span className='match'>{this.props.match}</span> bet! Better luck next time, kid!</p>
               </div>
               <footer>
                 {moment(this.props.date).tz('America/Vancouver').format('MMMM DD, YYYY - HH:mm')}

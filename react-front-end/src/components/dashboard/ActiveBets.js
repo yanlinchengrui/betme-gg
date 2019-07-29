@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Button } from 'antd';
+import { Link } from "react-router-dom";
 import csgo from '../../images/csgo.svg'
 import lol from '../../images/lol.svg'
 import ow from '../../images/ow.svg'
@@ -15,27 +16,23 @@ class ActiveBet extends Component {
   }
 
   displayActiveBets() {
-    let notification;
+    let activebet;
 
     switch (this.props.betStatus) {
       case "pending":
-        notification = (
+        activebet = (
           <div className='bet bet--pending'>
             <div className='bet__match'>
               <div className='bet__match-logo'>
                 <img src={this.gameLogo[this.props.game]} alt={this.props.game} style={{ width: '40px', height: '40px' }} />
               </div>
-              {/* <div className='bet__match-name'>
-                <h4>{this.props.match}</h4>
-              </div> */}
-              <div>
-                {this.props.team1}
-              </div>
-              <div>
-                {this.props.team2}
+              <div className='bet__match-name'>
+                <h4>{this.props.team1} vs {this.props.team2}</h4>
               </div>
               <div className='bet__match-view'>
-                <Button>View Bet</Button>
+                <Link to={`/bets/user/${this.props.betId}`}>
+                  <Button>View Bet</Button>
+                </Link>
               </div>
             </div>
 
@@ -44,7 +41,7 @@ class ActiveBet extends Component {
                 <p>Status: <span className='capitalize'>{this.props.betStatus}</span></p>
               </div>
               <div className='bet__info'>
-                <p>Stakes: ${ this.props.stakes * this.props.participants }</p>
+                <p>Stakes: ${this.props.stakes * this.props.participants}</p>
               </div>
               <div className='bet__info'>
                 <p>Bet Owner: {this.props.owner}</p>
@@ -58,17 +55,19 @@ class ActiveBet extends Component {
         break;
 
       case "active":
-        notification = (
+        activebet = (
           <div className='bet bet--active'>
             <div className='bet__match'>
               <div className='bet__match-logo'>
                 <img src={this.gameLogo[this.props.game]} alt={this.props.game} style={{ width: '40px', height: '40px' }} />
               </div>
-              {/* <div className='bet__match-name'>
-                <h4>{this.props.match}</h4>
-              </div> */}
+              <div className='bet__match-name'>
+                <h4>{this.props.team1} vs {this.props.team2}</h4>
+              </div>
               <div className='bet__match-view'>
-                <Button>View Bet</Button>
+              <Link to={`/bets/user/${this.props.betId}`}>
+                  <Button>View Bet</Button>
+                </Link>
               </div>
             </div>
             <footer>
@@ -92,7 +91,7 @@ class ActiveBet extends Component {
       default:
         break;
     }
-    return notification;
+    return activebet;
   }
 
   render() {

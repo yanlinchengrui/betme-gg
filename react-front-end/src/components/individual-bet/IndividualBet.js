@@ -15,13 +15,13 @@ class IndividualBet extends Component {
          return this.props.betInfo.users.map(participant => {
           
            if (!participant.User_Bet.termStatus) {
-            return <div key={participant.id}> {participant.user_name}: Awaiting Bet Acceptence </div>
+            return <div className='Awaiting' key={participant.id}> {participant.user_name}: Awaiting Bet Acceptence </div>
          
           } else if (!participant.User_Bet.teamSelect) {
-            return <div key={participant.id}>{ participant.user_name}: Awaiting team selection </div>
+            return <div className='Awaiting' key={participant.id}>{ participant.user_name}: Awaiting team selection </div>
           
           } else {
-            return <div key={participant.id}>{participant.user_name}</div>
+            return <div className={participant.User_Bet.teamSelect} key={participant.id}>{participant.user_name}</div>
           }
         })
         }
@@ -85,7 +85,9 @@ class IndividualBet extends Component {
             </div>
           </div>
 
-          {<div>{getParticipantInformation()}</div>}
+          <div className='individual__participants'>
+            {getParticipantInformation()}
+          </div>
      
         </div>
     )

@@ -23,10 +23,44 @@ body {
 }
 
 .ant-drawer {
+  .ant-drawer-content {
+    background-color: $primary-color;
+
+    .ant-drawer-header {
+      background-color: $primary-color;
+      border-bottom: 1px solid rgba(255,255,255,0.2) !important;
+      
+      .ant-drawer-title {
+        color: #fff !important;
+      }
+
+      .ant-drawer-close {
+        color: #fff;
+      }
+    }
+
+    .ant-form-item-label > label {
+      color: #fff !important;
+    }
+  }
   .new-bet__actions {
     .ant-btn-primary {
       @extend %btn-styles;
     }
+  }
+}
+
+.ant-popover {
+  &-arrow {
+    border-color: $primary-color !important;
+  }
+
+  &-inner {
+    background-color: $primary-color !important;
+  }
+
+  &-inner-content {
+    color: #fff !important;
   }
 }
 

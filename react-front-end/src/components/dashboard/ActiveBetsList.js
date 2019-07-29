@@ -9,6 +9,7 @@ class ActiveBetList extends Component {
       return (
         <ActiveBet
           key={activeBet.id}
+          betId={activeBet.id}
           team1={activeBet.team1FullName}
           team2={activeBet.team2FullName}
           stakes={activeBet.stakes}

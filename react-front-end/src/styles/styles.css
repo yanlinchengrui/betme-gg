@@ -22,6 +22,25 @@ body {
 .ant-menu-item .anticon, .ant-menu-submenu-title .anticon {
   margin-right: 0 !important; }
 
+.ant-drawer .ant-drawer-content {
+  background-color: #3745fe; }
+  .ant-drawer .ant-drawer-content .ant-drawer-header {
+    background-color: #3745fe;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important; }
+    .ant-drawer .ant-drawer-content .ant-drawer-header .ant-drawer-title {
+      color: #fff !important; }
+    .ant-drawer .ant-drawer-content .ant-drawer-header .ant-drawer-close {
+      color: #fff; }
+  .ant-drawer .ant-drawer-content .ant-form-item-label > label {
+    color: #fff !important; }
+
+.ant-popover-arrow {
+  border-color: #3745fe !important; }
+.ant-popover-inner {
+  background-color: #3745fe !important; }
+.ant-popover-inner-content {
+  color: #fff !important; }
+
 .ant-badge-count, .ant-badge-dot, .ant-badge .ant-scroll-number-custom-component {
   width: 8px !important;
   height: 8px !important;
@@ -78,22 +97,25 @@ img.bg {
     text-shadow: 0 0 20px rgba(55, 69, 254, 0.5); }
 
 .notifications .notification {
-  border-width: 1px;
+  border-width: 2px;
   border-style: solid;
   border-radius: 4px;
-  margin-bottom: 15px; }
+  margin-bottom: 15px;
+  width: 400px; }
   .notifications .notification--invite {
-    border-color: #d9d9d9;
-    background-color: rgba(217, 217, 217, 0.1); }
+    border-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.1); }
   .notifications .notification--teamselect {
-    border-color: #40a9ff;
-    background-color: rgba(64, 169, 255, 0.1); }
+    border-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.1); }
   .notifications .notification--weiner {
-    border-color: #52c41a;
-    background-color: rgba(82, 196, 26, 0.1); }
+    border: 2px dashed #996515;
+    background-color: #daa520;
+    color: #71480a; }
   .notifications .notification--loser {
-    border-color: #ff4d4f;
-    background-color: rgba(255, 77, 79, 0.1); }
+    border: 2px dashed #b22222;
+    background-color: #ff0000;
+    color: #731616; }
   .notifications .notification__content {
     font-size: 12px;
     padding: 6px 12px; }
@@ -106,7 +128,7 @@ img.bg {
         margin-bottom: 0; }
         .notifications .notification__content-text p .match {
           font-weight: 700;
-          border-bottom: 2px dotted rgba(0, 0, 0, 0.65); }
+          border-bottom: 2px dotted rgba(255, 255, 255, 0.25); }
       .notifications .notification__content-text .actions {
         margin-left: auto; }
         .notifications .notification__content-text .actions .team-btn {
@@ -116,14 +138,14 @@ img.bg {
   .notifications .notification footer {
     font-size: 8px;
     font-weight: 700;
-    color: rgba(0, 0, 0, 0.25); }
+    color: rgba(255, 255, 255, 0.4); }
 
 .new-bet__actions {
   position: absolute;
   left: 0;
   bottom: 0;
   width: 100%;
-  border-top: 1px solid #e8e8e8;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
   padding: 10px 16px;
   text-align: right; }
 .new-bet .ant-input.email-field {
@@ -283,27 +305,29 @@ main {
           background-size: cover;
           background-position: center;
           justify-content: flex-end;
-          padding-right: 110px;
+          padding-right: 60px;
           -webkit-border-radius: 20px 0 0 0;
           border-radius: 20px 0 0 0; }
           .bet .individual__match .team--1 .team__name {
-            margin-right: 40px; }
+            margin-right: 40px;
+            text-align: right; }
         .bet .individual__match .team--2 {
           background-color: #ff4d4f;
           background-image: url("../images/t2.png");
           background-size: cover;
           background-position: center;
           justify-content: flex-start;
-          padding-left: 110px;
+          padding-left: 60px;
           -webkit-border-radius: 0 20px 0 0;
           border-radius: 0 20px 0 0; }
           .bet .individual__match .team--2 .team__name {
             order: 2;
-            margin-left: 40px; }
+            margin-left: 40px;
+            text-align: left; }
           .bet .individual__match .team--2 .team__logo {
             order: 1; }
         .bet .individual__match .team__name h2 {
-          font-size: 36px;
+          font-size: 24px;
           font-weight: 700;
           color: #fff;
           margin-bottom: 0;
@@ -319,8 +343,8 @@ main {
           -webkit-box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.25);
           box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.25); }
           .bet .individual__match .team__logo img {
-            width: 85%;
-            height: 85%; }
+            width: 80%;
+            height: 80%; }
     .bet .individual__info {
       display: flex;
       justify-content: space-evenly;
@@ -367,6 +391,52 @@ main {
         .bet .individual__pick-btns .team-pick .t2-btn:hover {
           background-color: #ff4d4f;
           color: #fff; }
+    .bet .individual__participants {
+      display: flex;
+      flex-direction: column;
+      padding: 20px 60px; }
+      .bet .individual__participants .Team1, .bet .individual__participants .Team2, .bet .individual__participants .Awaiting {
+        display: block;
+        font-size: 18px;
+        padding: 6px; }
+      .bet .individual__participants .Team1 {
+        text-align: left;
+        color: #1890ff;
+        border-bottom: 1px solid #1890ff; }
+      .bet .individual__participants .Team2 {
+        text-align: right;
+        color: #ff4d4f;
+        border-bottom: 1px solid #ff4d4f; }
+      .bet .individual__participants .Awaiting {
+        text-align: center;
+        color: #7f7d87;
+        border-bottom: 1px solid #7f7d87; }
+
+.profile {
+  background-color: #26282f;
+  -webkit-border-radius: 0 0 20px 20px;
+  border-radius: 0 0 20px 20px;
+  -webkit-box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15); }
+  .profile__header {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    padding-bottom: 300px; }
+    .profile__header .header__avatar {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      border-radius: 100%;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%) translateY(50%);
+      -webkit-box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.25);
+      box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.25); }
 
 .stream {
   background-color: #0f0f0f;
