@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Form, Input, Button } from 'antd';
-import Axios from 'axios';
+import axios from 'axios';
 
 class Login extends Component {
   constructor(props) {
@@ -21,7 +21,7 @@ class Login extends Component {
 
   handleSubmit = e => {
     e.preventDefault()
-    Axios.post('http://localhost:3000/login', {
+    axios.post('http://localhost:3000/login', {
       email: this.state.email,
       password: this.state.password
     }).then(() => {

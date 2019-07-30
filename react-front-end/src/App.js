@@ -107,7 +107,7 @@ class App extends Component {
     this.getUserBetsDetails()
     this.getUpcomingMatches()
 
-    setInterval(this.getUserBetsDetails, 5000);
+    // setInterval(this.getUserBetsDetails, 5000);
   }
 
   render() {

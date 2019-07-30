@@ -5,11 +5,37 @@ $darker: #191b22;
 $darkest: #0f0f0f;
 $success-color: #52c41a;
 $error-color: #ff4d4f;
-$t1-color: #1890ff;
-$t2-color: $error-color;
+
 
 %btn-styles {
   border-radius: 100px;
   padding: 0 25px;
   border-width: 2px;
 }
+
+// NEW STYLES
+
+// GLOBAL STUFF
+$body-background: #1e2741;
+$t1-color: #5bc0de;
+$t2-color: #d9534f;
+
+// NAV STUFF
+$nav-bar: #232f4d;
+$logo-accent: #ba40f5;
+$nav-links: #fff;
+$nav-underline: $logo-accent;
+
+// DASHBOARD STUFF
+$faded: #767ca3;
+$header-background: #181e3a;
+$component-background: $nav-bar;
+
+// NOTIFICATION STUFF
+$teampick: #337ab7;
+$invite: #5bc0de;
+$win: #f0ad4e;
+$loss: #d9534f;
+
+// BETS PAGE STUFF
+$bet-background: $nav-bar

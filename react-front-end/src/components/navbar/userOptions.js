@@ -25,10 +25,10 @@ class UserOptions extends Component {
     const content = (
       <div className='user-options'>
         <Link to={'/profile'}>
-          <Button type='primary' style={{ display: 'block', marginBottom: '6px' }}>Profile</Button>
+          <Button className='user-options-btn' type='primary' style={{ display: 'block', marginBottom: '6px' }}>Profile</Button>
         </Link>
         <Link to={'/login'}>
-          <Button type='primary' style={{ display: 'block' }}>Login</Button>
+          <Button className='user-options-btn' type='primary' style={{ display: 'block' }}>Login</Button>
         </Link>
       </div>
     );

@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import { Drawer, Form, Button, Col, Row, InputNumber } from 'antd';
+import axios from 'axios';
 import MatchPicker from './MatchPicker'
 import InviteFriends from './InviteFriends'
-import moment from 'moment-timezone';
 
 
 class NewBet extends Component {
-  state = {
-    visible: false,
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      visible: false
+    }
+  }
 
   showNewBet = () => {
     this.setState({
@@ -81,7 +83,7 @@ class NewBet extends Component {
             </Row>
             <Row type='flex'>
               <Col span={24}>
-                <Form.Item label='Place your bet'>
+                <Form.Item label='Set your stakes'>
                   {getFieldDecorator('stakes', { initialValue: 0 })(
                     <InputNumber
                       formatter={value => `$ ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
@@ -96,7 +98,7 @@ class NewBet extends Component {
                 <InviteFriends form={this.props.form} />
               </Col>
             </Row>
-            <div className='new-bet__actions'>
+            <div className='new-bet-actions'>
               <Button onClick={this.handleSubmit} type='primary'>
                 Create Bet!
               </Button>

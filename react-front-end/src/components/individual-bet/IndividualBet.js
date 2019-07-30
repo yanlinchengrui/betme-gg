@@ -66,13 +66,13 @@ class IndividualBet extends Component {
                 <div key={this.props.currentUser.id}>
                   <h2> Accept or decline the invite: </h2>
                   <div className='team-pick'>
-                    <Button className='t1-btn' type='dashed' onClick={async () => {
+                    <Button className='t1-btn' onClick={async () => {
                       await this.props.handleNotificationSelection(owner.User_Bet.id, true, 'invite');
                       this.props.getBetDetails();
                     }}>
                       Accept
                     </Button>
-                    <Button className='t2-btn' type='dashed' onClick={async () => {
+                    <Button className='t2-btn' onClick={async () => {
                       await this.props.handleNotificationSelection(owner.User_Bet.id, false, 'invite');
                       this.props.getBetDetails();
                     }}>
@@ -90,13 +90,13 @@ class IndividualBet extends Component {
                   <div key={this.props.currentUser.id}>
                     <h2>Pick your team!</h2>
                     <div className='team-pick' >
-                      <Button className='t1-btn' type='dashed' onClick={async () => {
+                      <Button className='t1-btn' onClick={async () => {
                         await this.props.handleNotificationSelection(owner.User_Bet.id, 'Team1', 'teamSelect');
                         this.props.getBetDetails();
                       }}>
                         {this.props.betInfo.team1}
                       </Button>
-                      <Button className='t2-btn' type='dashed' onClick={async () => {
+                      <Button className='t2-btn' onClick={async () => {
                         await this.props.handleNotificationSelection(owner.User_Bet.id, 'Team2', 'teamSelect');
                         this.props.getBetDetails();
                       }}>
@@ -111,7 +111,7 @@ class IndividualBet extends Component {
                 <div key={this.props.currentUser.id}>
                   <h2> Are you sure? </h2>
                   <div className='team-pick'>
-                    <Button className='t1-btn' style={{ marginRight: '0' }} type='dashed' onClick={async () => {
+                    <Button className='t1-btn' style={{ marginRight: '0' }} onClick={async () => {
                       await this.props.handleNotificationSelection(owner.User_Bet.id, true, 'invite');
                       this.props.getBetDetails();
                     }}>

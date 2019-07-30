@@ -61,7 +61,7 @@ class NotificationList extends Component {
     return (
       <Popover content={<div>{notification}</div>} trigger='click' onClick={() => this.props.handleNotificationRead(userBetIds)}>
         <Badge dot={this.state.dot}>
-          <Icon type='bell' theme='filled' style={{ fontSize: '24px' }} />
+          <Icon type='bell' theme='outlined' style={{ fontSize: '24px' }} />
         </Badge>
       </Popover>
     );

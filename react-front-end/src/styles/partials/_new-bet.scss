@@ -1,6 +1,111 @@
+.ant-drawer {
+  .ant-drawer-content {
+    background: #ba40f5;
+      background: -moz-linear-gradient(left,  #ba40f5 0%, #7266f6 100%);
+      background: -webkit-linear-gradient(left,  #ba40f5 0%,#7266f6 100%);
+      background: linear-gradient(to right,  #ba40f5 0%,#7266f6 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ba40f5', endColorstr='#7266f6',GradientType=1 );
 
-.new-bet {
-  &__actions {
+    .ant-drawer-header {
+      background: #ba40f5;
+      background: -moz-linear-gradient(left,  #ba40f5 0%, #7266f6 100%);
+      background: -webkit-linear-gradient(left,  #ba40f5 0%,#7266f6 100%);
+      background: linear-gradient(to right,  #ba40f5 0%,#7266f6 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ba40f5', endColorstr='#7266f6',GradientType=1 );
+      border-bottom: 1px solid rgba(255,255,255,0.2) !important;
+      
+      .ant-drawer-title {
+        color: rgba(255,255,255,0.5);
+        font: {
+          weight: 700;
+          size: 14px;
+          family: 'Montserrat', sans-serif;
+        }
+        text-transform: uppercase;
+      }
+
+      .ant-drawer-close {
+        color: rgba(255,255,255,0.5);
+      }
+    }
+
+    .ant-drawer-body {
+      .ant-form {
+        label {
+          color: #fff;
+          font: {
+            weight: 700;
+          }
+        }
+
+        .ant-select-selection {
+          background-color: rgba(255,255,255,0.5);
+          border: 1px solid #fff;
+  
+          &__placeholder {
+            color: #fff;
+          }
+  
+          &-selected-value {
+            color: #fff;
+          }
+  
+          .ant-select-arrow {
+            color: rgba(255,255,255,0.5);
+          }
+        }
+
+        .ant-input-number {
+          background-color: rgba(255,255,255,0.5);
+          border: 1px solid #fff;
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  .email-field {
+    background-color: rgba(255,255,255,0.5);
+    border: 1px solid #fff;
+    color: #fff;
+    border-radius: 4px;
+
+    .ant-input {
+      background-color: transparent !important;
+      color: #fff !important;
+    }
+  }
+
+  .ant-form-explain {
+    color: #fff !important;
+  }
+
+  .dynamic-delete-button {
+    color: #fff;
+  }
+
+  .invite-friends {
+    width: 100%;
+    height: auto;
+    padding: 10px 20px;
+    font: {
+      size: 10px;
+      weight: 700;
+    }
+    border-radius: 50px;
+    text-shadow: none;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.75);
+    background: transparent;
+    border: 1px solid #fff;
+
+    &:hover {
+      color: $logo-accent;
+      border-color: $logo-accent;
+    }
+  }
+
+  .new-bet-actions {
     position: absolute;
     left: 0;
     bottom: 0;
@@ -8,14 +113,33 @@
     border-top: 1px solid rgba(255,255,255,0.2);
     padding: 10px 16px;
     text-align: right;
-  }
 
-  .ant-input.email-field {
-    width: 90%;
-    margin-right: 8px;
-  }
+    .ant-btn {
+      width: 100%;
+      height: auto;
+      padding: 10px 20px;
+      font: {
+        size: 10px;
+        weight: 700;
+      }
+      border-radius: 50px;
+      text-shadow: none;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.75);
+      background: transparent;
+      border: 1px solid #fff;
 
-  .email-field__btn {
-    width: 100%;
+      &:hover {
+        color: $logo-accent;
+        background-color: #fff;
+        border-color: $logo-accent;
+      }
+    }
+  }
+}
+
+.ant-select-dropdown {
+  &-menu-item-active {
+    background-color: rgba(186,64,245,0.2) !important;
   }
 }

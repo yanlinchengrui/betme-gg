@@ -1,39 +1,62 @@
+.ant-badge-count, .ant-badge-dot, .ant-badge .ant-scroll-number-custom-component {
+  width: 8px !important;
+  height: 8px !important;
+  -webkit-box-shadow: 0 0 10px 0 rgba(217,83,79, 0.9) !important;
+  box-shadow: 0 0 10px 0 rgba(217,83,79, 0.9) !important;
+}
+
+.ant-popover {
+  position: fixed !important;
+
+  &-arrow {
+    border-color: #fff !important;
+  }
+
+  &-inner {
+    background: #ba40f5 !important;
+    background: -moz-linear-gradient(left,  #ba40f5 0%, #7266f6 100%) !important;
+    background: -webkit-linear-gradient(left,  #ba40f5 0%,#7266f6 100%) !important;
+    background: linear-gradient(to right,  #ba40f5 0%,#7266f6 100%) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ba40f5', endColorstr='#7266f6',GradientType=1 ) !important;
+  }
+
+  &-inner-content {
+    color: #fff !important;
+  }
+}
+
 .notifications {
 
   .notification {
-    border-width: 2px;
+    border-width: 1px;
     border-style: solid;
     border-radius: 4px;
     margin-bottom: 15px;
     width: 400px;
 
     &--invite {
-      border-color: rgba(255,255,255,0.2);
-      background-color: rgba(255,255,255,0.1);
+      border-color: $invite;
+      background: rgba(91,192,222,0.8);
+      
     }
 
     &--teamselect {
-      border-color: rgba(255,255,255,0.2);
-      background-color: rgba(255,255,255,0.1);
+      border-color: $teampick;
+      background: rgba(51,122,183,0.8);
     }
 
-    &--weiner {
-      // (　´∀｀)つ―⊂ZZZ⊃
-      border: 2px dashed #996515;
-      background-color: #daa520;
-      color: #71480a;
-
-
+    &--winner {
+      border-color: $win;
+      background: rgba(240,173,78,0.8);
     }
 
     &--loser {
-      border: 2px dashed #b22222;
-      background-color: #df3838;
-      color: #731616;
+      border-color: $loss;
+      background: rgba(217,83,79,0.8);
     }
 
-    &__content {
-      font-size: 12px;
+    &-content {
+      font-size: 14px;
       padding: 6px 12px;
 
       &-text {
@@ -45,12 +68,12 @@
         p {
           margin-bottom: 0;
 
-          & .match {
+          .match {
             font-weight: 700;
 
             a {
-              color: rgba(255,255,255,0.5);
-              border-bottom: 2px dotted rgba(255,255,255,0.5);
+              color: rgba(255,255,255,0.75);
+              border-bottom: 2px dotted rgba(255,255,255,0.75);
               transition: all 0.3s;
 
               &:hover {
@@ -61,32 +84,48 @@
           }
         }
 
-        & .actions {
+        .actions {
           margin-left: auto;
 
-          & .team-btn {
-            @extend %btn-styles;
-            padding: 0 12.5px;
-            font-size: 10px;
+          .accept-btn {
+            opacity: 0.75;
+
+            &:hover {
+              opacity: 1;
+            }
+          }
+
+          .team-btn {
+            height: auto;
+            padding: 5px 20px;
+            font: {
+              size: 10px;
+              weight: 700;
+            }
+            -webkit-border-radius: 4px 4px 4px 4px;
+            border-radius: 4px 4px 4px 4px;
+            text-shadow: none;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.75);
             min-width: 50px;
 
             &--1 {
               background-color: $t1-color;
               border-color: $t1-color;
+              opacity: 0.75;
 
               &:hover {
-                background-color: lighten($t1-color, 10%);
-                border-color: lighten($t1-color, 10%);
+                opacity: 1;
               }
             }
 
             &--2 {
               background-color: $t2-color;
               border-color: $t2-color;
+              opacity: 0.75;
 
               &:hover {
-                background-color: lighten($t2-color, 10%);
-                border-color: lighten($t2-color, 10%);
+                opacity: 1;
               }
             }
           }

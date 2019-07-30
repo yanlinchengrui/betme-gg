@@ -16,8 +16,8 @@ class Profile extends Component {
   }
 
   favGame = {
-    'Counter Strike: Global Offensive': csgo,
-    'League of Legends': lol,
+    'CS:GO': csgo,
+    'LoL': lol,
     'Overwatch': ow,
     'Dota 2': dota
   }

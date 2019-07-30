@@ -4,24 +4,30 @@
   margin-top: 40px;
 
   h2 {
-    color: #fff;
-    border-bottom: 2px solid #fff;
-    font-size: 24px;
-    font-weight: 700;
+    color: $faded;
+    font: {
+      size: 16px;
+      weight: 700;
+      family: 'Montserrat', sans-serif;
+    }
     margin-bottom: 20px;
+    text-transform: uppercase;
   }
 
-  &__matches {
-    width: 330px;
+  /* ====================== START MATCHES ====================== */
+
+  .matches {
+    flex: 0 0 330px;
 
     .match {
-      background-color: $darkest;
+      -webkit-border-radius: 4px 4px 4px 4px;
+      border-radius: 4px 4px 4px 4px;
+      background: $component-background;
       padding: 12px 20px 20px 20px;
-      -webkit-border-radius: 20px;
-      border-radius: 20px;
-      margin-bottom: 20px;
-      -webkit-box-shadow: 0 5px 15px 0 rgba(0,0,0,0.15);
-      box-shadow: 0 5px 15px 0 rgba(0,0,0,0.15);
+      margin-bottom: 10px;
+      -webkit-box-shadow: 0 5px 20px 0 rgba(0,0,0,0.20);
+      box-shadow: 0 5px 20px 0 rgba(0,0,0,0.20);
+      border: 1px solid $faded;
 
       header {
         display: flex;
@@ -30,58 +36,52 @@
         margin-bottom: 20px;
       }
 
-      &__date, &__time {
-        color: $text-faded;
+      &-date, &-time {
+        color: #fff;
         display: flex;
         align-items: center;
-        width: 80px;
+        flex: 1;
 
         & .text {
-          font-size: 10px;
-          font-weight: 700;
+          font: {
+            size: 12px;
+            weight: 700;
+          }
           margin-left: 5px;
           text-transform: uppercase;
+          line-height: normal;
         }
       }
 
-      &__date {
+      &-date {
         justify-content: flex-start;
       }
 
-      &__time {
+      &-time {
         justify-content: flex-end;
       }
 
-      &__team-logos {
+      &-game {
+        width: 24px;
+      }
+
+      &-team-logos {
         display: flex;
         justify-content: center;
         align-items: center;
 
-        & .logo-container {
-          background-color: #fff;
-          width: 70px;
-          height: 70px;
-          display: flex;
-          border-radius: 100%;
-          align-items: center;
-          justify-content: center;
-
-          img {
-            display: block;
-            margin: 0 auto;
-          }
-        }
-
-        & .vs-text {
+        .vs {
           font-size: 32px;
           font-family: 'Permanent Marker', cursive;
           font-weight: 700;
           font-style: italic;
           padding-right: 13px;
-          margin: 0 25px;
+          margin: 0 auto;
+          width: 46px;
           background: -webkit-linear-gradient(#cc1500, #ffb900);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
+          text-shadow: 0 5px 20px rgba(229,101,0,0.55);
         }
       }
 
@@ -89,62 +89,128 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 0 25px;
       }
 
-      &__team-name {
+      &-team-name {
+        color: $faded;
         margin-top: 10px;
-        width: 70px;
+        width: 80px;
         text-align: center;
-        font-size: 10px;
+        font: {
+          size: 12px;
+          weight: 700;
+        }
         line-height: 1;
       }
     }
   }
 
-  &__bets {
+  /* ====================== START BETS ====================== */
+
+  .bets {
     flex-grow: 1;
-    margin-left: 100px;
+    margin-left: 40px;
 
-    .bets {
+    .bet-list {
+
       .bet {
-        background-color: $darkest;
-        -webkit-border-radius: 20px;
-        border-radius: 20px;
+        background: $component-background;
+        -webkit-border-radius: 4px 4px 4px 4px;
+        border-radius: 4px 4px 4px 4px;
         margin-bottom: 20px;
-        -webkit-box-shadow: 0 5px 15px 0 rgba(0,0,0,0.15);
-        box-shadow: 0 5px 15px 0 rgba(0,0,0,0.15);
+        -webkit-box-shadow: 0 5px 20px 0 rgba(0,0,0,0.20);
+        box-shadow: 0 5px 20px 0 rgba(0,0,0,0.20);
+        border: 1px solid $faded;
+        padding: 5px;
 
-        &__match {
-          padding: 20px;
+        &-match {
           display: flex;
           align-items: center;
           justify-content: flex-start;
+          background: $body-background;
+          -webkit-border-radius: 4px 4px 4px 4px;
+          border-radius: 4px 4px 4px 4px;
+          padding: 20px;
+          position: relative;
+
+          .game {
+            width: 160px;
+            height: 80px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 0;
+            overflow: hidden;
+            background: {
+              size: contain;
+              repeat: no-repeat;
+              position: center;
+            }
+            -webkit-border-radius: 4px 0 0 4px;
+            border-radius: 4px 0 0 4px;
+
+            &-Overwatch {
+              background: {
+                image: url('../images/ow-bet-bg.png');
+              }
+            }
+
+            &-LoL {
+              background: {
+                image: url('../images/lol-bet-bg.png');
+              }
+            }
+
+            &-CS\:GO {
+              background: {
+                image: url('../images/csgo-bet-bg.png');
+              }
+            }
+
+            &-Dota {
+              background: {
+                image: url('../images/dota-bet-bg.png');
+              }
+            }
+          }
 
           &-logo {
             margin-right: 20px;
+            z-index: 1;
           }
 
           &-name {
+            z-index: 1;
+
             h4 {
               font-size: 18px;
               font-weight: 700;
-              color: $text-faded;
+              color: #fff;
               margin-bottom: 0;
             }
           }
 
           &-view {
             margin-left: auto;
-            .ant-btn {
-              @extend %btn-styles;
-              border-color: $primary-color;
-              background-color: $primary-color;
-              color: #fff;
+            z-index: 1;
 
+            .ant-btn {
+              height: auto;
+              padding: 10px 20px;
+              font: {
+                size: 10px;
+                weight: 700;
+              }
+              border-radius: 50px;
+              border: 1px solid $faded;
+              background: transparent;
+              text-shadow: none;
+              text-transform: uppercase;
+              color: rgba(255,255,255,0.75);
+      
               &:hover {
-                -webkit-box-shadow: 0 0 20px 0 rgba(55,69,254,0.5);
-                box-shadow: 0 0 20px 0 rgba(55,69,254,0.5);
+                color: #fff;
+                border-color: #fff;
               }
             }
           }
@@ -152,41 +218,34 @@
 
         footer {
           display: flex;
-          padding: 5px 20px;
-          -webkit-border-radius: 0 0 20px 20px;
-          border-radius: 0 0 20px 20px;
+          align-items: center;
+          justify-content: space-between;
+          margin-top: 5px;
+          padding: 5px 10px;
 
-          & .bet__info {
-            margin-right: 40px;
+          .bet-info {
 
             p {
               margin-bottom: 0;
-              font-size: 10px;
-              font-weight: 700;
-
-              .capitalize {
-                text-transform: capitalize;
+              font: {
+                size: 10px;
+                weight: 700;
               }
+              text-transform: uppercase;
             }
           }
         }
 
         &--pending {
-          footer {
-            background-color: #7f7d87;
-          }
+          color: #f0ad4e;
         }
 
         &--active {
-          footer {
-            background-color: $success-color;
-          }
+          color: #5cb85c;
         }
 
         &--complete {
-          footer {
-            background-color: $t1-color;
-          }
+          color: #d9534f;
         }
       }
     }

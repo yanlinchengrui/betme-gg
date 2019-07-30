@@ -1,65 +1,138 @@
-.header {
-  width: 100%;
-  display: flex;
-  align-items: center;
+.ant-layout-header {
+  position: sticky;
+  top: 0;
+  height: auto !important;
+  background: $nav-bar !important;
+  line-height: normal !important;
+  -webkit-box-shadow: 0 10px 10px 0 rgba(0,0,0,0.1);
+  box-shadow: 0 10px 10px 0 rgba(0,0,0,0.1);
+  z-index: 50;
 
   .container {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-  }
 
-  .navigation {
-    display: flex;
-    line-height: 1;
-    align-items: center;
+    .logo {
+      a {
+        color: #fff;
+        font: {
+          family: 'Montserrat', sans-serif;
+          size: 28px;
+          weight: 700;
+        }
+        text-transform: uppercase;
+        transition: all 0.3s;
+  
+        &:hover {
+          color: $logo-accent;
+          text-shadow: 0 5px 20px rgba(186,64,245,0.55);
+        }
+      }
+    
+      &--accent {
+        color: $logo-accent;
+        text-shadow: 0 5px 20px rgba(186,64,245,0.55);
+      }
+    }
 
-    &__btn {
-      padding: 0 0 0 20px;
+    .ant-menu {
+      display: flex;
+      line-height: 1;
+      align-items: center;
+      background: transparent;
+      color: $nav-links;
+      margin: {
+        right: auto;
+        left: 40px;
+      };
 
-      & .ant-btn {
-        @extend %btn-styles;
+      &-horizontal {
+        border-bottom: none;
       }
 
-      & .ant-btn-primary {
-        background: transparent;
-        border: 2px solid rgba(255,255,255,0.2);
+      &-item {
+        padding: 20px;
 
         &:hover {
-          background-color: $primary-color;
-          border-color: $primary-color;
-          -webkit-box-shadow: 0 0 20px 0 rgba(55,69,254,0.5);
-          box-shadow: 0 0 20px 0 rgba(55,69,254,0.5);
+          border-bottom: 2px solid $nav-underline;
+        }
+      }
+    }
+
+    .notifications, .user-options {
+      display: inline-block;
+      vertical-align: bottom;
+      border-bottom: 2px solid transparent;
+      cursor: pointer;
+      margin-top: -1px;
+      top: 1px;
+      position: relative;
+      transition: border-color 0.3s;
+
+      &:hover{
+        border-color: $nav-underline;
+      }
+    }
+
+    .notifications {
+      padding: 22px 20px 18px;
+      
+    }
+
+    .user-options {
+      padding: 16px 20px;
+    }
+
+    .new-bet {
+      margin-left: 20px;
+
+      .ant-btn {
+        height: auto;
+        padding: 10px 20px;
+        font: {
+          size: 10px;
+          weight: 700;
+        }
+        border-radius: 50px;
+        border: none;
+        background: #ba40f5;
+        background: -moz-linear-gradient(left,  #ba40f5 0%, #7266f6 100%);
+        background: -webkit-linear-gradient(left,  #ba40f5 0%,#7266f6 100%);
+        background: linear-gradient(to right,  #ba40f5 0%,#7266f6 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ba40f5', endColorstr='#7266f6',GradientType=1 );
+        box-shadow: 0 5px 20px 0 rgba(186,64,245,0.55);
+        text-shadow: none;
+        text-transform: uppercase;
+        color: rgba(255,255,255,0.75);
+
+        &:hover {
+          color: #fff;
+          transform: scale(1.1);
         }
       }
     }
   }
 }
 
-.logo {
-  margin-right: auto;
-
-  a {
-    color: #fff;
-    font-family: 'Ubuntu', sans-serif;
-    font-style: italic;
-    font-size: 36px;
-
-    &:hover {
-      color: $primary-color;
-      text-shadow: 0 0 20px rgba(55,69,254,0.5);
-    }
+.user-options-btn {
+  width: 100% !important;
+  height: auto !important;
+  padding: 10px 20px !important;
+  font: {
+    size: 10px !important;
+    weight: 700 !important;
   }
+  border-radius: 50px !important;
+  text-shadow: none !important;
+  text-transform: uppercase !important;
+  color: rgba(255,255,255,0.75) !important;
+  background: transparent !important;
+  border: 1px solid #fff !important;
 
-  &--accent {
-    color: $primary-color;
-    text-shadow: 0 0 20px rgba(55,69,254,0.5);
-  }
-}
-
-.user-options {
-  .ant-btn {
-    @extend %btn-styles;
-    width: 100px;
+  &:hover {
+    color: $logo-accent !important;
+    background-color: #fff !important;
+    border-color: $logo-accent !important;
   }
 }
