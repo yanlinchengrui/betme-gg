@@ -51,7 +51,7 @@ class NotificationList extends Component {
         type={bet.User_Bet.notificationType}
         team1={bet.team1}
         team2={bet.team2}
-        date={bet.User_Bet.updatedAt}
+        date={bet.User_Bet.createdAt}
         handleNotificationSelection={this.props.handleNotificationSelection}
       />;
     });

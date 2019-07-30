@@ -38,7 +38,7 @@ class NewBet extends Component {
         values.team2 = teams[1];
         values.team1FullName = gameInfo[0].opponents[0].opponent.name;
         values.team2FullName = gameInfo[0].opponents[1].opponent.name;
-        values.start_time = moment(gameInfo[0].begin_at).tz('America/Vancouver').format('DD MMM YYYY HH:mm');
+        values.start_time = gameInfo[0].begin_at;
         values.team1logo = gameInfo[0].opponents[0].opponent.image_url;
         values.team2logo = gameInfo[0].opponents[1].opponent.image_url;
         values.matchId = gameInfo[0].id;

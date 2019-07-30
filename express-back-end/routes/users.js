@@ -17,7 +17,9 @@ router.get('/:id', (req, res) => {
     res.status(200)
   }
   User.findOne({
-    where: { id: req.session.user.id }, include: [{ model: db.Bet, as: 'bets' }]
+    where: { id: req.session.user.id },
+    include: [{ model: db.Bet, as: 'bets' }],
+    order: [[{ model: db.Bet, as: 'bets' }, 'createdAt', 'DESC']]
   }).then((rez) => {
     console.log(rez.toJSON())
     res.json(rez);

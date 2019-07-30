@@ -59,6 +59,45 @@ class HistoricalBet extends Component {
         )
         break;
 
+      case "cancelled":
+        historicalBet = (
+          <div className='bet bet--complete'>
+            <div className='bet__match'>
+              <div className='bet__match-logo'>
+                <img src={this.gameLogo[this.props.game]} alt={this.props.game} style={{ width: '40px', height: '40px' }} />
+              </div>
+              {/* <div className='bet__match-name'>
+                <h4>{this.props.match}</h4>
+              </div> */}
+              <div>
+                {this.props.team1}
+              </div>
+              <div>
+                {this.props.team2}
+              </div>
+              <div className='bet__match-view'>
+                <Link to={`/bets/user/${this.props.betId}`}>
+                  <Button>View Bet</Button>
+                </Link>
+              </div>
+            </div>
+            <footer>
+              <div className='bet__info'>
+                <p>Status: <span className='capitalize'>{this.props.betStatus}</span></p>
+              </div>
+              <div className='bet__info'>
+                <p>Stakes: ${this.props.stakes * this.props.participants}</p>
+              </div>
+              <div className='bet__info'>
+                <p>Bet Owner: {this.props.owner}</p>
+              </div>
+              <div className='bet__info'>
+                <p>Participants: {this.props.participants}</p>
+              </div>
+            </footer>
+          </div>
+        )
+        break;
 
       default:
         break;

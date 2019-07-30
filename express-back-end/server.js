@@ -16,6 +16,8 @@ const models = require('./models');
 const Bet = models.Bet;
 const UserBet = models.User_Bet;
 
+const Op = require('sequelize').Op;
+
 const cookieSession = require('cookie-session')
 App.use(cookieSession({
   name: 'session',
@@ -75,7 +77,7 @@ checkWinnerAndUpdateWinStatus = () => {
     return await axios.get(`https://api.pandascore.co/matches/${matchId}?token=${process.env.TOKEN}`);
   }
 
-  Bet.findAll({
+  return Bet.findAll({
     where: { bet_status: 'active' },
     attributes: ['id', 'matchId'],
   }).then((bets) => {
@@ -97,8 +99,6 @@ checkWinnerAndUpdateWinStatus = () => {
             }
           }).then((thisBet) => {
             thisBet.update({ bet_status: 'completed' });
-          }).catch((err) => {
-            console.log(err);
           })
 
           // update all user bets
@@ -113,9 +113,7 @@ checkWinnerAndUpdateWinStatus = () => {
                 notificationType: userBet.dataValues.teamSelect === winner ? 'win' : 'loss',
               });
             });
-          }).catch((err) => {
-            console.log(err);
-          });
+          })
 
         }
       }).catch((err) => {
@@ -125,9 +123,30 @@ checkWinnerAndUpdateWinStatus = () => {
   });
 }
 
-// now it only checks all bets once when the server starts
-// can change to check once a hour
+checkPendingBetsAndStartTime = () => {
+  return Bet.findAll({
+    where: {
+      bet_status: 'pending',
+      start_time: {
+        [Op.lte]: new Date()
+      }
+    }
+  }).then((bets) => {
+    bets.forEach((bet) => {
+      bet.update({
+        bet_status: 'cancelled'
+      })
+    })
+  })
+}
+
+checkPendingBetsAndStartTime();
 checkWinnerAndUpdateWinStatus();
+
+setInterval(async () => {
+  await checkPendingBetsAndStartTime();
+  await checkWinnerAndUpdateWinStatus();
+}, 600000);
 
 
 // Create the WebSockets server
