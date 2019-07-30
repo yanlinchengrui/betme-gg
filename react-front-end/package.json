@@ -8,6 +8,7 @@
     "moment": "^2.24.0",
     "moment-timezone": "^0.5.26",
     "react": "^16.8.6",
+    "react-countdown-now": "^2.1.1",
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.1",
     "react-scripts": "2.1.8"

@@ -21,7 +21,7 @@ class BetHistoryList extends Component {
     });
     return (
       <div className='dashboard__bets'>
-        <h2>Historical bets</h2>
+        <h2>Past bets</h2>
         {historicalBets}
       </div>
     );
