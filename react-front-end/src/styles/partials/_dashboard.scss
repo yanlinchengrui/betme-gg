@@ -129,7 +129,7 @@
             h4 {
               font-size: 18px;
               font-weight: 700;
-              color: #7f7d87;
+              color: $text-faded;
               margin-bottom: 0;
             }
           }
@@ -143,8 +143,8 @@
               color: #fff;
 
               &:hover {
-                background-color: lighten($primary-color, 10%);
-                border-color: lighten($primary-color, 10%);
+                -webkit-box-shadow: 0 0 20px 0 rgba(55,69,254,0.5);
+                box-shadow: 0 0 20px 0 rgba(55,69,254,0.5);
               }
             }
           }
@@ -180,6 +180,12 @@
         &--active {
           footer {
             background-color: $success-color;
+          }
+        }
+
+        &--complete {
+          footer {
+            background-color: $t1-color;
           }
         }
       }

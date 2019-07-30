@@ -34,8 +34,8 @@ class Notification extends Component {
               <div className='notification__content-text'>
                 <p>Pick your team for <span className='match'>{this.props.match}</span></p>
                 <div className='actions'>
-                  <Button className='team-btn' type='primary' style={{ marginLeft: '10px' }} name='Team 1' onClick={() => this.props.handleNotificationSelection(this.props.userBetId, 'Team1', this.props.type)}>{this.props.team1}</Button>
-                  <Button className='team-btn' type='primary' style={{ marginLeft: '5px' }} name='Team 2' onClick={() => this.props.handleNotificationSelection(this.props.userBetId, 'Team2', this.props.type)}>{this.props.team2}</Button>
+                  <Button className='team-btn team-btn--1' type='primary' style={{ marginLeft: '10px' }} name='Team 1' onClick={() => this.props.handleNotificationSelection(this.props.userBetId, 'Team1', this.props.type)}>{this.props.team1}</Button>
+                  <Button className='team-btn team-btn--2' type='primary' style={{ marginLeft: '5px' }} name='Team 2' onClick={() => this.props.handleNotificationSelection(this.props.userBetId, 'Team2', this.props.type)}>{this.props.team2}</Button>
                 </div>
               </div>
               <footer>

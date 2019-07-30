@@ -24,11 +24,73 @@
         position: center;
         repeat: no-repeat;
       }
-      bottom: 40px;
+      bottom: 60px;
       left: 50%;
       transform: translateX(-50%) translateY(50%);
       -webkit-box-shadow: 0 10px 20px 0 rgba(0,0,0,0.25);
       box-shadow: 0 10px 20px 0 rgba(0,0,0,0.25);
+    }
+  }
+
+  &__info {
+    padding: 80px 40px 20px;
+    overflow: hidden;
+
+    .info__user {
+      float: left;
+      width: 250px;
+
+      h2 {
+        color: #fff;
+        border-bottom: 2px solid #fff;
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 20px;
+      }
+
+      .info__container {
+        background-color: $darkest;
+        padding: 12px 20px 20px 20px;
+        -webkit-border-radius: 20px;
+        border-radius: 20px;
+        margin-bottom: 20px;
+        -webkit-box-shadow: 0 5px 15px 0 rgba(0,0,0,0.15);
+        box-shadow: 0 5px 15px 0 rgba(0,0,0,0.15);
+        color: $text-faded;
+
+        h4 {
+            font: {
+              size: 24px;
+              weight: 700;
+            }
+            color: #fff;
+        }
+
+        .user-info {
+          &__title {
+            font-weight: 700;
+            margin-right: 5px;
+            color: #fff;
+          }
+        }
+      }
+    }
+
+    .info__past-bets {
+      float: right;
+      width: 594px;
+
+      .dashboard__bets {
+        margin-left: 0;
+
+        h2 {
+          color: #fff;
+          border-bottom: 2px solid #fff;
+          font-size: 24px;
+          font-weight: 700;
+          margin-bottom: 20px;
+        }
+      }
     }
   }
 }

@@ -1,10 +1,32 @@
 import React, { Component } from "react";
 import { Button } from 'antd';
+import { Link } from "react-router-dom";
 import moment from 'moment-timezone';
+import Countdown from 'react-countdown-now';
 
 class IndividualBet extends Component {
-
+  gameName = {
+    'CS:GO': 'csgo',
+    'LoL': 'lol',
+    'Overwatch': 'ow',
+    'Dota 2': 'dota2'
+  }
+  
   render() {
+
+    const LiveBtn = () => {
+      return <Link to={`/stream/${this.gameName[this.props.betInfo.game]}`}>Watch Live!</Link>
+    }
+
+    const renderer = ({ days, hours, minutes, seconds, end }) => {
+      if ((end - Date.now() < (3600000*2)) && (end - Date.now()) > 0) {
+        return <LiveBtn />
+      } else if ((end - Date.now()) < 0) {
+        return 'Match Over';
+      } else {
+        return <Countdown date={Date.now() + (days * 3600000*24) + (hours * 3600000 - 3600000*2) + (minutes * 60000) + (seconds * 1000)} />;
+      }
+    };
 
     const getParticipantInformation = () => {
       if (!this.props.betInfo.users) {
@@ -106,9 +128,18 @@ class IndividualBet extends Component {
       })
     }
 
+    let gameday = new Date(new Date(this.props.betInfo.start_time).getTime() + 3600000*2);
+
     return (
       <div className='individual'>
         <div className='individual__match'>
+          <div className='match-details'>
+            <Countdown date={gameday} renderer={(things)=>{
+                things.end = gameday;
+                return renderer(things)}
+              }
+            />
+          </div>
           <div className='team team--1'>
             <div className='team__name'>
               <h2>{this.props.betInfo.team1FullName}</h2>

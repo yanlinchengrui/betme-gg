@@ -12,8 +12,25 @@
       display: flex;
       justify-content: flex-start;
       align-items: center;
+      position: relative;
 
-      & .team {
+      .match-details {
+        background-color: $darkest;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        font: {
+          size: 20px;
+          weight: 700;
+        }
+        color: #fff;
+        padding: 5px 15px;
+        -webkit-border-radius: 0 0 20px 20px;
+        border-radius: 0 0 20px 20px;
+      }
+
+      .team {
         width: 50%;
         display: flex;
         align-items: center;
@@ -180,8 +197,8 @@
 
       .Awaiting {
         text-align: center;
-        color: #7f7d87;
-        border-bottom: 1px solid #7f7d87;
+        color: $text-faded;
+        border-bottom: 1px solid $text-faded;
       }
     }
   }
