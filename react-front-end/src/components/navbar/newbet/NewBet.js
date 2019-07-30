@@ -44,11 +44,13 @@ class NewBet extends Component {
         console.log('Received values of form: ', values);
 
         axios.post('http://localhost:8080/bets', values, { withCredentials: true })
-          .then(function (response) {
+          .then((response) => {
             props.refreshComponent();
+            props.form.resetFields();
+            this.onClose();
             console.log(response);
           })
-          .catch(function (error) {
+          .catch((error) => {
             console.log(error);
           });
       }
