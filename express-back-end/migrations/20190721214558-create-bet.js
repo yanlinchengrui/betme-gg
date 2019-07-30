@@ -28,7 +28,7 @@ module.exports = {
         allowNull: false
       },
       start_time: {
-        type: Sequelize.STRING,
+        type: Sequelize.DATE,
         allowNull: false
       },
       team1: {
