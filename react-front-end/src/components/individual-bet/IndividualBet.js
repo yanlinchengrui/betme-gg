@@ -42,7 +42,7 @@ class IndividualBet extends Component {
           return <div className='Awaiting' key={participant.id}>{participant.user_name}: Awaiting Team Selection </div>
 
         } else {
-          return <div className={participant.User_Bet.teamSelect} key={participant.id}>{participant.user_name}</div>
+          return <div className={participant.User_Bet.teamSelect} key={participant.id}>{participant.user_name} {participant.User_Bet.userWinStatus === null || (participant.User_Bet.userWinStatus ? ' won the bet!' : ' lost the bet!')}</div>
         }
       })
     }

@@ -5,6 +5,7 @@ class BetHistoryList extends Component {
 
   render() {
 
+    console.log(this.props.betinfo);
     const historicalBets = this.props.betinfo.map(historicalBet => {
       return (
         <HistoricalBet
@@ -17,6 +18,7 @@ class BetHistoryList extends Component {
           game={historicalBet.game}
           participants={historicalBet.participants}
           betId={historicalBet.id}
+          userWinStatus={historicalBet.userWinStatus}
         />
       );
     });
