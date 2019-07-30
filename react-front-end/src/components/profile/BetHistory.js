@@ -54,6 +54,9 @@ class HistoricalBet extends Component {
               <div className='bet__info'>
                 <p>Participants: {this.props.participants}</p>
               </div>
+              <div className='bet__info'>
+                <p>Status: {this.props.userWinStatus ? 'Winner' : 'Loser'} </p>
+              </div>
             </footer>
           </div>
         )
