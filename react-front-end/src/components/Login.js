@@ -33,7 +33,7 @@ class Login extends Component {
 
   render() {
     return (
-      <div style={{ width: '300px', margin: '0 auto', padding: '20px', backgroundColor: '#3745fe', borderRadius: '20px' }}>
+      <div style={{ width: '300px', height: '205px', margin: '40px auto 0', padding: '20px', backgroundColor: '#3745fe', borderRadius: '20px' }}>
         <Form onSubmit={this.handleSubmit}>
           <Form.Item>
             <Input placeholder='Email' value={this.state.email} onChange={this.handleEmail} />
