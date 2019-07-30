@@ -6,6 +6,7 @@ import Login from "./components/Login";
 import IndividualBetMain from "./components/individual-bet/IndividualBetMain";
 import StreamAndChat from "./components/stream/StreamAndChat";
 import Profile from "./components/profile/Profile";
+import Footer from "./components/Footer";
 import axios from "axios";
 
 import "./App.css";
@@ -133,6 +134,7 @@ class App extends Component {
 
           </Switch>
         </main>
+        <Footer />
       </div>
     );
   }
