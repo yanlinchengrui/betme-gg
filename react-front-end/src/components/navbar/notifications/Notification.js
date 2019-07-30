@@ -77,6 +77,21 @@ class Notification extends Component {
         );
         break;
 
+      case 'declined':
+        notification = (
+          <div className='notification notification--loser'>
+            <div className='notification__content'>
+              <div className='notification__content-text'>
+                <Icon type="smile" theme="filled" rotate={180} />&nbsp;<p>The bet: <span className='match'>{this.props.match}</span> got cancelled due to some reason... </p>
+              </div>
+              <footer>
+                {moment(this.props.date).tz('America/Vancouver').format('MMMM DD, YYYY - HH:mm')}
+              </footer>
+            </div>
+          </div>
+        );
+        break;
+
       default:
         break;
     }

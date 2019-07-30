@@ -86,6 +86,7 @@ class NewBet extends Component {
                 <Form.Item label='Set your stakes'>
                   {getFieldDecorator('stakes', { initialValue: 0 })(
                     <InputNumber
+                      min={1}
                       formatter={value => `$ ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
                       parser={value => value.replace(/\$\s?|(,*)/g, '')}
                     />
