@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import IndividualBet from "./IndividualBet";
 import axios from "axios"
+import defaultBg from '../../images/default-bg.png'
 
 class IndividualBetMain extends Component {
   constructor(props) {
@@ -35,7 +36,8 @@ class IndividualBetMain extends Component {
   render() {
     return (
       <div className="container">
-        <div className="bet">
+        <img src={defaultBg} className='bg'/>
+        <div className="bet-page">
           <IndividualBet betInfo={this.state.betInfo} handleNotificationSelection={this.props.handleNotificationSelection} currentUser={this.props.currentUser} getBetDetails={this.getBetDetails} />
         </div>
       </div>

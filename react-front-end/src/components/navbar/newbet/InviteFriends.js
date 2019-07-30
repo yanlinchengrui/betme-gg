@@ -12,7 +12,6 @@ class InviteFriends extends Component {
     if (keys.length === 1) {
       return;
     }
-
     // can use data-binding to set
     form.setFieldsValue({
       keys: keys.filter(key => key !== k),
@@ -85,8 +84,9 @@ class InviteFriends extends Component {
             },
           ],
         })(<Input 
-          prefix={<Icon type="mail" style={{ color: 'rgba(0,0,0,.25)' }} />}
+          prefix={<Icon type="mail" style={{ color: '#fff' }} />}
           style={{ width: '90%', marginRight: '8px' }}
+          className='email-field'
         />)}
         {keys.length > 1 ? (
           <Icon
@@ -101,8 +101,8 @@ class InviteFriends extends Component {
       <div>
         {formItems}
         <Form.Item {...formBtn}>
-          <Button type="dashed" className='email-field__btn' onClick={this.add}>
-            Invite your friends!
+          <Button className='invite-friends' onClick={this.add}>
+            Click here to invite your friends!
           </Button>
         </Form.Item>
       </div>

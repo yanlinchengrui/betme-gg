@@ -1,19 +1,26 @@
 .footer {
-  background-color: $dark;
+  background-color: #141b31;
   text-align: center;
   font: {
-    family: 'Ubuntu', sans-serif;
+    family: 'Montserrat', sans-serif;
     weight: 700;
     size: 10px;
   }
   padding: 20px 0;
   margin-top: 40px;
+  text-transform: uppercase;
 
   p {
     margin-bottom: 0;
 
     .team-name {
-      color: $primary-color;
+      color: $logo-accent;
+      font: {
+        family: 'Permanent Marker', cursive;
+        size: 14px;
+      }
+      margin: 0 10px;
+      text-shadow: 0 5px 20px rgba(186,64,245,0.55);
     }
   }
 }

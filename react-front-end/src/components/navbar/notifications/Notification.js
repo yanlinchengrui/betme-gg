@@ -12,12 +12,12 @@ class Notification extends Component {
       case 'invite':
         notification = (
           <div className='notification notification--invite'>
-            <div className='notification__content'>
-              <div className='notification__content-text'>
-                <p>{this.props.owner} has invited you to a bet for <span className='match'>{this.props.match}</span></p>
+            <div className='notification-content'>
+              <div className='notification-content-text'>
+                <p>{this.props.owner} has invited you to a bet for <span className='match'><Link to={`/bets/user/${this.props.betId}`}>{this.props.match}</Link></span></p>
                 <div className='actions'>
-                  <Icon type='check-circle' theme='filled' style={{ fontSize: '24px', color: '#fff', marginLeft: '10px' }} onClick={() => this.props.handleNotificationSelection(this.props.userBetId, true, this.props.type)} />
-                  <Icon type='close-circle' theme='filled' style={{ fontSize: '24px', color: '#fff', marginLeft: '5px' }} onClick={() => this.props.handleNotificationSelection(this.props.userBetId, false, this.props.type)} />
+                  <Icon className='accept-btn' type='check-circle' theme='outlined' style={{ fontSize: '24px', marginLeft: '10px' }} onClick={() => this.props.handleNotificationSelection(this.props.userBetId, true, this.props.type)} />
+                  <Icon className='accept-btn' type='close-circle' theme='outlined' style={{ fontSize: '24px', marginLeft: '5px' }} onClick={() => this.props.handleNotificationSelection(this.props.userBetId, false, this.props.type)} />
                 </div>
               </div>
               <footer>
@@ -31,8 +31,8 @@ class Notification extends Component {
       case 'teamSelect':
         notification = (
           <div className='notification notification--teamselect'>
-            <div className='notification__content'>
-              <div className='notification__content-text'>
+            <div className='notification-content'>
+              <div className='notification-content-text'>
                 <p>Pick your team for <span className='match'><Link to={`/bets/user/${this.props.betId}`}>{this.props.match}</Link></span></p>
                 <div className='actions'>
                   <Button className='team-btn team-btn--1' type='primary' style={{ marginLeft: '10px' }} name='Team 1' onClick={() => this.props.handleNotificationSelection(this.props.userBetId, 'Team1', this.props.type)}>{this.props.team1}</Button>
@@ -49,10 +49,10 @@ class Notification extends Component {
 
       case 'win':
         notification = (
-          <div className='notification notification--weiner'>
-            <div className='notification__content'>
-              <div className='notification__content-text'>
-                <Icon type="trophy" theme="filled" />&nbsp;<p>Winner winner chicken dinner! You won the <span className='match'>{this.props.match}</span> bet!</p>
+          <div className='notification notification--winner'>
+            <div className='notification-content'>
+              <div className='notification-content-text'>
+                <p>Winner winner chicken dinner! You won the <span className='match'><Link to={`/bets/user/${this.props.betId}`}>{this.props.match}</Link></span> bet!</p>
               </div>
               <footer>
                 {moment(this.props.date).tz('America/Vancouver').format('MMMM DD, YYYY - HH:mm')}
@@ -65,9 +65,9 @@ class Notification extends Component {
       case 'loss':
         notification = (
           <div className='notification notification--loser'>
-            <div className='notification__content'>
-              <div className='notification__content-text'>
-                <Icon type="frown" theme="filled" />&nbsp;<p>You lost the <span className='match'>{this.props.match}</span> bet! Better luck next time, kid!</p>
+            <div className='notification-content'>
+              <div className='notification-content-text'>
+                <p>You lost the <span className='match'><Link to={`/bets/user/${this.props.betId}`}>{this.props.match}</Link></span> bet! Better luck next time, kid!</p>
               </div>
               <footer>
                 {moment(this.props.date).tz('America/Vancouver').format('MMMM DD, YYYY - HH:mm')}

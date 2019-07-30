@@ -1,12 +1,13 @@
-.bet {
-  background-color: $darkest;
-  -webkit-box-shadow: 0 5px 15px 0 rgba(0,0,0,0.15);
-  box-shadow: 0 5px 15px 0 rgba(0,0,0,0.15);
-  -webkit-border-radius: 20px 20px 20px 20px;
-  border-radius: 20px 20px 20px 20px;
+.bet-page {
+  background-color: $bet-background;
+  -webkit-box-shadow: 0 5px 20px 0 rgba(0,0,0,0.20);
+  box-shadow: 0 5px 20px 0 rgba(0,0,0,0.20);
+  -webkit-border-radius: 4px 4px 4px 4px;
+  border-radius: 4px 4px 4px 4px;
+  border: 1px solid $faded;
+  margin-top: 40px;
 
   & .individual {
-    margin-top: 40px;
 
     &__match {
       display: flex;
@@ -15,19 +16,21 @@
       position: relative;
 
       .match-details {
-        background-color: $darkest;
+        background-color: rgba(255,255,255,0.25);
+        border: 1px solid rgba(255,255,255,0.5);
         position: absolute;
-        top: 0;
+        top: 10px;
         left: 50%;
         transform: translateX(-50%);
         font: {
-          size: 20px;
+          size: 14px;
           weight: 700;
         }
         color: #fff;
         padding: 5px 15px;
-        -webkit-border-radius: 0 0 20px 20px;
-        border-radius: 0 0 20px 20px;
+        -webkit-border-radius: 4px 4px 4px 4px;
+        border-radius: 4px 4px 4px 4px;
+        text-transform: uppercase;
       }
 
       .team {
@@ -43,11 +46,11 @@
           background-position: center;
           justify-content: flex-end;
           padding-right: 60px;
-          -webkit-border-radius: 20px 0 0 0;
-          border-radius: 20px 0 0 0;
+          -webkit-border-radius: 4px 0 0 0;
+          border-radius: 4px 0 0 0;
 
           .team__name {
-            margin-right: 40px;
+            margin-right: 20px;
             text-align: right;
           }
         }
@@ -59,12 +62,12 @@
           background-position: center;
           justify-content: flex-start;
           padding-left: 60px;
-          -webkit-border-radius: 0 20px 0 0;
-          border-radius: 0 20px 0 0;
+          -webkit-border-radius: 0 4px 0 0;
+          border-radius: 0 4px 0 0;
 
           .team__name {
             order: 2;
-            margin-left: 40px;
+            margin-left: 20px;
             text-align: left;
           }
 
@@ -95,8 +98,8 @@
           box-shadow: 0 10px 20px 0 rgba(0,0,0,0.25);
 
           img {
-            width: 80%;
-            height: 80%;
+            width: 70%;
+            height: 70%;
           }
         }
       }
@@ -105,12 +108,15 @@
     &__info {
       display: flex;
       justify-content: space-evenly;
-      background-color: $primary-color;
+      background: #ba40f5;
+      background: -moz-linear-gradient(left,  #ba40f5 0%, #7266f6 100%);
+      background: -webkit-linear-gradient(left,  #ba40f5 0%,#7266f6 100%);
+      background: linear-gradient(to right,  #ba40f5 0%,#7266f6 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ba40f5', endColorstr='#7266f6',GradientType=1 );
       font-size: 12px;
       font-weight: 700;
       padding: 6px 0;
-      -webkit-box-shadow: 0 0 20px 0 rgba(55,69,254,0.5);
-      box-shadow: 0 0 20px 0 rgba(55,69,254,0.5);
+      box-shadow: 0 5px 20px 0 rgba(186,64,245,0.55);
 
       .pot, .date, .participants {
         width: 200px;
@@ -126,11 +132,12 @@
       margin: 20px 0;
 
       h2 {
-        color: #fff;
-        border-bottom: 2px solid #fff;
-        font-size: 24px;
+        color: #767ca3;
+        font-size: 16px;
         font-weight: 700;
+        font-family: 'Montserrat', sans-serif;
         margin-bottom: 20px;
+        text-transform: uppercase;
         text-align: center;
       }
 
@@ -198,8 +205,8 @@
 
       .Awaiting {
         text-align: center;
-        color: $text-faded;
-        border-bottom: 1px solid $text-faded;
+        color: $faded;
+        border-bottom: 1px solid $faded;
       }
     }
   }

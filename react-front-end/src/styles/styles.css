@@ -1,39 +1,3 @@
-.ant-drawer .new-bet__actions .ant-btn-primary, .header .navigation__btn .ant-btn, .user-options .ant-btn, .notifications .notification__content-text .actions .team-btn, .dashboard__bets .bets .bet__match-view .ant-btn {
-  border-radius: 100px;
-  padding: 0 25px;
-  border-width: 2px; }
-
-body {
-  font-family: 'Lato', sans-serif !important;
-  color: #fff !important;
-  background-color: #191b22 !important;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center top; }
-
-.ant-layout-header {
-  height: 65px !important;
-  line-height: 1 !important;
-  background: #0f0f0f !important; }
-
-.ant-menu-dark {
-  background: #0f0f0f !important; }
-
-.ant-menu-item .anticon, .ant-menu-submenu-title .anticon {
-  margin-right: 0 !important; }
-
-.ant-drawer .ant-drawer-content {
-  background-color: #3745fe; }
-  .ant-drawer .ant-drawer-content .ant-drawer-header {
-    background-color: #3745fe;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important; }
-    .ant-drawer .ant-drawer-content .ant-drawer-header .ant-drawer-title {
-      color: #fff !important; }
-    .ant-drawer .ant-drawer-content .ant-drawer-header .ant-drawer-close {
-      color: #fff; }
-  .ant-drawer .ant-drawer-content .ant-form-item-label > label {
-    color: #fff !important; }
-
 .ant-popover-arrow {
   border-color: #3745fe !important; }
 .ant-popover-inner {
@@ -46,6 +10,11 @@ body {
   height: 8px !important;
   -webkit-box-shadow: 0 0 10px 0 rgba(245, 34, 45, 0.9) !important;
   box-shadow: 0 0 10px 0 rgba(245, 34, 45, 0.9) !important; }
+
+body {
+  font-family: 'Istok Web', sans-serif !important;
+  color: #fff !important;
+  background-color: #1e2741 !important; }
 
 .container {
   margin: 0 auto;
@@ -65,109 +34,255 @@ img.bg {
   z-index: -1;
   overflow: hidden; }
 
-.header {
-  width: 100%;
-  display: flex;
-  align-items: center; }
-  .header .container {
+.ant-layout-header {
+  position: sticky;
+  top: 0;
+  height: auto !important;
+  background: #232f4d !important;
+  line-height: normal !important;
+  -webkit-box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.1);
+  z-index: 50; }
+  .ant-layout-header .container {
     display: flex;
     justify-content: flex-end;
     align-items: center; }
-  .header .navigation {
-    display: flex;
-    line-height: 1;
-    align-items: center; }
-    .header .navigation__btn {
-      padding: 0 0 0 20px; }
-      .header .navigation__btn .ant-btn-primary {
-        background: transparent;
-        border: 2px solid rgba(255, 255, 255, 0.2); }
-        .header .navigation__btn .ant-btn-primary:hover {
-          background-color: #3745fe;
-          border-color: #3745fe;
-          -webkit-box-shadow: 0 0 20px 0 rgba(55, 69, 254, 0.5);
-          box-shadow: 0 0 20px 0 rgba(55, 69, 254, 0.5); }
+    .ant-layout-header .container .logo a {
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 28px;
+      font-weight: 700;
+      text-transform: uppercase;
+      transition: all 0.3s; }
+      .ant-layout-header .container .logo a:hover {
+        color: #ba40f5;
+        text-shadow: 0 5px 20px rgba(186, 64, 245, 0.55); }
+    .ant-layout-header .container .logo--accent {
+      color: #ba40f5;
+      text-shadow: 0 5px 20px rgba(186, 64, 245, 0.55); }
+    .ant-layout-header .container .ant-menu {
+      display: flex;
+      line-height: 1;
+      align-items: center;
+      background: transparent;
+      color: #fff;
+      margin-right: auto;
+      margin-left: 40px; }
+      .ant-layout-header .container .ant-menu-horizontal {
+        border-bottom: none; }
+      .ant-layout-header .container .ant-menu-item {
+        padding: 20px; }
+        .ant-layout-header .container .ant-menu-item:hover {
+          border-bottom: 2px solid #ba40f5; }
+    .ant-layout-header .container .notifications, .ant-layout-header .container .user-options {
+      display: inline-block;
+      vertical-align: bottom;
+      border-bottom: 2px solid transparent;
+      cursor: pointer;
+      margin-top: -1px;
+      top: 1px;
+      position: relative;
+      transition: border-color 0.3s; }
+      .ant-layout-header .container .notifications:hover, .ant-layout-header .container .user-options:hover {
+        border-color: #ba40f5; }
+    .ant-layout-header .container .notifications {
+      padding: 22px 20px 18px; }
+    .ant-layout-header .container .user-options {
+      padding: 16px 20px; }
+    .ant-layout-header .container .new-bet {
+      margin-left: 20px; }
+      .ant-layout-header .container .new-bet .ant-btn {
+        height: auto;
+        padding: 10px 20px;
+        font-size: 10px;
+        font-weight: 700;
+        border-radius: 50px;
+        border: none;
+        background: #ba40f5;
+        background: -moz-linear-gradient(left, #ba40f5 0%, #7266f6 100%);
+        background: -webkit-linear-gradient(left, #ba40f5 0%, #7266f6 100%);
+        background: linear-gradient(to right, #ba40f5 0%, #7266f6 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ba40f5', endColorstr='#7266f6',GradientType=1 );
+        box-shadow: 0 5px 20px 0 rgba(186, 64, 245, 0.55);
+        text-shadow: none;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.75); }
+        .ant-layout-header .container .new-bet .ant-btn:hover {
+          color: #fff;
+          transform: scale(1.1); }
 
-.logo {
-  margin-right: auto; }
-  .logo a {
-    color: #fff;
-    font-family: 'Ubuntu', sans-serif;
-    font-style: italic;
-    font-size: 36px; }
-    .logo a:hover {
-      color: #3745fe;
-      text-shadow: 0 0 20px rgba(55, 69, 254, 0.5); }
-  .logo--accent {
-    color: #3745fe;
-    text-shadow: 0 0 20px rgba(55, 69, 254, 0.5); }
+.user-options-btn {
+  width: 100% !important;
+  height: auto !important;
+  padding: 10px 20px !important;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  border-radius: 50px !important;
+  text-shadow: none !important;
+  text-transform: uppercase !important;
+  color: rgba(255, 255, 255, 0.75) !important;
+  background: transparent !important;
+  border: 1px solid #fff !important; }
+  .user-options-btn:hover {
+    color: #ba40f5 !important;
+    background-color: #fff !important;
+    border-color: #ba40f5 !important; }
 
-.user-options .ant-btn {
-  width: 100px; }
+.ant-badge-count, .ant-badge-dot, .ant-badge .ant-scroll-number-custom-component {
+  width: 8px !important;
+  height: 8px !important;
+  -webkit-box-shadow: 0 0 10px 0 rgba(217, 83, 79, 0.9) !important;
+  box-shadow: 0 0 10px 0 rgba(217, 83, 79, 0.9) !important; }
+
+.ant-popover {
+  position: fixed !important; }
+  .ant-popover-arrow {
+    border-color: #fff !important; }
+  .ant-popover-inner {
+    background: #ba40f5 !important;
+    background: -moz-linear-gradient(left, #ba40f5 0%, #7266f6 100%) !important;
+    background: -webkit-linear-gradient(left, #ba40f5 0%, #7266f6 100%) !important;
+    background: linear-gradient(to right, #ba40f5 0%, #7266f6 100%) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ba40f5', endColorstr='#7266f6',GradientType=1 ) !important; }
+  .ant-popover-inner-content {
+    color: #fff !important; }
 
 .notifications .notification {
-  border-width: 2px;
+  border-width: 1px;
   border-style: solid;
   border-radius: 4px;
   margin-bottom: 15px;
   width: 400px; }
   .notifications .notification--invite {
-    border-color: rgba(255, 255, 255, 0.2);
-    background-color: rgba(255, 255, 255, 0.1); }
+    border-color: #5bc0de;
+    background: rgba(91, 192, 222, 0.8); }
   .notifications .notification--teamselect {
-    border-color: rgba(255, 255, 255, 0.2);
-    background-color: rgba(255, 255, 255, 0.1); }
-  .notifications .notification--weiner {
-    border: 2px dashed #996515;
-    background-color: #daa520;
-    color: #71480a; }
+    border-color: #337ab7;
+    background: rgba(51, 122, 183, 0.8); }
+  .notifications .notification--winner {
+    border-color: #f0ad4e;
+    background: rgba(240, 173, 78, 0.8); }
   .notifications .notification--loser {
-    border: 2px dashed #b22222;
-    background-color: #df3838;
-    color: #731616; }
-  .notifications .notification__content {
-    font-size: 12px;
+    border-color: #d9534f;
+    background: rgba(217, 83, 79, 0.8); }
+  .notifications .notification-content {
+    font-size: 14px;
     padding: 6px 12px; }
-    .notifications .notification__content-text {
+    .notifications .notification-content-text {
       display: flex;
       justify-content: flex-start;
       align-items: center;
       margin-bottom: 5px; }
-      .notifications .notification__content-text p {
+      .notifications .notification-content-text p {
         margin-bottom: 0; }
-        .notifications .notification__content-text p .match {
+        .notifications .notification-content-text p .match {
           font-weight: 700; }
-          .notifications .notification__content-text p .match a {
-            color: rgba(255, 255, 255, 0.5);
-            border-bottom: 2px dotted rgba(255, 255, 255, 0.5);
+          .notifications .notification-content-text p .match a {
+            color: rgba(255, 255, 255, 0.75);
+            border-bottom: 2px dotted rgba(255, 255, 255, 0.75);
             transition: all 0.3s; }
-            .notifications .notification__content-text p .match a:hover {
+            .notifications .notification-content-text p .match a:hover {
               color: #fff;
               border-bottom: 2px dotted #fff; }
-      .notifications .notification__content-text .actions {
+      .notifications .notification-content-text .actions {
         margin-left: auto; }
-        .notifications .notification__content-text .actions .team-btn {
-          padding: 0 12.5px;
+        .notifications .notification-content-text .actions .accept-btn {
+          opacity: 0.75; }
+          .notifications .notification-content-text .actions .accept-btn:hover {
+            opacity: 1; }
+        .notifications .notification-content-text .actions .team-btn {
+          height: auto;
+          padding: 5px 20px;
           font-size: 10px;
+          font-weight: 700;
+          -webkit-border-radius: 4px 4px 4px 4px;
+          border-radius: 4px 4px 4px 4px;
+          text-shadow: none;
+          text-transform: uppercase;
+          color: rgba(255, 255, 255, 0.75);
           min-width: 50px; }
-          .notifications .notification__content-text .actions .team-btn--1 {
-            background-color: #1890ff;
-            border-color: #1890ff; }
-            .notifications .notification__content-text .actions .team-btn--1:hover {
-              background-color: #4ba9ff;
-              border-color: #4ba9ff; }
-          .notifications .notification__content-text .actions .team-btn--2 {
-            background-color: #ff4d4f;
-            border-color: #ff4d4f; }
-            .notifications .notification__content-text .actions .team-btn--2:hover {
-              background-color: #ff8081;
-              border-color: #ff8081; }
+          .notifications .notification-content-text .actions .team-btn--1 {
+            background-color: #5bc0de;
+            border-color: #5bc0de;
+            opacity: 0.75; }
+            .notifications .notification-content-text .actions .team-btn--1:hover {
+              opacity: 1; }
+          .notifications .notification-content-text .actions .team-btn--2 {
+            background-color: #d9534f;
+            border-color: #d9534f;
+            opacity: 0.75; }
+            .notifications .notification-content-text .actions .team-btn--2:hover {
+              opacity: 1; }
   .notifications .notification footer {
     font-size: 8px;
     font-weight: 700;
     color: rgba(255, 255, 255, 0.4); }
 
-.new-bet__actions {
+.ant-drawer .ant-drawer-content {
+  background: #ba40f5;
+  background: -moz-linear-gradient(left, #ba40f5 0%, #7266f6 100%);
+  background: -webkit-linear-gradient(left, #ba40f5 0%, #7266f6 100%);
+  background: linear-gradient(to right, #ba40f5 0%, #7266f6 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ba40f5', endColorstr='#7266f6',GradientType=1 ); }
+  .ant-drawer .ant-drawer-content .ant-drawer-header {
+    background: #ba40f5;
+    background: -moz-linear-gradient(left, #ba40f5 0%, #7266f6 100%);
+    background: -webkit-linear-gradient(left, #ba40f5 0%, #7266f6 100%);
+    background: linear-gradient(to right, #ba40f5 0%, #7266f6 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ba40f5', endColorstr='#7266f6',GradientType=1 );
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important; }
+    .ant-drawer .ant-drawer-content .ant-drawer-header .ant-drawer-title {
+      color: rgba(255, 255, 255, 0.5);
+      font-weight: 700;
+      font-size: 14px;
+      font-family: 'Montserrat', sans-serif;
+      text-transform: uppercase; }
+    .ant-drawer .ant-drawer-content .ant-drawer-header .ant-drawer-close {
+      color: rgba(255, 255, 255, 0.5); }
+  .ant-drawer .ant-drawer-content .ant-drawer-body .ant-form label {
+    color: #fff;
+    font-weight: 700; }
+  .ant-drawer .ant-drawer-content .ant-drawer-body .ant-form .ant-select-selection {
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 1px solid #fff; }
+    .ant-drawer .ant-drawer-content .ant-drawer-body .ant-form .ant-select-selection__placeholder {
+      color: #fff; }
+    .ant-drawer .ant-drawer-content .ant-drawer-body .ant-form .ant-select-selection-selected-value {
+      color: #fff; }
+    .ant-drawer .ant-drawer-content .ant-drawer-body .ant-form .ant-select-selection .ant-select-arrow {
+      color: rgba(255, 255, 255, 0.5); }
+  .ant-drawer .ant-drawer-content .ant-drawer-body .ant-form .ant-input-number {
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 1px solid #fff;
+    color: #fff; }
+.ant-drawer .email-field {
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 1px solid #fff;
+  color: #fff;
+  border-radius: 4px; }
+  .ant-drawer .email-field .ant-input {
+    background-color: transparent !important;
+    color: #fff !important; }
+.ant-drawer .ant-form-explain {
+  color: #fff !important; }
+.ant-drawer .dynamic-delete-button {
+  color: #fff; }
+.ant-drawer .invite-friends {
+  width: 100%;
+  height: auto;
+  padding: 10px 20px;
+  font-size: 10px;
+  font-weight: 700;
+  border-radius: 50px;
+  text-shadow: none;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.75);
+  background: transparent;
+  border: 1px solid #fff; }
+  .ant-drawer .invite-friends:hover {
+    color: #ba40f5;
+    border-color: #ba40f5; }
+.ant-drawer .new-bet-actions {
   position: absolute;
   left: 0;
   bottom: 0;
@@ -175,386 +290,449 @@ img.bg {
   border-top: 1px solid rgba(255, 255, 255, 0.2);
   padding: 10px 16px;
   text-align: right; }
-.new-bet .ant-input.email-field {
-  width: 90%;
-  margin-right: 8px; }
-.new-bet .email-field__btn {
-  width: 100%; }
+  .ant-drawer .new-bet-actions .ant-btn {
+    width: 100%;
+    height: auto;
+    padding: 10px 20px;
+    font-size: 10px;
+    font-weight: 700;
+    border-radius: 50px;
+    text-shadow: none;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.75);
+    background: transparent;
+    border: 1px solid #fff; }
+    .ant-drawer .new-bet-actions .ant-btn:hover {
+      color: #ba40f5;
+      background-color: #fff;
+      border-color: #ba40f5; }
+
+.ant-select-dropdown-menu-item-active {
+  background-color: rgba(186, 64, 245, 0.2) !important; }
 
 .footer {
-  background-color: #26282f;
+  background-color: #141b31;
   text-align: center;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   font-size: 10px;
   padding: 20px 0;
-  margin-top: 40px; }
+  margin-top: 40px;
+  text-transform: uppercase; }
   .footer p {
     margin-bottom: 0; }
     .footer p .team-name {
-      color: #3745fe; }
+      color: #ba40f5;
+      font-family: 'Permanent Marker', cursive;
+      font-size: 14px;
+      margin: 0 10px;
+      text-shadow: 0 5px 20px rgba(186, 64, 245, 0.55); }
 
 .dashboard {
   display: flex;
   align-items: flex-start;
-  margin-top: 40px; }
+  margin-top: 40px;
+  /* ====================== START MATCHES ====================== */
+  /* ====================== START BETS ====================== */ }
   .dashboard h2 {
-    color: #fff;
-    border-bottom: 2px solid #fff;
-    font-size: 24px;
+    color: #767ca3;
+    font-size: 16px;
     font-weight: 700;
-    margin-bottom: 20px; }
-  .dashboard__matches {
-    width: 330px; }
-    .dashboard__matches .match {
-      background-color: #0f0f0f;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 20px;
+    text-transform: uppercase; }
+  .dashboard .matches {
+    flex: 0 0 330px; }
+    .dashboard .matches .match {
+      -webkit-border-radius: 4px 4px 4px 4px;
+      border-radius: 4px 4px 4px 4px;
+      background: #232f4d;
       padding: 12px 20px 20px 20px;
-      -webkit-border-radius: 20px;
-      border-radius: 20px;
-      margin-bottom: 20px;
-      -webkit-box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
-      box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15); }
-      .dashboard__matches .match header {
+      margin-bottom: 10px;
+      -webkit-box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.2);
+      box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.2);
+      border: 1px solid #767ca3; }
+      .dashboard .matches .match header {
         display: flex;
         justify-content: space-between;
         align-items: center;
         margin-bottom: 20px; }
-      .dashboard__matches .match__date, .dashboard__matches .match__time {
-        color: #7f7d87;
+      .dashboard .matches .match-date, .dashboard .matches .match-time {
+        color: #fff;
         display: flex;
         align-items: center;
-        width: 80px; }
-        .dashboard__matches .match__date .text, .dashboard__matches .match__time .text {
-          font-size: 10px;
+        flex: 1; }
+        .dashboard .matches .match-date .text, .dashboard .matches .match-time .text {
+          font-size: 12px;
           font-weight: 700;
           margin-left: 5px;
-          text-transform: uppercase; }
-      .dashboard__matches .match__date {
+          text-transform: uppercase;
+          line-height: normal; }
+      .dashboard .matches .match-date {
         justify-content: flex-start; }
-      .dashboard__matches .match__time {
+      .dashboard .matches .match-time {
         justify-content: flex-end; }
-      .dashboard__matches .match__team-logos {
+      .dashboard .matches .match-game {
+        width: 24px; }
+      .dashboard .matches .match-team-logos {
         display: flex;
         justify-content: center;
         align-items: center; }
-        .dashboard__matches .match__team-logos .logo-container {
-          background-color: #fff;
-          width: 70px;
-          height: 70px;
-          display: flex;
-          border-radius: 100%;
-          align-items: center;
-          justify-content: center; }
-          .dashboard__matches .match__team-logos .logo-container img {
-            display: block;
-            margin: 0 auto; }
-        .dashboard__matches .match__team-logos .vs-text {
+        .dashboard .matches .match-team-logos .vs {
           font-size: 32px;
           font-family: 'Permanent Marker', cursive;
           font-weight: 700;
           font-style: italic;
           padding-right: 13px;
-          margin: 0 25px;
+          margin: 0 auto;
+          width: 46px;
           background: -webkit-linear-gradient(#cc1500, #ffb900);
           -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent; }
-      .dashboard__matches .match footer {
+          -webkit-text-fill-color: transparent;
+          text-shadow: 0 5px 20px rgba(229, 101, 0, 0.55); }
+      .dashboard .matches .match footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between; }
+      .dashboard .matches .match-team-name {
+        color: #767ca3;
+        margin-top: 10px;
+        width: 80px;
+        text-align: center;
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 1; }
+  .dashboard .bets {
+    flex-grow: 1;
+    margin-left: 40px; }
+    .dashboard .bets .bet-list .bet {
+      background: #232f4d;
+      -webkit-border-radius: 4px 4px 4px 4px;
+      border-radius: 4px 4px 4px 4px;
+      margin-bottom: 20px;
+      -webkit-box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.2);
+      box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.2);
+      border: 1px solid #767ca3;
+      padding: 5px; }
+      .dashboard .bets .bet-list .bet-match {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        background: #1e2741;
+        -webkit-border-radius: 4px 4px 4px 4px;
+        border-radius: 4px 4px 4px 4px;
+        padding: 20px;
+        position: relative; }
+        .dashboard .bets .bet-list .bet-match .game {
+          width: 160px;
+          height: 80px;
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 0;
+          overflow: hidden;
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+          -webkit-border-radius: 4px 0 0 4px;
+          border-radius: 4px 0 0 4px; }
+          .dashboard .bets .bet-list .bet-match .game-Overwatch {
+            background-image: url("../images/ow-bet-bg.png"); }
+          .dashboard .bets .bet-list .bet-match .game-LoL {
+            background-image: url("../images/lol-bet-bg.png"); }
+          .dashboard .bets .bet-list .bet-match .game-CS\:GO {
+            background-image: url("../images/csgo-bet-bg.png"); }
+          .dashboard .bets .bet-list .bet-match .game-Dota {
+            background-image: url("../images/dota-bet-bg.png"); }
+        .dashboard .bets .bet-list .bet-match-logo {
+          margin-right: 20px;
+          z-index: 1; }
+        .dashboard .bets .bet-list .bet-match-name {
+          z-index: 1; }
+          .dashboard .bets .bet-list .bet-match-name h4 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 0; }
+        .dashboard .bets .bet-list .bet-match-view {
+          margin-left: auto;
+          z-index: 1; }
+          .dashboard .bets .bet-list .bet-match-view .ant-btn {
+            height: auto;
+            padding: 10px 20px;
+            font-size: 10px;
+            font-weight: 700;
+            border-radius: 50px;
+            border: 1px solid #767ca3;
+            background: transparent;
+            text-shadow: none;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.75); }
+            .dashboard .bets .bet-list .bet-match-view .ant-btn:hover {
+              color: #fff;
+              border-color: #fff; }
+      .dashboard .bets .bet-list .bet footer {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 0 25px; }
-      .dashboard__matches .match__team-name {
-        margin-top: 10px;
-        width: 70px;
-        text-align: center;
-        font-size: 10px;
-        line-height: 1; }
-  .dashboard__bets {
-    flex-grow: 1;
-    margin-left: 100px; }
-    .dashboard__bets .bets .bet {
-      background-color: #0f0f0f;
-      -webkit-border-radius: 20px;
-      border-radius: 20px;
-      margin-bottom: 20px;
-      -webkit-box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
-      box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15); }
-      .dashboard__bets .bets .bet__match {
-        padding: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: flex-start; }
-        .dashboard__bets .bets .bet__match-logo {
-          margin-right: 20px; }
-        .dashboard__bets .bets .bet__match-name h4 {
-          font-size: 18px;
-          font-weight: 700;
-          color: #7f7d87;
-          margin-bottom: 0; }
-        .dashboard__bets .bets .bet__match-view {
-          margin-left: auto; }
-          .dashboard__bets .bets .bet__match-view .ant-btn {
-            border-color: #3745fe;
-            background-color: #3745fe;
-            color: #fff; }
-            .dashboard__bets .bets .bet__match-view .ant-btn:hover {
-              -webkit-box-shadow: 0 0 20px 0 rgba(55, 69, 254, 0.5);
-              box-shadow: 0 0 20px 0 rgba(55, 69, 254, 0.5); }
-      .dashboard__bets .bets .bet footer {
-        display: flex;
-        padding: 5px 20px;
-        -webkit-border-radius: 0 0 20px 20px;
-        border-radius: 0 0 20px 20px; }
-        .dashboard__bets .bets .bet footer .bet__info {
-          margin-right: 40px; }
-          .dashboard__bets .bets .bet footer .bet__info p {
-            margin-bottom: 0;
-            font-size: 10px;
-            font-weight: 700; }
-            .dashboard__bets .bets .bet footer .bet__info p .capitalize {
-              text-transform: capitalize; }
-      .dashboard__bets .bets .bet--pending footer {
-        background-color: #7f7d87; }
-      .dashboard__bets .bets .bet--active footer {
-        background-color: #52c41a; }
-      .dashboard__bets .bets .bet--complete footer {
-        background-color: #1890ff; }
-
-.bet {
-  background-color: #0f0f0f;
-  -webkit-box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
-  box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
-  -webkit-border-radius: 20px 20px 20px 20px;
-  border-radius: 20px 20px 20px 20px; }
-  .bet .individual {
-    margin-top: 40px; }
-    .bet .individual__match {
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      position: relative; }
-      .bet .individual__match .match-details {
-        background-color: #0f0f0f;
-        position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        font-size: 20px;
-        font-weight: 700;
-        color: #fff;
-        padding: 5px 15px;
-        -webkit-border-radius: 0 0 20px 20px;
-        border-radius: 0 0 20px 20px; }
-      .bet .individual__match .team {
-        width: 50%;
-        display: flex;
-        align-items: center;
-        padding: 100px 0 60px; }
-        .bet .individual__match .team--1 {
-          background-color: #1890ff;
-          background-image: url("../images/t1.png");
-          background-size: cover;
-          background-position: center;
-          justify-content: flex-end;
-          padding-right: 60px;
-          -webkit-border-radius: 20px 0 0 0;
-          border-radius: 20px 0 0 0; }
-          .bet .individual__match .team--1 .team__name {
-            margin-right: 40px;
-            text-align: right; }
-        .bet .individual__match .team--2 {
-          background-color: #ff4d4f;
-          background-image: url("../images/t2.png");
-          background-size: cover;
-          background-position: center;
-          justify-content: flex-start;
-          padding-left: 60px;
-          -webkit-border-radius: 0 20px 0 0;
-          border-radius: 0 20px 0 0; }
-          .bet .individual__match .team--2 .team__name {
-            order: 2;
-            margin-left: 40px;
-            text-align: left; }
-          .bet .individual__match .team--2 .team__logo {
-            order: 1; }
-        .bet .individual__match .team__name h2 {
-          font-size: 24px;
-          font-weight: 700;
-          color: #fff;
+        margin-top: 5px;
+        padding: 5px 10px; }
+        .dashboard .bets .bet-list .bet footer .bet-info p {
           margin-bottom: 0;
-          text-shadow: 0 5px 9px rgba(0, 0, 0, 0.35); }
-        .bet .individual__match .team__logo {
-          width: 120px;
-          height: 120px;
-          border-radius: 100%;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          background-color: #fff;
-          -webkit-box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.25);
-          box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.25); }
-          .bet .individual__match .team__logo img {
-            width: 80%;
-            height: 80%; }
-    .bet .individual__info {
-      display: flex;
-      justify-content: space-evenly;
-      background-color: #3745fe;
-      font-size: 12px;
+          font-size: 10px;
+          font-weight: 700;
+          text-transform: uppercase; }
+      .dashboard .bets .bet-list .bet--pending {
+        color: #f0ad4e; }
+      .dashboard .bets .bet-list .bet--active {
+        color: #5cb85c; }
+      .dashboard .bets .bet-list .bet--complete {
+        color: #d9534f; }
+
+.bet-page {
+  background-color: #232f4d;
+  -webkit-box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.2);
+  -webkit-border-radius: 4px 4px 4px 4px;
+  border-radius: 4px 4px 4px 4px;
+  border: 1px solid #767ca3;
+  margin-top: 40px; }
+  .bet-page .individual__match {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative; }
+    .bet-page .individual__match .match-details {
+      background-color: rgba(255, 255, 255, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 14px;
       font-weight: 700;
-      padding: 6px 0;
-      -webkit-box-shadow: 0 0 20px 0 rgba(55, 69, 254, 0.5);
-      box-shadow: 0 0 20px 0 rgba(55, 69, 254, 0.5); }
-      .bet .individual__info .pot, .bet .individual__info .date, .bet .individual__info .participants {
-        width: 200px;
-        text-align: center; }
-    .bet .individual__pick {
+      color: #fff;
+      padding: 5px 15px;
+      -webkit-border-radius: 4px 4px 4px 4px;
+      border-radius: 4px 4px 4px 4px;
+      text-transform: uppercase; }
+    .bet-page .individual__match .team {
+      width: 50%;
       display: flex;
-      justify-content: center;
-      flex-direction: column;
       align-items: center;
-      margin: 20px 0; }
-      .bet .individual__pick h2 {
-        color: #fff;
-        border-bottom: 2px solid #fff;
+      padding: 100px 0 60px; }
+      .bet-page .individual__match .team--1 {
+        background-color: #5bc0de;
+        background-image: url("../images/t1.png");
+        background-size: cover;
+        background-position: center;
+        justify-content: flex-end;
+        padding-right: 60px;
+        -webkit-border-radius: 4px 0 0 0;
+        border-radius: 4px 0 0 0; }
+        .bet-page .individual__match .team--1 .team__name {
+          margin-right: 20px;
+          text-align: right; }
+      .bet-page .individual__match .team--2 {
+        background-color: #d9534f;
+        background-image: url("../images/t2.png");
+        background-size: cover;
+        background-position: center;
+        justify-content: flex-start;
+        padding-left: 60px;
+        -webkit-border-radius: 0 4px 0 0;
+        border-radius: 0 4px 0 0; }
+        .bet-page .individual__match .team--2 .team__name {
+          order: 2;
+          margin-left: 20px;
+          text-align: left; }
+        .bet-page .individual__match .team--2 .team__logo {
+          order: 1; }
+      .bet-page .individual__match .team__name h2 {
         font-size: 24px;
         font-weight: 700;
-        margin-bottom: 20px;
-        text-align: center; }
-      .bet .individual__pick-btns .team-pick .t1-btn, .bet .individual__pick-btns .team-pick .t2-btn {
-        font-size: 30px;
-        min-width: 150px;
-        font-weight: 700;
-        height: auto;
-        border-radius: 100px;
-        border-width: 2px; }
-      .bet .individual__pick-btns .team-pick .t1-btn {
-        background-color: transparent;
-        border-color: #1890ff;
-        color: #1890ff;
-        margin-right: 40px; }
-        .bet .individual__pick-btns .team-pick .t1-btn:hover {
-          background-color: #1890ff;
-          color: #fff; }
-      .bet .individual__pick-btns .team-pick .t2-btn {
-        background-color: transparent;
-        border-color: #ff4d4f;
-        color: #ff4d4f; }
-        .bet .individual__pick-btns .team-pick .t2-btn:hover {
-          background-color: #ff4d4f;
-          color: #fff; }
-    .bet .individual__participants {
-      display: flex;
-      flex-direction: column;
-      padding: 20px 60px 60px; }
-      .bet .individual__participants .Team1, .bet .individual__participants .Team2, .bet .individual__participants .Awaiting {
-        display: block;
-        font-size: 18px;
-        padding: 6px; }
-      .bet .individual__participants .Team1 {
-        text-align: left;
-        color: #1890ff;
-        border-bottom: 1px solid #1890ff; }
-      .bet .individual__participants .Team2 {
-        text-align: right;
-        color: #ff4d4f;
-        border-bottom: 1px solid #ff4d4f; }
-      .bet .individual__participants .Awaiting {
-        text-align: center;
-        color: #7f7d87;
-        border-bottom: 1px solid #7f7d87; }
+        color: #fff;
+        margin-bottom: 0;
+        text-shadow: 0 5px 9px rgba(0, 0, 0, 0.35); }
+      .bet-page .individual__match .team__logo {
+        width: 120px;
+        height: 120px;
+        border-radius: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #fff;
+        -webkit-box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.25);
+        box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.25); }
+        .bet-page .individual__match .team__logo img {
+          width: 70%;
+          height: 70%; }
+  .bet-page .individual__info {
+    display: flex;
+    justify-content: space-evenly;
+    background: #ba40f5;
+    background: -moz-linear-gradient(left, #ba40f5 0%, #7266f6 100%);
+    background: -webkit-linear-gradient(left, #ba40f5 0%, #7266f6 100%);
+    background: linear-gradient(to right, #ba40f5 0%, #7266f6 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ba40f5', endColorstr='#7266f6',GradientType=1 );
+    font-size: 12px;
+    font-weight: 700;
+    padding: 6px 0;
+    box-shadow: 0 5px 20px 0 rgba(186, 64, 245, 0.55); }
+    .bet-page .individual__info .pot, .bet-page .individual__info .date, .bet-page .individual__info .participants {
+      width: 200px;
+      text-align: center; }
+  .bet-page .individual__pick {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0; }
+    .bet-page .individual__pick h2 {
+      color: #767ca3;
+      font-size: 16px;
+      font-weight: 700;
+      font-family: 'Montserrat', sans-serif;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      text-align: center; }
+    .bet-page .individual__pick-btns .team-pick .t1-btn, .bet-page .individual__pick-btns .team-pick .t2-btn {
+      font-size: 30px;
+      min-width: 150px;
+      font-weight: 700;
+      height: auto;
+      border-radius: 100px;
+      border-width: 2px; }
+    .bet-page .individual__pick-btns .team-pick .t1-btn {
+      background-color: transparent;
+      border-color: #5bc0de;
+      color: #5bc0de;
+      margin-right: 40px; }
+      .bet-page .individual__pick-btns .team-pick .t1-btn:hover {
+        background-color: #5bc0de;
+        color: #fff; }
+    .bet-page .individual__pick-btns .team-pick .t2-btn {
+      background-color: transparent;
+      border-color: #d9534f;
+      color: #d9534f; }
+      .bet-page .individual__pick-btns .team-pick .t2-btn:hover {
+        background-color: #d9534f;
+        color: #fff; }
+  .bet-page .individual__participants {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 60px 60px; }
+    .bet-page .individual__participants .Team1, .bet-page .individual__participants .Team2, .bet-page .individual__participants .Awaiting {
+      display: block;
+      font-size: 18px;
+      padding: 6px; }
+    .bet-page .individual__participants .Team1 {
+      text-align: left;
+      color: #5bc0de;
+      border-bottom: 1px solid #5bc0de; }
+    .bet-page .individual__participants .Team2 {
+      text-align: right;
+      color: #d9534f;
+      border-bottom: 1px solid #d9534f; }
+    .bet-page .individual__participants .Awaiting {
+      text-align: center;
+      color: #767ca3;
+      border-bottom: 1px solid #767ca3; }
 
-.profile {
-  background-color: #26282f;
-  -webkit-border-radius: 0 0 20px 20px;
-  border-radius: 0 0 20px 20px;
-  -webkit-box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
-  box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15); }
-  .profile__header {
+.profile__header {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  padding-bottom: 300px;
+  margin-bottom: 80px;
+  -webkit-border-radius: 0 0 4px 4px;
+  border-radius: 0 0 4px 4px;
+  border-bottom: 1px solid #767ca3;
+  border-left: 1px solid #767ca3;
+  border-right: 1px solid #767ca3; }
+  .profile__header .header__avatar {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    position: relative;
-    padding-bottom: 300px; }
-    .profile__header .header__avatar {
-      position: absolute;
-      width: 200px;
-      height: 200px;
-      border-radius: 100%;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      bottom: 60px;
-      left: 50%;
-      transform: translateX(-50%) translateY(50%);
-      -webkit-box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.25);
-      box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.25); }
-  .profile__info {
-    padding: 80px 40px 20px;
-    overflow: hidden; }
-    .profile__info .info__user {
-      float: left;
-      width: 250px; }
-      .profile__info .info__user h2 {
-        color: #fff;
-        border-bottom: 2px solid #fff;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%) translateY(50%);
+    -webkit-box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.25);
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.25); }
+.profile__info {
+  overflow: hidden; }
+  .profile__info .info__user {
+    float: left;
+    width: 250px; }
+    .profile__info .info__user h2 {
+      color: #767ca3;
+      font-size: 16px;
+      font-weight: 700;
+      font-family: 'Montserrat', sans-serif;
+      margin-bottom: 20px;
+      text-transform: uppercase; }
+    .profile__info .info__user .info__container {
+      -webkit-border-radius: 4px 4px 4px 4px;
+      border-radius: 4px 4px 4px 4px;
+      background: #232f4d;
+      padding: 12px 20px 20px 20px;
+      margin-bottom: 10px;
+      -webkit-box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.2);
+      box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.2);
+      border: 1px solid #767ca3; }
+      .profile__info .info__user .info__container h4 {
         font-size: 24px;
         font-weight: 700;
-        margin-bottom: 20px; }
-      .profile__info .info__user .info__container {
-        background-color: #0f0f0f;
-        padding: 12px 20px 20px 20px;
-        -webkit-border-radius: 20px;
-        border-radius: 20px;
+        color: #fff; }
+      .profile__info .info__user .info__container .user-info__title {
+        font-weight: 700;
+        margin-right: 8px;
+        color: #767ca3; }
+  .profile__info .info__past-bets {
+    float: right;
+    width: 594px; }
+    .profile__info .info__past-bets .dashboard__bets {
+      margin-left: 0; }
+      .profile__info .info__past-bets .dashboard__bets h2 {
+        color: #767ca3;
+        font-size: 16px;
+        font-weight: 700;
+        font-family: 'Montserrat', sans-serif;
         margin-bottom: 20px;
-        -webkit-box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
-        box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
-        color: #7f7d87; }
-        .profile__info .info__user .info__container h4 {
-          font-size: 24px;
-          font-weight: 700;
-          color: #fff; }
-        .profile__info .info__user .info__container .user-info__title {
-          font-weight: 700;
-          margin-right: 5px;
-          color: #fff; }
-    .profile__info .info__past-bets {
-      float: right;
-      width: 594px; }
-      .profile__info .info__past-bets .dashboard__bets {
-        margin-left: 0; }
-        .profile__info .info__past-bets .dashboard__bets h2 {
-          color: #fff;
-          border-bottom: 2px solid #fff;
-          font-size: 24px;
-          font-weight: 700;
-          margin-bottom: 20px; }
+        text-transform: uppercase; }
 
 .stream {
-  background-color: #0f0f0f;
+  background: #131b2e;
   display: flex;
   align-items: flex-start;
   width: 100%;
-  height: 407px;
-  -webkit-border-radius: 20px;
-  border-radius: 20px;
-  -webkit-box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
-  box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
-  margin-top: 40px; }
+  height: 581px;
+  -webkit-border-radius: 4px 4px 4px 4px;
+  border-radius: 4px 4px 4px 4px;
+  -webkit-box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.2);
+  margin-top: 40px;
+  border: 1px solid #767ca3; }
   .stream__window {
     position: relative;
-    padding-bottom: 37.4%;
+    padding-bottom: 54.2%;
     padding-top: 25px;
     height: 0;
     flex-grow: 1; }
     .stream__window iframe {
-      -webkit-border-radius: 20px 0 0 20px;
-      border-radius: 20px 0 0 20px;
+      -webkit-border-radius: 4px 0 0 4px;
+      border-radius: 4px 0 0 4px;
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
-      height: 100%; }
+      height: 100%;
+      border: none; }
   .stream__chat {
     width: 300px;
     height: 100%; }
@@ -576,12 +754,15 @@ img.bg {
         display: flex;
         flex-direction: column;
         width: 100%;
-        background-color: #3745fe;
         padding: 20px;
-        -webkit-border-radius: 20px;
-        border-radius: 0 0 20px 0;
-        -webkit-box-shadow: 0 0 20px 0 rgba(55, 69, 254, 0.5);
-        box-shadow: 0 0 20px 0 rgba(55, 69, 254, 0.5); }
+        -webkit-border-radius: 0 0 4px 0;
+        border-radius: 0 0 4px 0;
+        background: #ba40f5;
+        background: -moz-linear-gradient(left, #ba40f5 0%, #7266f6 100%);
+        background: -webkit-linear-gradient(left, #ba40f5 0%, #7266f6 100%);
+        background: linear-gradient(to right, #ba40f5 0%, #7266f6 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ba40f5', endColorstr='#7266f6',GradientType=1 );
+        box-shadow: 0 5px 20px 0 rgba(186, 64, 245, 0.55); }
         .stream__chat .chat__chatbar .chatbar__username, .stream__chat .chat__chatbar .chatbar__message {
           background-color: transparent;
           border-top: none;

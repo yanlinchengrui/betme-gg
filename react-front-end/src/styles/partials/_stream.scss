@@ -1,30 +1,32 @@
 .stream {
-  background-color: $darkest;
+  background: #131b2e;
   display: flex;
   align-items: flex-start;
   width: 100%;
-  height: 407px;
-  -webkit-border-radius: 20px;
-  border-radius: 20px;
-  -webkit-box-shadow: 0 5px 15px 0 rgba(0,0,0,0.15);
-  box-shadow: 0 5px 15px 0 rgba(0,0,0,0.15);
+  height: 581px;
+  -webkit-border-radius: 4px 4px 4px 4px;
+  border-radius: 4px 4px 4px 4px;
+  -webkit-box-shadow: 0 5px 20px 0 rgba(0,0,0,0.20);
+  box-shadow: 0 5px 20px 0 rgba(0,0,0,0.20);
   margin-top: 40px;
+  border: 1px solid $faded;
 
   &__window {
     position: relative;
-    padding-bottom: 37.4%;
+    padding-bottom: 54.2%;
     padding-top: 25px;
     height: 0;
     flex-grow: 1;
 
     iframe {
-      -webkit-border-radius: 20px 0 0 20px;
-      border-radius: 20px 0 0 20px;
+      -webkit-border-radius: 4px 0 0 4px;
+      border-radius: 4px 0 0 4px;
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
+      border: none;
     }
   }
 
@@ -54,12 +56,15 @@
         display: flex;
         flex-direction: column;
         width: 100%;
-        background-color: $primary-color;
         padding: 20px;
-        -webkit-border-radius: 20px;
-        border-radius: 0 0 20px 0;
-        -webkit-box-shadow: 0 0 20px 0 rgba(55,69,254,0.5);
-        box-shadow: 0 0 20px 0 rgba(55,69,254,0.5);
+        -webkit-border-radius: 0 0 4px 0;
+        border-radius: 0 0 4px 0;
+        background: #ba40f5;
+        background: -moz-linear-gradient(left,  #ba40f5 0%, #7266f6 100%);
+        background: -webkit-linear-gradient(left,  #ba40f5 0%,#7266f6 100%);
+        background: linear-gradient(to right,  #ba40f5 0%,#7266f6 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ba40f5', endColorstr='#7266f6',GradientType=1 );
+        box-shadow: 0 5px 20px 0 rgba(186,64,245,0.55);
 
         .chatbar__username, .chatbar__message {
           background-color: transparent;

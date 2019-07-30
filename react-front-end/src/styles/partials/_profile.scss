@@ -1,10 +1,4 @@
 .profile {
-  background-color: $dark;
-  -webkit-border-radius: 0 0 20px 20px;
-  border-radius: 0 0 20px 20px;
-  -webkit-box-shadow: 0 5px 15px 0 rgba(0,0,0,0.15);
-  box-shadow: 0 5px 15px 0 rgba(0,0,0,0.15);
-
   &__header {
     background: {
       size: cover;
@@ -13,6 +7,14 @@
     }
     position: relative;
     padding-bottom: 300px;
+    margin-bottom: 80px;
+    -webkit-border-radius: 0 0 4px 4px;
+    border-radius: 0 0 4px 4px;
+    border: {
+      bottom: 1px solid $faded;
+      left: 1px solid $faded;
+      right: 1px solid $faded;
+    }
 
     .header__avatar {
       position: absolute;
@@ -27,13 +29,12 @@
       bottom: 60px;
       left: 50%;
       transform: translateX(-50%) translateY(50%);
-      -webkit-box-shadow: 0 10px 20px 0 rgba(0,0,0,0.25);
-      box-shadow: 0 10px 20px 0 rgba(0,0,0,0.25);
+      -webkit-box-shadow: 0 5px 20px 0 rgba(0,0,0,0.25);
+      box-shadow: 0 5px 20px 0 rgba(0,0,0,0.25);
     }
   }
 
   &__info {
-    padding: 80px 40px 20px;
     overflow: hidden;
 
     .info__user {
@@ -41,22 +42,25 @@
       width: 250px;
 
       h2 {
-        color: #fff;
-        border-bottom: 2px solid #fff;
-        font-size: 24px;
-        font-weight: 700;
+        color: $faded;
+        font: {
+          size: 16px;
+          weight: 700;
+          family: 'Montserrat', sans-serif;
+        }
         margin-bottom: 20px;
+        text-transform: uppercase;
       }
 
       .info__container {
-        background-color: $darkest;
+        -webkit-border-radius: 4px 4px 4px 4px;
+        border-radius: 4px 4px 4px 4px;
+        background: $component-background;
         padding: 12px 20px 20px 20px;
-        -webkit-border-radius: 20px;
-        border-radius: 20px;
-        margin-bottom: 20px;
-        -webkit-box-shadow: 0 5px 15px 0 rgba(0,0,0,0.15);
-        box-shadow: 0 5px 15px 0 rgba(0,0,0,0.15);
-        color: $text-faded;
+        margin-bottom: 10px;
+        -webkit-box-shadow: 0 5px 20px 0 rgba(0,0,0,0.20);
+        box-shadow: 0 5px 20px 0 rgba(0,0,0,0.20);
+        border: 1px solid $faded;
 
         h4 {
             font: {
@@ -69,8 +73,8 @@
         .user-info {
           &__title {
             font-weight: 700;
-            margin-right: 5px;
-            color: #fff;
+            margin-right: 8px;
+            color: $faded;
           }
         }
       }
@@ -84,11 +88,14 @@
         margin-left: 0;
 
         h2 {
-          color: #fff;
-          border-bottom: 2px solid #fff;
-          font-size: 24px;
-          font-weight: 700;
+          color: $faded;
+          font: {
+            size: 16px;
+            weight: 700;
+            family: 'Montserrat', sans-serif;
+          }
           margin-bottom: 20px;
+          text-transform: uppercase;
         }
       }
     }

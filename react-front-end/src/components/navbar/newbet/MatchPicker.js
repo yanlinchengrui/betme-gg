@@ -5,7 +5,6 @@ import TeamPicker from './TeamPicker'
 const { Option } = Select;
 
 class MatchPicker extends Component {
-
   constructor(props) {
     super(props);
     this.state = {

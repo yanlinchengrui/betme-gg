@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import Chat from './chat/Chat'
-import lol from '../../images/lol-bg.jpg'
-import csgo from '../../images/csgo-bg.jpg'
-import dota2 from '../../images/dota2-bg.jpg'
-import ow from '../../images/ow-bg.jpg'
+import defaultBg from '../../images/default-bg.png'
 
 class StreamAndChat extends Component {
 
@@ -19,23 +16,11 @@ class StreamAndChat extends Component {
     }
   }
 
-  setBackground() {
-    if (this.props.match.params.game === 'lol') {
-      return lol;
-    } else if (this.props.match.params.game === 'csgo') {
-      return csgo;
-    } else if (this.props.match.params.game === 'dota2') {
-      return dota2;
-    } else if (this.props.match.params.game === 'ow') {
-      return ow;
-    }
-  }
-
   render() {
 
     return (
       <div className='container'>
-        <img src={this.setBackground()} className='bg' />
+        <img src={defaultBg} className='bg'/>
         <div className='stream'>
             <div className='stream__window'>
               <iframe

@@ -4,34 +4,59 @@ import NewBet from './newbet/NewBet.js';
 import NotificationList from './notifications/NotificationList';
 import UserOptions from './UserOptions';
 import { Menu, Layout } from 'antd';
+import csgo from '../../images/csgo.svg'
+import lol from '../../images/lol.svg'
+import ow from '../../images/ow.svg'
+import dota from '../../images/dota.svg'
 
 class NavBar extends Component {
 
   render() {
     return (
-      <Layout.Header className='header'>
+      <Layout.Header>
         <div className='container'>
           <div className='logo'>
             <Link to='/'>Betme.<span className='logo--accent'>gg</span></Link>
           </div>
-          <Menu
-            theme='dark'
-            mode='horizontal'
-            selectable={false}
-            className='navigation'
-          >
+          <Menu mode='horizontal' selectable={false}>
             <Menu.Item>
-              <NotificationList
+              <Link to='/stream/lol'>
+                <img src={lol} alt='League of Legends Stream' style={{ width: '24px', height: '24px' }} />
+              </Link>
+            </Menu.Item>
+            <Menu.Item>
+              <Link to='/stream/csgo'>
+                <img src={csgo} alt='Counter Strike: Global Offensive Stream' style={{ width: '24px', height: '24px' }} />
+              </Link>
+            </Menu.Item>
+            <Menu.Item>
+              <Link to='/stream/ow'>
+                <img src={ow} alt='Overwatch Stream' style={{ width: '24px', height: '24px' }} />
+              </Link>
+            </Menu.Item>
+            <Menu.Item>
+              <Link to='/stream/dota2'>
+                <img src={dota} alt='Dota 2 Stream' style={{ width: '24px', height: '24px' }} />
+              </Link>
+            </Menu.Item>
+          </Menu>
+<<<<<<< HEAD
+          <div className='navigation__btn'><NewBet upcomingMatches={this.props.upcomingMatches} refreshComponent={this.props.refreshComponent} bank={this.props.userInfo.bank} /></div>
+=======
+          <div className='notifications'>
+            <NotificationList
                 userBets={this.props.userBets}
                 handleNotificationRead={this.props.handleNotificationRead}
                 handleNotificationSelection={this.props.handleNotificationSelection}
               />
-            </Menu.Item>
-            <Menu.Item>
-              <UserOptions userInfo={this.props.userInfo} />
-            </Menu.Item>
-          </Menu>
-          <div className='navigation__btn'><NewBet upcomingMatches={this.props.upcomingMatches} refreshComponent={this.props.refreshComponent} bank={this.props.userInfo.bank} /></div>
+          </div>
+          <div className='user-options'>
+          <UserOptions userInfo={this.props.userInfo}/>
+          </div>
+          <div className='new-bet'>
+            <NewBet upcomingMatches={this.props.upcomingMatches} refreshComponent={this.props.refreshComponent} />
+          </div>
+>>>>>>> master
         </div>
       </Layout.Header>
     );
