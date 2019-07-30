@@ -20,6 +20,7 @@ class BetHistoryList extends Component {
           participants={historicalBet.participants}
           betId={historicalBet.id}
           userWinStatus={historicalBet.User_Bet.userWinStatus}
+          earnOrLost={historicalBet.User_Bet.earnOrLost}
         />
       );
     });

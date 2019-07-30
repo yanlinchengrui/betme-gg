@@ -40,9 +40,7 @@ class NavBar extends Component {
               </Link>
             </Menu.Item>
           </Menu>
-<<<<<<< HEAD
-          <div className='navigation__btn'><NewBet upcomingMatches={this.props.upcomingMatches} refreshComponent={this.props.refreshComponent} bank={this.props.userInfo.bank} /></div>
-=======
+
           <div className='notifications'>
             <NotificationList
                 userBets={this.props.userBets}
@@ -54,9 +52,9 @@ class NavBar extends Component {
           <UserOptions userInfo={this.props.userInfo}/>
           </div>
           <div className='new-bet'>
-            <NewBet upcomingMatches={this.props.upcomingMatches} refreshComponent={this.props.refreshComponent} />
+            <NewBet upcomingMatches={this.props.upcomingMatches} refreshComponent={this.props.refreshComponent} bank={this.props.userInfo.bank}/>
           </div>
->>>>>>> master
+
         </div>
       </Layout.Header>
     );

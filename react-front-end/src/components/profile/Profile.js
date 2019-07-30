@@ -48,7 +48,7 @@ class Profile extends Component {
     return (
       <div className='container'>
         <div className='profile'>
-          <div className='profile__header' style={{ backgroundImage: `url(${this.favGame[this.props.currentUser.favorite_game]})`}}>
+          <div className='profile__header' style={{ backgroundImage: `url(${this.favGame[this.props.currentUser.favorite_game]})` }}>
             <div className='header__avatar' style={{ backgroundImage: `url(${this.props.currentUser.avatar_url})` }}></div>
           </div>
           <div className='profile__info'>
@@ -60,26 +60,29 @@ class Profile extends Component {
                   <span className='user-info__title'>First Name:</span>{this.props.currentUser.first_name}
                 </div>
                 <div className='user-info'>
-                <span className='user-info__title'>Last Name:</span>{this.props.currentUser.last_name}
+                  <span className='user-info__title'>Last Name:</span>{this.props.currentUser.last_name}
                 </div>
                 <div className='user-info'>
-                <span className='user-info__title'>Favourite Team:</span>{this.props.currentUser.favorite_team}
+                  <span className='user-info__title'>Favourite Team:</span>{this.props.currentUser.favorite_team}
                 </div>
                 <div className='user-info'>
-                <span className='user-info__title'>Favourite Game:</span>{this.props.currentUser.favorite_game}
+                  <span className='user-info__title'>Favourite Game:</span>{this.props.currentUser.favorite_game}
                 </div>
                 <div className='user-info'>
-                <span className='user-info__title'>Bets Won:</span>{this.state.gamesWon}
+                  <span className='user-info__title'>Bank: </span>${this.props.currentUser.bank}
                 </div>
                 <div className='user-info'>
-                <span className='user-info__title'>Bets Lost:</span>{this.state.gamesLost}
+                  <span className='user-info__title'>Bets Won:</span>{this.state.gamesWon}
+                </div>
+                <div className='user-info'>
+                  <span className='user-info__title'>Bets Lost:</span>{this.state.gamesLost}
                 </div>
               </div>
             </div>
             <div className='info__past-bets'>
               <BetHistoryList betinfo={this.props.betinfo} />
             </div>
-          </div>      
+          </div>
         </div>
       </div>
     );
