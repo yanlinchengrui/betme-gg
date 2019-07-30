@@ -82,8 +82,9 @@ class NewBet extends Component {
             <Row type='flex'>
               <Col span={24}>
                 <Form.Item label='Place your bet'>
-                  {getFieldDecorator('stakes', { initialValue: 0 })(
+                  {getFieldDecorator('stakes', { initialValue: 10 })(
                     <InputNumber
+                      min={1}
                       formatter={value => `$ ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
                       parser={value => value.replace(/\$\s?|(,*)/g, '')}
                     />

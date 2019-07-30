@@ -54,7 +54,6 @@ class Notification extends Component {
               <div className='notification__content-text'>
                 <Icon type="trophy" theme="filled" />&nbsp;<p>Winner winner chicken dinner! You won the <span className='match'>{this.props.match}</span> bet!</p>
               </div>
-          
               <footer>
                 {moment(this.props.date).tz('America/Vancouver').format('MMMM DD, YYYY - HH:mm')}
               </footer>
@@ -69,6 +68,21 @@ class Notification extends Component {
             <div className='notification__content'>
               <div className='notification__content-text'>
                 <Icon type="frown" theme="filled" />&nbsp;<p>You lost the <span className='match'>{this.props.match}</span> bet! Better luck next time, kid!</p>
+              </div>
+              <footer>
+                {moment(this.props.date).tz('America/Vancouver').format('MMMM DD, YYYY - HH:mm')}
+              </footer>
+            </div>
+          </div>
+        );
+        break;
+
+      case 'declined':
+        notification = (
+          <div className='notification notification--loser'>
+            <div className='notification__content'>
+              <div className='notification__content-text'>
+                <Icon type="smile" theme="filled" rotate={180} />&nbsp;<p>The bet: <span className='match'>{this.props.match}</span> got cancelled due to some reason... </p>
               </div>
               <footer>
                 {moment(this.props.date).tz('America/Vancouver').format('MMMM DD, YYYY - HH:mm')}
