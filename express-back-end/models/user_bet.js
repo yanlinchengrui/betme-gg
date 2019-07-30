@@ -28,7 +28,10 @@ module.exports = (sequelize, DataTypes) => {
     },
     notificationRead: {
       type: DataTypes.BOOLEAN
-    }
+    },
+    earnOrLost: {
+      type: DataTypes.INTEGER
+    },
   }, {});
 
   return User_Bet;

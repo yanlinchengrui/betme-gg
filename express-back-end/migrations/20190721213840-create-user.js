@@ -39,6 +39,10 @@ module.exports = {
         type: Sequelize.STRING,
         isURL: true
       },
+      bank: {
+        type: Sequelize.INTEGER,
+        allowNull: false
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

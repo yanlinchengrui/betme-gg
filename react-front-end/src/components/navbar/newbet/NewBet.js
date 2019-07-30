@@ -81,10 +81,11 @@ class NewBet extends Component {
             </Row>
             <Row type='flex'>
               <Col span={24}>
-                <Form.Item label='Place your bet'>
+                <Form.Item label={'Your bank: ' + this.props.bank + '. Place your bet'}>
                   {getFieldDecorator('stakes', { initialValue: 10 })(
                     <InputNumber
-                      min={1}
+                      min={0}
+                      max={this.props.bank}
                       formatter={value => `$ ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
                       parser={value => value.replace(/\$\s?|(,*)/g, '')}
                     />

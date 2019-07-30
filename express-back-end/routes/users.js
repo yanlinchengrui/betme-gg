@@ -21,7 +21,7 @@ router.get('/:id', (req, res) => {
     include: [{ model: db.Bet, as: 'bets' }],
     order: [[{ model: db.Bet, as: 'bets' }, 'createdAt', 'DESC']]
   }).then((rez) => {
-    console.log(rez.toJSON())
+    // console.log(rez.toJSON())
     res.json(rez);
   });
   // } else {
