@@ -131,6 +131,7 @@
         font-size: 24px;
         font-weight: 700;
         margin-bottom: 20px;
+        text-align: center;
       }
 
       &-btns {
@@ -175,7 +176,7 @@
     &__participants {
       display: flex;
       flex-direction: column;
-      padding: 20px 60px;
+      padding: 20px 60px 60px;
       
       .Team1, .Team2, .Awaiting {
         display: block;

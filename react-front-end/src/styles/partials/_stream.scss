@@ -35,9 +35,17 @@
     & .chat {
       position: relative;
       height: 100%;
+      overflow: hidden;
 
       &__messages {
-        padding: 20px;
+        padding: 20px 20px 120px;
+        overflow-y: scroll;
+        height: 100%;
+
+        &::-webkit-scrollbar {
+          width: 0px;
+          background: transparent; /* make scrollbar transparent */
+        }
       }
 
       &__chatbar {

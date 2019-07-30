@@ -55,5 +55,11 @@
     color: $primary-color;
     text-shadow: 0 0 20px rgba(55,69,254,0.5);
   }
-  
+}
+
+.user-options {
+  .ant-btn {
+    @extend %btn-styles;
+    width: 100px;
+  }
 }

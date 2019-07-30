@@ -44,6 +44,7 @@ class NotificationList extends Component {
     const notification = this.props.userBets.map((bet) => {
       return <Notification
         key={bet.User_Bet.id}
+        betId={bet.User_Bet.bet_id}
         userBetId={bet.User_Bet.id}
         match={bet.match}
         owner={bet.owner}

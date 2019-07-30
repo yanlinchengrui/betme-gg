@@ -1,4 +1,4 @@
-.ant-drawer .new-bet__actions .ant-btn-primary, .header .navigation__btn .ant-btn, .notifications .notification__content-text .actions .team-btn, .dashboard__bets .bets .bet__match-view .ant-btn {
+.ant-drawer .new-bet__actions .ant-btn-primary, .header .navigation__btn .ant-btn, .user-options .ant-btn, .notifications .notification__content-text .actions .team-btn, .dashboard__bets .bets .bet__match-view .ant-btn {
   border-radius: 100px;
   padding: 0 25px;
   border-width: 2px; }
@@ -97,6 +97,9 @@ img.bg {
     color: #3745fe;
     text-shadow: 0 0 20px rgba(55, 69, 254, 0.5); }
 
+.user-options .ant-btn {
+  width: 100px; }
+
 .notifications .notification {
   border-width: 2px;
   border-style: solid;
@@ -128,8 +131,14 @@ img.bg {
       .notifications .notification__content-text p {
         margin-bottom: 0; }
         .notifications .notification__content-text p .match {
-          font-weight: 700;
-          border-bottom: 2px dotted rgba(255, 255, 255, 0.25); }
+          font-weight: 700; }
+          .notifications .notification__content-text p .match a {
+            color: rgba(255, 255, 255, 0.5);
+            border-bottom: 2px dotted rgba(255, 255, 255, 0.5);
+            transition: all 0.3s; }
+            .notifications .notification__content-text p .match a:hover {
+              color: #fff;
+              border-bottom: 2px dotted #fff; }
       .notifications .notification__content-text .actions {
         margin-left: auto; }
         .notifications .notification__content-text .actions .team-btn {
@@ -396,7 +405,8 @@ main {
         border-bottom: 2px solid #fff;
         font-size: 24px;
         font-weight: 700;
-        margin-bottom: 20px; }
+        margin-bottom: 20px;
+        text-align: center; }
       .bet .individual__pick-btns .team-pick .t1-btn, .bet .individual__pick-btns .team-pick .t2-btn {
         font-size: 30px;
         min-width: 150px;
@@ -422,7 +432,7 @@ main {
     .bet .individual__participants {
       display: flex;
       flex-direction: column;
-      padding: 20px 60px; }
+      padding: 20px 60px 60px; }
       .bet .individual__participants .Team1, .bet .individual__participants .Team2, .bet .individual__participants .Awaiting {
         display: block;
         font-size: 18px;
@@ -536,9 +546,16 @@ main {
     height: 100%; }
     .stream__chat .chat {
       position: relative;
-      height: 100%; }
+      height: 100%;
+      overflow: hidden; }
       .stream__chat .chat__messages {
-        padding: 20px; }
+        padding: 20px 20px 120px;
+        overflow-y: scroll;
+        height: 100%; }
+        .stream__chat .chat__messages::-webkit-scrollbar {
+          width: 0px;
+          background: transparent;
+          /* make scrollbar transparent */ }
       .stream__chat .chat__chatbar {
         position: absolute;
         bottom: 0;

@@ -109,13 +109,13 @@ class IndividualBet extends Component {
             case false:
               return (
                 <div key={this.props.currentUser.id}>
-                  <h2> ARE YOU SURE? </h2>
+                  <h2> Are you sure? </h2>
                   <div className='team-pick'>
-                    <Button className='t1-btn' type='dashed' onClick={async () => {
+                    <Button className='t1-btn' style={{ marginRight: '0' }} type='dashed' onClick={async () => {
                       await this.props.handleNotificationSelection(owner.User_Bet.id, true, 'invite');
                       this.props.getBetDetails();
                     }}>
-                      LET ME IN
+                      Let me in!
                     </Button>
                   </div>
                 </div>

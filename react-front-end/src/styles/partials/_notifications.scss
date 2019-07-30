@@ -47,7 +47,17 @@
 
           & .match {
             font-weight: 700;
-            border-bottom: 2px dotted rgba(255,255,255,0.25);
+
+            a {
+              color: rgba(255,255,255,0.5);
+              border-bottom: 2px dotted rgba(255,255,255,0.5);
+              transition: all 0.3s;
+
+              &:hover {
+                color: #fff;
+                border-bottom: 2px dotted #fff;
+              }
+            }
           }
         }
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { Popover, Avatar } from 'antd';
+import { Popover, Avatar, Button } from 'antd';
 
 class UserOptions extends Component {
   constructor(props) {
@@ -23,12 +23,12 @@ class UserOptions extends Component {
 
   render() {
     const content = (
-      <div>
+      <div className='user-options'>
         <Link to={'/profile'}>
-          Profile
+          <Button type='primary' style={{ display: 'block', marginBottom: '6px' }}>Profile</Button>
         </Link>
         <Link to={'/login'}>
-          Login
+          <Button type='primary' style={{ display: 'block' }}>Login</Button>
         </Link>
       </div>
     );
