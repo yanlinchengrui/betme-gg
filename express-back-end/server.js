@@ -128,6 +128,7 @@ checkWinnerAndUpdateWinStatus = () => {
               userBet.update({
                 userWinStatus: winnerCheck ? true : false,
                 notificationType: winnerCheck ? 'win' : 'loss',
+                notificationRead: false
               });
             });
 
@@ -201,7 +202,7 @@ checkWinnerAndUpdateWinStatus();
 setInterval(async () => {
   await checkPendingBetsAndStartTime();
   await checkWinnerAndUpdateWinStatus();
-}, 600000);
+}, 10000);
 
 
 // Create the WebSockets server

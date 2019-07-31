@@ -45,6 +45,9 @@ class NewBet extends Component {
         values.team2logo = gameInfo[0].opponents[1].opponent.image_url;
         values.matchId = gameInfo[0].id;
 
+        const emails = values.emails.filter((email) => !!email);
+        values.emails = emails;
+
         console.log('Received values of form: ', values);
 
         axios.post('http://localhost:8080/bets', values, { withCredentials: true })

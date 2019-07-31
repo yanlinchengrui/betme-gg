@@ -59,7 +59,7 @@ class HistoricalBet extends Component {
 
       case "cancelled":
         historicalBet = (
-          <div className='bet bet--complete'>
+          <div className='bet bet--cancelled'>
             <div className='bet-match'>
               <div className={`game game-${this.props.game}`}></div>
               <div className='bet-match-logo'>
