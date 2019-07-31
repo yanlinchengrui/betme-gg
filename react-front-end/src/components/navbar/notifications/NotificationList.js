@@ -59,7 +59,7 @@ class NotificationList extends Component {
     const userBetIds = this.props.userBets.map((bet) => bet.User_Bet.id);
 
     return (
-      <Popover content={<div>{notification}</div>} trigger='click' onClick={() => this.props.handleNotificationRead(userBetIds)}>
+      <Popover placement="bottomRight" content={<div>{notification}</div>} trigger='click' onClick={() => this.props.handleNotificationRead(userBetIds)}>
         <Badge dot={this.state.dot}>
           <Icon type='bell' theme='outlined' style={{ fontSize: '24px' }} />
         </Badge>

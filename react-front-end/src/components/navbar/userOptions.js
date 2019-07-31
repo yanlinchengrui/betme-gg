@@ -41,6 +41,7 @@ class UserOptions extends Component {
           </div>
         }
         trigger='click'
+        placement="bottomRight"
       >
         <Avatar src={this.props.userInfo.avatar_url} />
       </Popover>

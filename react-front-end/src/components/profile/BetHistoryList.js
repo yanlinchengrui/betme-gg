@@ -23,8 +23,10 @@ class BetHistoryList extends Component {
       );
     });
     return (
-      <div className='dashboard__bets'>
-        <h2>Past bets</h2>
+      <div className='bets'>
+        <div className='title'>
+          <h2>Past bets</h2>
+        </div>
         {historicalBets}
       </div>
     );

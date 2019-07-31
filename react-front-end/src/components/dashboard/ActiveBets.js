@@ -41,7 +41,7 @@ class ActiveBet extends Component {
                 <p>Status: <span className='capitalize'>{this.props.betStatus}</span></p>
               </div>
               <div className='bet-info'>
-                <p>Total pot: ${this.props.stakes * this.props.participants}</p>
+                <p>Stakes: ${this.props.stakes * this.props.participants}</p>
               </div>
               <div className='bet-info'>
                 <p>Bet Owner: {this.props.owner}</p>
