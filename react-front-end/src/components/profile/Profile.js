@@ -69,7 +69,7 @@ class Profile extends Component {
                   <span className='user-info-title'>Favourite Game:</span>{this.props.currentUser.favorite_game}
                 </div>
                 <div className='user-info'>
-                  <span className='user-info-title'>GG Coins: </span>{this.props.currentUser.bank}
+                  <span className='user-info-title'>GG.Coins: </span>{this.props.currentUser.bank}
                 </div>
                 <div className='user-info'>
                   <span className='user-info-title'>Bets Won:</span>{this.state.gamesWon}
