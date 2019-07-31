@@ -19,7 +19,7 @@ class StreamAndChat extends Component {
   render() {
 
     return (
-      <div className='container'>
+      <div className='container-stream'>
         <img src={defaultBg} className='bg'/>
         <div className='stream'>
             <div className='stream__window'>
