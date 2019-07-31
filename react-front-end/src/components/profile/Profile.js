@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import BetHistoryList from "./BetHistoryList";
 import axios from "axios"
-import csgo from '../../images/csgo-header.jpg'
-import lol from '../../images/lol-header.jpg'
-import ow from '../../images/ow-header.jpg'
-import dota from '../../images/dota2-header.jpg'
+import csgo from '../../images/csgo-header.png'
+import lol from '../../images/lol-header.png'
+import ow from '../../images/ow-header.png'
+import dota from '../../images/dota2-header.png'
 
 class Profile extends Component {
   constructor(props) {
