@@ -160,7 +160,7 @@ img.bg {
     padding: 6px 12px; }
     .notifications .notification-content-text {
       display: flex;
-      justify-content: flex-start;
+      justify-content: space-between;
       align-items: center;
       margin-bottom: 5px; }
       .notifications .notification-content-text p {
@@ -783,6 +783,9 @@ img.bg {
             font-size: 9px;
             font-weight: 700;
             text-transform: uppercase; }
+            @media only screen and (max-width: 840px) {
+              .profile-info .info-past-bets .bets .bet-list .bet footer .bet-info p {
+                text-align: center; } }
         .profile-info .info-past-bets .bets .bet-list .bet--complete {
           color: #5bc0de; }
         .profile-info .info-past-bets .bets .bet-list .bet--cancelled {

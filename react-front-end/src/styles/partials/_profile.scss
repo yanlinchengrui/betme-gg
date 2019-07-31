@@ -216,7 +216,6 @@
               padding: 5px 10px;
     
               .bet-info {
-    
                 p {
                   margin-bottom: 0;
                   font: {
@@ -224,6 +223,10 @@
                     weight: 700;
                   }
                   text-transform: uppercase;
+
+                  @media only screen and (max-width: 840px) {
+                    text-align: center;
+                  }
                 }
               }
             }

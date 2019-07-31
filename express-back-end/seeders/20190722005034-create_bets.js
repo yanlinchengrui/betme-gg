@@ -4,7 +4,7 @@ module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert('Bets', [{
       match: 'SK telecom T1 vs Cloud9',
-      owner: 'PeterMan',
+      owner: 'CaptainPeter',
       stakes: 15,
       bet_status: 'Pending',
       game: 'lol',
@@ -22,7 +22,7 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      match: 'Counter Logic Gaming vs Flyquest',
+      match: 'KaBum eSports vs INTZ e-Sports Club',
       owner: 'PokemonGOvind',
       stakes: 50,
       bet_status: 'Pending',
@@ -41,8 +41,8 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      match: 'Vancouver Titans vs Florida Mayham',
-      owner: 'SethMarksTheSpot',
+      match: 'Vega Squadron vs Dragon Army',
+      owner: 'WarchiefNick',
       stakes: 200,
       bet_status: 'Active',
       game: 'lol',
