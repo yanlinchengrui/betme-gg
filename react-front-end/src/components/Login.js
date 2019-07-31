@@ -42,7 +42,7 @@ class Login extends Component {
             <Input.Password placeholder='Password' value={this.state.password} onChange={this.handlePassword} />
           </Form.Item>
           <Button htmlType='submit' type='primary' style={{ width: '100%' }}>
-            Login
+            Logout
           </Button>
         </Form>
       </div>

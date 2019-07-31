@@ -50,10 +50,7 @@ class HistoricalBet extends Component {
                 <p>Participants: {this.props.participants}</p>
               </div>
               <div className='bet-info'>
-                <p>Outcome: {this.props.userWinStatus ? 'Winner' : 'Loser'} </p>
-              </div>
-              <div className='bet-info'>
-                <p>{this.props.userWinStatus ? 'You won ' + this.props.earnOrLost : 'You lost ' + this.props.earnOrLost} GG Coins in this bet!'</p>
+                <p>Outcome: {this.props.userWinStatus ? 'You won ' + this.props.earnOrLost : 'You lost ' + this.props.earnOrLost} GG.Coins</p>
               </div>
             </footer>
           </div>

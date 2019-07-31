@@ -220,7 +220,7 @@
                 p {
                   margin-bottom: 0;
                   font: {
-                    size: 10px;
+                    size: 9px;
                     weight: 700;
                   }
                   text-transform: uppercase;
@@ -229,6 +229,10 @@
             }
             
             &--complete {
+              color: #5bc0de;
+            }
+
+            &--cancelled {
               color: #d9534f;
             }
           }

@@ -182,7 +182,8 @@ img.bg {
             opacity: 1; }
         .notifications .notification-content-text .actions .team-btn {
           height: auto;
-          padding: 5px 20px;
+          padding: 5px;
+          min-width: 70px !important;
           font-size: 10px;
           font-weight: 700;
           -webkit-border-radius: 4px 4px 4px 4px;
@@ -475,7 +476,7 @@ img.bg {
         padding: 5px 10px; }
         .dashboard .bets .bet-list .bet footer .bet-info p {
           margin-bottom: 0;
-          font-size: 10px;
+          font-size: 9px;
           font-weight: 700;
           text-transform: uppercase; }
       .dashboard .bets .bet-list .bet--pending {
@@ -779,10 +780,12 @@ img.bg {
           padding: 5px 10px; }
           .profile-info .info-past-bets .bets .bet-list .bet footer .bet-info p {
             margin-bottom: 0;
-            font-size: 10px;
+            font-size: 9px;
             font-weight: 700;
             text-transform: uppercase; }
         .profile-info .info-past-bets .bets .bet-list .bet--complete {
+          color: #5bc0de; }
+        .profile-info .info-past-bets .bets .bet-list .bet--cancelled {
           color: #d9534f; }
 
 .stream {
