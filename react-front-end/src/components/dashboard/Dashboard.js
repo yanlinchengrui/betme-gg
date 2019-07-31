@@ -8,10 +8,10 @@ class Dashboard extends Component {
   render() {
     return (
       <div className='container'>
-        <img src={defaultBg} className='bg'/>
+        <img src={defaultBg} alt='background' className='bg' />
         <div className='dashboard'>
-          <UpcomingMatches upcomingMatches={this.props.upcomingMatches}/>
-          <ActiveBetsList activeBets={this.props.activeBets}/>
+          <UpcomingMatches upcomingMatches={this.props.upcomingMatches} />
+          <ActiveBetsList activeBets={this.props.activeBets} />
         </div>
       </div>
     );

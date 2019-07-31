@@ -135,6 +135,7 @@ checkWinnerAndUpdateWinStatus = () => {
             this.winners = winners;
             let avgStakes = totalWinners ? (totalStakes / totalWinners) : 0;
 
+            // update earnOrLost for each user
             allUserBet.forEach((userBet) => {
               if (userBet.dataValues.userWinStatus) {
                 userBet.update({
@@ -172,12 +173,24 @@ checkPendingBetsAndStartTime = () => {
       start_time: {
         [Op.lte]: new Date()
       }
-    }
+    },
+    include: [{ model: models.User, as: 'users' }]
   }).then((bets) => {
     bets.forEach((bet) => {
-      bet.update({
-        bet_status: 'cancelled'
-      })
+      bet.update(
+        {
+          bet_status: 'cancelled'
+        },
+        {
+          returning: true,
+          plain: true
+        }).then((rez) => {
+          rez.dataValues.users.forEach((user) => {
+            if (user.dataValues.User_Bet.notificationType === 'inProgress') {
+              user.update({ bank: user.dataValues.bank + bet.dataValues.stakes })
+            }
+          });
+        })
     })
   })
 }

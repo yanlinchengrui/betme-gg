@@ -17,7 +17,8 @@ class Chat extends Component {
   }
 
   componentDidMount() {
-    this.updateCurrentUser()
+    this.updateCurrentUser();
+    this.setState({ messages: [] });
 
     this.ws.onopen = (event) => {
       console.log(this.props.currentUser);

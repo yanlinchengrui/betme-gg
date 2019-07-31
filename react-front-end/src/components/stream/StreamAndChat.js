@@ -20,22 +20,23 @@ class StreamAndChat extends Component {
 
     return (
       <div className='container-stream'>
-        <img src={defaultBg} className='bg'/>
+        <img alt='background' src={defaultBg} className='bg' />
         <div className='stream'>
-            <div className='stream__window'>
-              <iframe
-                className='livestream'
-                src={this.pointStream()}
-                height="100%"
-                width="100%"
-                frameBorder="0"
-                scrolling='false'
-                allowFullScreen={true}>
-              </iframe>
-            </div>
-            <div className='stream__chat'>
-              <Chat currentUser={this.props.currentUser} game={this.props.match.params.game} />
-            </div>
+          <div className='stream__window'>
+            <iframe
+              className='livestream'
+              src={this.pointStream()}
+              height="100%"
+              width="100%"
+              frameBorder="0"
+              scrolling='false'
+              allowFullScreen={true}
+              title='twitch'>
+            </iframe>
+          </div>
+          <div className='stream__chat'>
+            <Chat currentUser={this.props.currentUser} game={this.props.match.params.game} />
+          </div>
         </div>
       </div>
     );

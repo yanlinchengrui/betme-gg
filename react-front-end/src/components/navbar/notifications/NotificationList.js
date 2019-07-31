@@ -53,6 +53,7 @@ class NotificationList extends Component {
         team2={bet.team2}
         date={bet.User_Bet.createdAt}
         handleNotificationSelection={this.props.handleNotificationSelection}
+        earnOrLost={bet.User_Bet.earnOrLost}
       />;
     });
 

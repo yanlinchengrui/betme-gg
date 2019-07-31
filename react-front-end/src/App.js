@@ -12,7 +12,6 @@ import axios from "axios";
 import "./App.css";
 import "./styles/styles.css";
 import "antd/dist/antd.css";
-import { promises } from "dns";
 
 class App extends Component {
   constructor(props) {
@@ -40,7 +39,6 @@ class App extends Component {
           userInfo: allData,
           userBets: bets
         });
-        console.log(this.state.userBets)
       })
       .catch(err => {
         console.log(err);

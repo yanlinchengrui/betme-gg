@@ -52,7 +52,7 @@ class Notification extends Component {
           <div className='notification notification--winner'>
             <div className='notification-content'>
               <div className='notification-content-text'>
-                <p>Winner winner chicken dinner! You won the <span className='match'><Link to={`/bets/user/${this.props.betId}`}>{this.props.match}</Link></span> bet!</p>
+                <p>Winner winner chicken dinner! You won the <span className='match'><Link to={`/bets/user/${this.props.betId}`}>{this.props.match}</Link></span> bet and {this.props.earnOrLost} GG.Coins!</p>
               </div>
               <footer>
                 {moment(this.props.date).tz('America/Vancouver').format('MMMM DD, YYYY - HH:mm')}
@@ -67,7 +67,7 @@ class Notification extends Component {
           <div className='notification notification--loser'>
             <div className='notification-content'>
               <div className='notification-content-text'>
-                <p>You lost the <span className='match'><Link to={`/bets/user/${this.props.betId}`}>{this.props.match}</Link></span> bet! Better luck next time, kid!</p>
+                <p>You lost the <span className='match'><Link to={`/bets/user/${this.props.betId}`}>{this.props.match}</Link></span> bet and {this.props.earnOrLost} GG.Coins! Better luck next time, kid!</p>
               </div>
               <footer>
                 {moment(this.props.date).tz('America/Vancouver').format('MMMM DD, YYYY - HH:mm')}

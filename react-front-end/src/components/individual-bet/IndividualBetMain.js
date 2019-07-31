@@ -36,7 +36,7 @@ class IndividualBetMain extends Component {
   render() {
     return (
       <div className="container">
-        <img src={defaultBg} className='bg'/>
+        <img alt='background' src={defaultBg} className='bg' />
         <div className="bet-page">
           <IndividualBet betInfo={this.state.betInfo} handleNotificationSelection={this.props.handleNotificationSelection} currentUser={this.props.currentUser} getBetDetails={this.getBetDetails} />
         </div>

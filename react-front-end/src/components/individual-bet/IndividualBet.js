@@ -122,7 +122,7 @@ class IndividualBet extends Component {
               )
 
             default:
-              return;
+              return null;
           }
         }
       })
@@ -146,7 +146,7 @@ class IndividualBet extends Component {
               <h2>{this.props.betInfo.team1FullName}</h2>
             </div>
             <div className='team__logo'>
-              <img src={this.props.betInfo.team1logo} />
+              <img alt='team1' src={this.props.betInfo.team1logo} />
             </div>
           </div>
           <div className='team team--2'>
@@ -154,7 +154,7 @@ class IndividualBet extends Component {
               <h2>{this.props.betInfo.team2FullName}</h2>
             </div>
             <div className='team__logo'>
-              <img src={this.props.betInfo.team2logo} />
+              <img alt='team2' src={this.props.betInfo.team2logo} />
             </div>
           </div>
         </div>
