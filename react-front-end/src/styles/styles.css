@@ -40,10 +40,9 @@ img.bg {
     align-items: center; }
     .ant-layout-header .container .logo a {
       color: #fff;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Ubuntu', sans-serif;
       font-size: 28px;
       font-weight: 700;
-      text-transform: uppercase;
       transition: all 0.3s; }
       .ant-layout-header .container .logo a:hover {
         color: #ba40f5;
