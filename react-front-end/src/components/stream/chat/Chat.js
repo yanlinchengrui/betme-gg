@@ -17,6 +17,8 @@ class Chat extends Component {
   }
 
   componentDidMount() {
+    this.updateCurrentUser()
+
     this.ws.onopen = (event) => {
       console.log(this.props.currentUser);
       console.log('Connected to server');
@@ -56,6 +58,7 @@ class Chat extends Component {
       });
     }
   }
+
 
   render() {
     return (
