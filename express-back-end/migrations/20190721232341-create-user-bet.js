@@ -39,6 +39,9 @@ module.exports = {
       notificationRead: {
         type: Sequelize.BOOLEAN
       },
+      earnOrLost: {
+        type: Sequelize.INTEGER
+      },
       createdAt: Sequelize.DATE,
       updatedAt: Sequelize.DATE,
     });

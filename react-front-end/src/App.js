@@ -31,7 +31,7 @@ class App extends Component {
 
   getUserBetsDetails = () => {
     return axios
-      .get("http://localhost:8080/users/:id", { withCredentials: true })
+      .get("http://localhost:8080/users/details", { withCredentials: true })
       .then(allInfo => {
         let allData = allInfo.data;
         const bets = allData.bets;

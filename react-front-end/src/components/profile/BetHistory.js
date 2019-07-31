@@ -23,7 +23,7 @@ class HistoricalBet extends Component {
         historicalBet = (
           <div className='bet bet--complete'>
             <div className='bet-match'>
-            <div className={`game game-${this.props.game}`}></div>
+              <div className={`game game-${this.props.game}`}></div>
               <div className='bet-match-logo'>
                 <img src={this.gameLogo[this.props.game]} alt={this.props.game} style={{ width: '40px', height: '40px' }} />
               </div>
@@ -52,6 +52,9 @@ class HistoricalBet extends Component {
               <div className='bet-info'>
                 <p>Outcome: {this.props.userWinStatus ? 'Winner' : 'Loser'} </p>
               </div>
+              <div className='bet-info'>
+                <p>{this.props.userWinStatus ? 'You won ' + this.props.earnOrLost : 'You lost ' + this.props.earnOrLost} GG Coins in this bet!'</p>
+              </div>
             </footer>
           </div>
         )
@@ -61,7 +64,7 @@ class HistoricalBet extends Component {
         historicalBet = (
           <div className='bet bet--complete'>
             <div className='bet-match'>
-            <div className={`game game-${this.props.game}`}></div>
+              <div className={`game game-${this.props.game}`}></div>
               <div className='bet-match-logo'>
                 <img src={this.gameLogo[this.props.game]} alt={this.props.game} style={{ width: '40px', height: '40px' }} />
               </div>

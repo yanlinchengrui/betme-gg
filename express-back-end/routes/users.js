@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
     });
 });
 
-router.get('/:id', (req, res) => {
+router.get('/details', (req, res) => {
   // if (req.session.user) {
   if (!req.session.user) {
     res.status(200)
@@ -21,7 +21,7 @@ router.get('/:id', (req, res) => {
     include: [{ model: db.Bet, as: 'bets' }],
     order: [[{ model: db.Bet, as: 'bets' }, 'createdAt', 'DESC']]
   }).then((rez) => {
-    console.log(rez.toJSON())
+    // console.log(rez.toJSON())
     res.json(rez);
   });
   // } else {
