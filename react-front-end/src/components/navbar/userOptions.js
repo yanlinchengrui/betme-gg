@@ -28,7 +28,7 @@ class UserOptions extends Component {
           <Button className='user-options-btn' type='primary' style={{ display: 'block', marginBottom: '6px' }}>Profile</Button>
         </Link>
         <Link to={'/login'}>
-          <Button className='user-options-btn' type='primary' style={{ display: 'block' }}>Login</Button>
+          <Button className='user-options-btn' type='primary' style={{ display: 'block' }}>Logout</Button>
         </Link>
       </div>
     );
