@@ -136,9 +136,11 @@ checkWinnerAndUpdateWinStatus = () => {
             let avgStakes = totalWinners ? (totalStakes / totalWinners) : 0;
 
             allUserBet.forEach((userBet) => {
-              userBet.update({
-                earnOrLost: userBet.dataValues.userWinStatus ? (avgStakes - userBet.dataValues.earnOrLost) : userBet.dataValues.earnOrLost
-              });
+              if (userBet.dataValues.userWinStatus) {
+                userBet.update({
+                  earnOrLost: avgStakes - userBet.dataValues.earnOrLost
+                });
+              }
             });
 
           }).then(() => {
