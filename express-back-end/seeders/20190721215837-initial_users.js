@@ -3,14 +3,14 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert('Users', [{
-      user_name: 'PeterMan',
+      user_name: 'CaptainPeter',
       first_name: 'Peter',
       last_name: 'Yan',
-      favorite_team: 'IDK',
-      favorite_game: 'Counter Strike: Global Offensive',
+      favorite_team: 'Tyloo',
+      favorite_game: 'CS:GO',
       email: 'pepe@pepe.ca',
       password: '123',
-      avatar_url: 'https://media.giphy.com/media/l2JhIUyUs8KDCCf3W/giphy.gif',
+      avatar_url: 'https://media.giphy.com/media/fGrLyPfkfEZ2w/giphy.gif',
       bank: 10000,
       createdAt: new Date(),
       updatedAt: new Date()
@@ -19,7 +19,7 @@ module.exports = {
       user_name: 'PokemonGOvind',
       first_name: 'Govind',
       last_name: 'Sandhu',
-      favorite_team: 'SQL',
+      favorite_team: 'Vancouver Titans',
       favorite_game: 'Overwatch',
       email: 'govind@sandhu.ca',
       password: '123',
@@ -29,14 +29,14 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      user_name: 'NickMi',
+      user_name: 'WarchiefNick',
       first_name: 'Nick',
       last_name: 'Jenvey',
-      favorite_team: 'SKT1',
-      favorite_game: 'League of Legends',
+      favorite_team: 'SK Telecome T1',
+      favorite_game: 'LoL',
       email: 'nick@jenvey.ca',
       password: '123',
-      avatar_url: 'https://media.giphy.com/media/UEwgbxjsG3xC0/giphy.gif',
+      avatar_url: 'https://media.giphy.com/media/Pk4X5UwDNf6sqaRmaS/giphy.gif',
       bank: 10000,
       createdAt: new Date(),
       updatedAt: new Date()
