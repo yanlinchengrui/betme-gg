@@ -36,7 +36,8 @@ router.post("/", (req, res) => {
         bet_id: betid,
         teamSelect: req.body.team,
         notificationType: 'inProgress',
-        termStatus: true
+        termStatus: true,
+        earnOrLost: req.body.stakes,
       };
       return UserBet.create(ownerBet);
     })
@@ -53,12 +54,14 @@ router.post("/", (req, res) => {
             bet_id: betid,
             user_id: userid,
             notificationType: 'invite',
-            notificationRead: false
+            notificationRead: false,
+            earnOrLost: req.body.stakes,
           })
         });
       });
     })
     .then(() => {
+      User.findOne({ where: { id: userid } }).then((owner) => owner.update({ bank: owner.dataValues.bank - req.body.stakes }));
       res.status(201).send("Bet created");
     })
     .catch(err => {

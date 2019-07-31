@@ -82,7 +82,7 @@ checkWinnerAndUpdateWinStatus = () => {
     attributes: ['id', 'matchId'],
   }).then((bets) => {
     bets.forEach((bet) => {
-      checkWinner(bet.dataValues.matchId).then((rez) => {
+      checkWinner(bet.dataValues.matchId).then(async (rez) => {
         // console.log(rez.data.winner);
         if (rez.data.winner) {
 
@@ -91,30 +91,72 @@ checkWinnerAndUpdateWinStatus = () => {
           const winner = teamz[0] === rez.data.winner.acronym ? 'Team1' : 'Team2';
           console.log(`${rez.data.name}: Winner is ${rez.data.winner.acronym} => ${winner}`);
 
+          let totalStakes = 0;
+          let totalWinners = 0;
+          let winners = [];
+
           // update bet status
-          Bet.findOne({
+          await Bet.findOne({
             where: {
               id: bet.dataValues.id,
               matchId: bet.dataValues.matchId
             }
           }).then((thisBet) => {
-            thisBet.update({ bet_status: 'completed' });
-          })
+            this.totalStakes = totalStakes;
+            totalStakes = parseInt(thisBet.dataValues.participants) * thisBet.dataValues.stakes;
+            return thisBet.update({ bet_status: 'completed' });
+          });
 
           // update all user bets
-          UserBet.findAll({
+          await UserBet.findAll({
             where: {
               bet_id: bet.dataValues.id
             }
           }).then((allUserBet) => {
+
             allUserBet.forEach((userBet) => {
+              let winnerCheck = userBet.dataValues.teamSelect === winner;
+
+              // bind this.totalWinners to the one outside of the scope
+              this.totalWinners = totalWinners;
+              winnerCheck && totalWinners++;
+
+              // bind this.winners to the one outside of the scope
+              this.winners = winners;
+              winnerCheck && winners.push(userBet.dataValues.user_id);
+
               userBet.update({
-                userWinStatus: userBet.dataValues.teamSelect === winner ? true : false,
-                notificationType: userBet.dataValues.teamSelect === winner ? 'win' : 'loss',
+                userWinStatus: winnerCheck ? true : false,
+                notificationType: winnerCheck ? 'win' : 'loss',
               });
             });
-          })
 
+            this.totalWinners = totalWinners;
+            this.winners = winners;
+            let avgStakes = totalWinners ? (totalStakes / totalWinners) : 0;
+
+            allUserBet.forEach((userBet) => {
+              if (userBet.dataValues.userWinStatus) {
+                userBet.update({
+                  earnOrLost: avgStakes - userBet.dataValues.earnOrLost
+                });
+              }
+            });
+
+          }).then(() => {
+            console.log('---------------------------');
+            let avgStakes = totalWinners ? (totalStakes / totalWinners) : 0;
+
+            console.log(totalStakes, totalWinners);
+            console.log(avgStakes, winners);
+
+            // update winner bank
+            winners.forEach((winner) => {
+              models.User.findOne({ where: { id: winner } }).then((thisUser) => {
+                thisUser.update({ bank: thisUser.dataValues.bank + avgStakes });
+              })
+            })
+          })
         }
       }).catch((err) => {
         console.log(err);

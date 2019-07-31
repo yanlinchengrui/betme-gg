@@ -73,9 +73,21 @@ router.put("/:id/teamSelect", (req, res) => {
       teamSelect: req.body.teamSelect,
       notificationType: 'inProgress'
     },
-    { where: { id: req.params.id } }
-  ).then(() => {
+    {
+      where: { id: req.params.id },
+      returning: true,
+      plain: true,
+    }
+  ).then((thisUserBet) => {
+    const userId = thisUserBet[1].dataValues.user_id;
+    db.User.findOne({ where: { id: userId }, include: [{ model: Bet, as: 'bets', where: { id: thisUserBet[1].dataValues.bet_id }, attributes: ['stakes'] }] })
+      .then((userIwant) => {
+        userIwant.update({ bank: userIwant.dataValues.bank - userIwant.dataValues.bets[0].dataValues.stakes });
+      });
     res.status(200).json({ message: "modified" });
+  }).catch((err) => {
+    res.status(500).json({ message: "something went wrong here" });
+    console.log(err);
   });
 });
 

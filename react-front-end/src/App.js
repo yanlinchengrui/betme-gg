@@ -31,7 +31,7 @@ class App extends Component {
 
   getUserBetsDetails = () => {
     return axios
-      .get("http://localhost:8080/users/:id", { withCredentials: true })
+      .get("http://localhost:8080/users/details", { withCredentials: true })
       .then(allInfo => {
         let allData = allInfo.data;
         const bets = allData.bets;
@@ -107,7 +107,7 @@ class App extends Component {
     this.getUserBetsDetails()
     this.getUpcomingMatches()
 
-    // setInterval(this.getUserBetsDetails, 5000);
+    setInterval(this.getUserBetsDetails, 5000);
   }
 
   render() {

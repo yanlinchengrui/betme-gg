@@ -31,6 +31,10 @@ module.exports = (sequelize, DataTypes) => {
     avatar_url: {
       type: DataTypes.STRING,
       isURL: true
+    },
+    bank: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
     }
   }, {});
   User.associate = function (models) {
