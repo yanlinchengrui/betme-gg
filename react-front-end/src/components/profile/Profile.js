@@ -32,7 +32,6 @@ class Profile extends Component {
           gamesWon: allData.win,
           gamesLost: allData.loss
         });
-        console.log(this.state.userBets)
       })
       .catch(err => {
         console.log(err);

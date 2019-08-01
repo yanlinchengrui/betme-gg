@@ -30,17 +30,6 @@ class InviteFriends extends Component {
     });
   };
 
-  handleSubmit = e => {
-    e.preventDefault();
-    this.props.form.validateFields((err, values) => {
-      if (!err) {
-        const { keys, names } = values;
-        console.log('Received values of form: ', values);
-        console.log('Merged values:', keys.map(key => names[key]));
-      }
-    });
-  };
-
   render() {
     const { getFieldDecorator, getFieldValue } = this.props.form;
     const formItemLayout = {
@@ -83,7 +72,7 @@ class InviteFriends extends Component {
               message: 'Add your friend\'s emails!',
             },
           ],
-        })(<Input 
+        })(<Input
           prefix={<Icon type="mail" style={{ color: '#fff' }} />}
           style={{ width: '90%', marginRight: '8px' }}
           className='email-field'

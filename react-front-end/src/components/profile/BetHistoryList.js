@@ -4,10 +4,7 @@ import HistoricalBet from "./BetHistory";
 class BetHistoryList extends Component {
 
   render() {
-
-    console.log(this.props.betinfo);
     const historicalBets = this.props.betinfo.map(historicalBet => {
-      console.log(historicalBet);
       return (
         <HistoricalBet
           key={historicalBet.id}

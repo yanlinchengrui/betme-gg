@@ -48,14 +48,11 @@ class NewBet extends Component {
         const emails = values.emails.filter((email) => !!email);
         values.emails = emails;
 
-        console.log('Received values of form: ', values);
-
         axios.post('http://localhost:8080/bets', values, { withCredentials: true })
           .then((response) => {
             props.refreshComponent();
             props.form.resetFields();
             this.onClose();
-            console.log(response);
           })
           .catch((error) => {
             console.log(error);

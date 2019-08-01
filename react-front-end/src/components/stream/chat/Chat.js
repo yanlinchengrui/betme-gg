@@ -21,11 +21,9 @@ class Chat extends Component {
     this.setState({ messages: [] });
 
     this.ws.onopen = (event) => {
-      console.log(this.props.currentUser);
       console.log('Connected to server');
     };
     this.ws.onmessage = (event) => {
-      // console.log(event.data);
       const jsonData = JSON.parse(event.data);
       if (jsonData.onlineUsers) {
         this.setState({ onlineUsers: jsonData.onlineUsers });
@@ -54,9 +52,7 @@ class Chat extends Component {
   componentDidUpdate(prevProps) {
     // Typical usage (don't forget to compare props):
     if (JSON.stringify(this.props.currentUser) !== JSON.stringify(prevProps.currentUser)) {
-      this.setState({ currentUser: { name: this.props.currentUser.user_name } }, () => {
-        console.log(this.state.currentUser);
-      });
+      this.setState({ currentUser: { name: this.props.currentUser.user_name } });
     }
   }
 

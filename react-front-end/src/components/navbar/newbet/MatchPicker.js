@@ -27,7 +27,6 @@ class MatchPicker extends Component {
             rules: [{ required: true }],
           })(
             <Select placeholder='Please select the match' onChange={this.handleChange}>
-              {console.log(this.props.upcomingMatches)}
               {this.props.upcomingMatches.map((match) => {
                 return (<Option key={match.id} value={match.name}>{match.name}</Option>);
               })}

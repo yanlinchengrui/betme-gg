@@ -4,27 +4,6 @@ const db = require("../models");
 const UserBet = db.User_Bet;
 const Bet = db.Bet;
 
-
-
-// get all unread notifications
-// router.get("/", (req, res) => {
-//   if (req.session.user) {
-//     UserBet.findAll({
-//       where: {
-//         user_id: req.session.user.id
-//       },
-//       order: [
-//         ['createdAt', 'ASC'],
-//       ],
-//     }).then((rez) => {
-//       // console.log(rez.toJSON);
-//       res.json(rez);
-//     });
-//   } else {
-//     res.status(200);
-//   }
-// });
-
 router.put("/:id/termStatus", (req, res) => {
   let betid;
 
@@ -92,7 +71,6 @@ router.put("/:id/teamSelect", (req, res) => {
 });
 
 router.put("/:id/notificationRead", (req, res) => {
-  console.log('this shit broken');
   UserBet.update(
     {
       notificationRead: true

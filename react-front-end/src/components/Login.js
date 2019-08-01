@@ -25,7 +25,6 @@ class Login extends Component {
       email: this.state.email,
       password: this.state.password
     }).then(() => {
-      console.log(this.props);
       this.props.getUserBetsDetails();
       this.props.history.push('/');
     });

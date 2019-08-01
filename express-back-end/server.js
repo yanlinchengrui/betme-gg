@@ -41,15 +41,6 @@ App.use(BodyParser.json());
 App.use(Express.static('public'));
 App.use(cors({ origin: 'http://localhost:3000', credentials: true }));
 
-// Middleware for checking sessions
-// App.use((req, res, next) => { console.log(req.session.user_id); next(); });
-// App.use((req, res, next) => { console.log(req.path, req.body, req.method); next(); });
-
-// Sample GET route
-App.get('/api/data', (req, res) => res.json({
-  message: "Seems to work!",
-}));
-
 // user routes 
 App.use('/users', require('./routes/users'))
 
@@ -83,13 +74,11 @@ checkWinnerAndUpdateWinStatus = () => {
   }).then((bets) => {
     bets.forEach((bet) => {
       checkWinner(bet.dataValues.matchId).then(async (rez) => {
-        // console.log(rez.data.winner);
         if (rez.data.winner) {
 
           // decide if team1 or team2 is winner
           const teamz = rez.data.name.split(' vs ');
           const winner = teamz[0] === rez.data.winner.acronym ? 'Team1' : 'Team2';
-          console.log(`${rez.data.name}: Winner is ${rez.data.winner.acronym} => ${winner}`);
 
           let totalStakes = 0;
           let totalWinners = 0;
@@ -146,11 +135,7 @@ checkWinnerAndUpdateWinStatus = () => {
             });
 
           }).then(() => {
-            console.log('---------------------------');
             let avgStakes = totalWinners ? (totalStakes / totalWinners) : 0;
-
-            console.log(totalStakes, totalWinners);
-            console.log(avgStakes, winners);
 
             // update winner bank
             winners.forEach((winner) => {
@@ -230,8 +215,6 @@ wss.on('connection', (ws) => {
     const jsonData = JSON.parse(data);
     jsonData.id = uuidv1();
     jsonData.type = jsonData.type === 'postNotification' ? 'incomingNotification' : 'incomingMessage';
-
-    console.log(jsonData);
 
     wss.broadcast(JSON.stringify(jsonData));
   });

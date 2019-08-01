@@ -6,7 +6,6 @@ const UserBet = db.User_Bet;
 const User = db.User;
 
 router.post("/", (req, res) => {
-  console.log(req.session);
   const newBet = {
     match: req.body.match,
     owner: req.session.user.user_name,

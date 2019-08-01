@@ -90,13 +90,11 @@ class App extends Component {
   }
 
   handleNotificationRead = (ids) => {
-    console.log('Update notifications');
     Promise.all(ids.map((id) => {
       return axios.put(`http://localhost:8080/notifications/${id}/notificationRead`,
         { withCredentials: true }
       )
     })).then(() => {
-      console.log('Notifications were updated');
       this.getUserBetsDetails();
     });
   }

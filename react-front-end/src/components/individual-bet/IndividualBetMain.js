@@ -19,7 +19,6 @@ class IndividualBetMain extends Component {
       .get(`http://localhost:8080/bets/user/${this.props.match.params.id}`, { withCredentials: true })
       .then(allInfo => {
         let allData = allInfo.data;
-        console.log(allData)
         this.setState({
           betInfo: allData,
         });
