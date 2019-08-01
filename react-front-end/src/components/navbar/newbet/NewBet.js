@@ -83,7 +83,7 @@ class NewBet extends Component {
             </Row>
             <Row type='flex'>
               <Col span={24}>
-                <Form.Item label={'GG.Coins: ' + this.props.bank + ' -  Place your bet'}>
+                <Form.Item label={'GG Coins: ' + this.props.bank + ' -  Place your bet'}>
                   {getFieldDecorator('stakes', { initialValue: 10 })(
                     <InputNumber
                       min={0}

@@ -82,7 +82,7 @@ class Notification extends Component {
           <div className='notification notification--loser'>
             <div className='notification__content'>
               <div className='notification__content-text'>
-                <Icon type="smile" theme="filled" rotate={180} />&nbsp;<p>The <span className='match'>{this.props.match}</span> bet was cancelled. </p>
+                <p>The <span className='match'>{this.props.match}</span> bet was cancelled. </p>
               </div>
               <footer>
                 {moment(this.props.date).tz('America/Vancouver').format('MMMM DD, YYYY - HH:mm')}

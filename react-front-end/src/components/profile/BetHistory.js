@@ -38,19 +38,19 @@ class HistoricalBet extends Component {
             </div>
             <footer>
               <div className='bet-info'>
-                <p>Status: <span className='capitalize'>{this.props.betStatus}</span></p>
+                <p>Status:<br /> <span className='capitalize'>{this.props.betStatus}</span></p>
               </div>
               <div className='bet-info'>
-                <p>Stakes: ${this.props.stakes * this.props.participants}</p>
+                <p>Stakes:<br /> ${this.props.stakes * this.props.participants}</p>
               </div>
               <div className='bet-info'>
-                <p>Bet Owner: {this.props.owner}</p>
+                <p>Bet Owner:<br /> {this.props.owner}</p>
               </div>
               <div className='bet-info'>
-                <p>Participants: {this.props.participants}</p>
+                <p>Participants:<br /> {this.props.participants}</p>
               </div>
               <div className='bet-info'>
-                <p>Outcome: {this.props.userWinStatus ? 'You won ' + this.props.earnOrLost : 'You lost ' + this.props.earnOrLost} GG.Coins</p>
+                <p>Outcome:<br /> {this.props.userWinStatus ? 'You won ' + this.props.earnOrLost : 'You lost ' + this.props.earnOrLost} GG.Coins</p>
               </div>
             </footer>
           </div>
@@ -76,16 +76,16 @@ class HistoricalBet extends Component {
             </div>
             <footer>
               <div className='bet-info'>
-                <p>Status: <span className='capitalize'>{this.props.betStatus}</span></p>
+                <p>Status:<br /> <span className='capitalize'>{this.props.betStatus}</span></p>
               </div>
               <div className='bet-info'>
-                <p>Stakes: ${this.props.stakes * this.props.participants}</p>
+                <p>Stakes:<br /> ${this.props.stakes * this.props.participants}</p>
               </div>
               <div className='bet-info'>
-                <p>Bet Owner: {this.props.owner}</p>
+                <p>Bet Owner:<br /> {this.props.owner}</p>
               </div>
               <div className='bet-info'>
-                <p>Participants: {this.props.participants}</p>
+                <p>Participants:<br /> {this.props.participants}</p>
               </div>
             </footer>
           </div>
