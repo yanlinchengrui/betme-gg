@@ -8,6 +8,7 @@ import StreamAndChat from "./components/stream/StreamAndChat";
 import Profile from "./components/profile/Profile";
 import Footer from "./components/Footer";
 import axios from "axios";
+import compareObjs from "deep-equal";
 
 import "./App.css";
 import "./styles/styles.css";
@@ -23,9 +24,6 @@ class App extends Component {
       userBetInformation: [],
       upcomingMatches: []
     };
-
-    this.handleNotificationSelection = this.handleNotificationSelection.bind(this);
-
   }
 
   getUserBetsDetails = () => {
@@ -46,15 +44,21 @@ class App extends Component {
   }
 
   getUpcomingMatches = () => {
-    axios.get(`https://api.pandascore.co/matches/upcoming?page[size]=5&&token=${process.env.REACT_APP_TOKEN}`)
+    axios.get(`https://api.pandascore.co/matches/upcoming?page[size]=20&&token=${process.env.REACT_APP_TOKEN}`)
       .then((rez) => {
-        this.setState(
-          {
-            upcomingMatches: rez.data.filter(match => {
-              return match.opponents.length;
-            })
+        let upcomingMatches = rez.data.filter(match => {
+          return match.opponents.length && match.opponents[0].opponent.image_url && match.opponents[1].opponent.image_url;
+        }).slice(0, 5);
+
+        upcomingMatches.forEach(match => {
+          let matchName = match.name;
+          if (matchName.indexOf(':') !== -1) {
+            matchName = matchName.substring(matchName.indexOf(":") + 2);
+            match.name = matchName;
           }
-        );
+        });
+
+        this.setState({ upcomingMatches: upcomingMatches });
       });
   }
 
@@ -100,10 +104,17 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.getUserBetsDetails()
-    this.getUpcomingMatches()
-
+    this.getUpcomingMatches();
+    this.getUserBetsDetails();
     setInterval(this.getUserBetsDetails, 5000);
+  }
+
+  shouldComponentUpdate(nextProp, nextState) {
+    if (compareObjs(nextState.userBets, this.state.userBets) &&
+      compareObjs(nextState.userBetInformation, this.state.userBetInformation)) {
+      return false;
+    }
+    return true;
   }
 
   render() {

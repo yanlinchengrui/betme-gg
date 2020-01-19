@@ -5,6 +5,7 @@
   "dependencies": {
     "antd": "^3.20.5",
     "axios": "^0.18.0",
+    "deep-equal": "^2.0.1",
     "moment": "^2.24.0",
     "moment-timezone": "^0.5.26",
     "react": "^16.8.6",
